@@ -1,4 +1,4 @@
-package com.proj.tech.demo;
+package com.proj.tech.controller;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
