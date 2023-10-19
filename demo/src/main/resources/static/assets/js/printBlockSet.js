@@ -1,6 +1,6 @@
 
 // Tableau des blocs que je veux tester 
-// Les clefs de tableBlock doivent correspondre avec le <aside> dans index.html
+// Les clefs de tableBlock doivent correspondre avec le <aside> dans mainPage.html
 const tableBlock = {
     "Arduino" : ["Clignoter 1 seconde", "Arreter 3 secondes", "Cloignoter 0.1 miliseconde", "Arreter 5 secondes", "Autres tests"],
     "Tourner" : ["Tourner à droite 3 fois","Tourner à droite 5 fois", "Tourner à droite 10 fois", "Tourner à gauche 3 fois", "Tourner à gauche 5 fois","Tourner à gauche 10 fois"],
