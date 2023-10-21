@@ -4,6 +4,7 @@ import com.proj.tech.dto.Session;
 import com.proj.tech.model.SessionEntity;
 import com.proj.tech.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

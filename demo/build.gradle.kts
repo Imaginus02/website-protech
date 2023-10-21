@@ -21,7 +21,8 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // libs to use JPA in your project
-	implementation("com.h2database:h2") // libs to use a H2 database
+	implementation("com.h2database:h2") // libs to use H2 database
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:3.0.4")
 }
 
 tasks.withType<Test> {
