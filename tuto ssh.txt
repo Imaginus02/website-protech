@@ -1,0 +1,7 @@
+Une fois que tu as ta clé ssh (publique et privée), il faut :
+1 - Ne plus jamais touché à la clé publique
+2 - ssh-keygen -y -f /chemin/de-la-cle-privee, puis copier le résultat dans github comme clé ssh
+3 - Tu vas dans le repository gitub, dans code puis dans ssh et tu copie
+4 - tu tapes la commande git remote set-url origin ce-que-t-as-copie
+5 - tu fais vim ~/.bashrc puis presque à la toute fin du fichier, juste au dessus du truc où y'a écrit que ça doit être à la fin, tu rajoutes :
+6 - ssh-add chemin-de-ta-cle-privee
