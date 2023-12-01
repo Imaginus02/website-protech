@@ -11,4 +11,5 @@ if [ -z "$SASS_EXEC" ]; then
   exit 1
 fi
 
-CHOKIDAR_USEPOLLING=true sass --watch integration/style.scss integration/assets/stylesheets/output.css
+CHOKIDAR_USEPOLLING=true sass --watch demo/src/main/resources/static/style.scss demo/src/main/resources/static/assets/stylesheets/mainPage.css
+# C:\Users\noset\Documents\ProjTech2\website-protech\demo\src\main\resources\static\style.scss

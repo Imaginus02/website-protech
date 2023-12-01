@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ProjTech</string>
+    <string name="qui"> Qui es-tu ?</string>
+    <string name="eleve"> Elève </string>
+    <string name="prof"> Professeur </string>
+
+    <string name="LogIn">Connexion</string>
+    <string name="toConnect"> Se connecter </string>
+    <string name="nameEleve"> Choisit un nom : </string>
+    <string name="nameSession"> Session ID :</string>
+
+    <string name="mailProf"> Adresse Mail : </string>
+    <string name="mdp"> Mot de passe :</string>
+</resources>

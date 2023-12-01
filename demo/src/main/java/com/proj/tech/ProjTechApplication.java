@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @EntityScan(basePackages = {"com.proj.tech"})
 public class ProjTechApplication {
 	public static void main(String[] args) {
+
 		SpringApplication.run(ProjTechApplication.class, args);
+
 	}
 
 }
