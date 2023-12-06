@@ -33,25 +33,40 @@ public class SpringSecurityConfig {
         return manager;
     }
 
-    @Bean
-    @Order(SecurityProperties.BASIC_AUTH_ORDER)
-    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
-        http.formLogin(withDefaults());
-        http.httpBasic(withDefaults());
-        return http.build();
-    }
+//    @Bean
+//    @Order(SecurityProperties.BASIC_AUTH_ORDER)
+//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
+//        http.formLogin(withDefaults());
+//        http.httpBasic(withDefaults());
+//        return http.build();
+//    }
 
     @Bean
     @Order(1)
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/**")).hasRole(ROLE_PROFESSOR) // (2)
-                        .anyRequest().permitAll() // (3)
+                .csrf().disable()
+                .authorizeHttpRequests((requests) ->
+                        requests
+//                            .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_PROFESSOR) // (2)
+                            .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_ADMIN)
+                            .anyRequest().permitAll() // (3)
                 )
-                .formLogin(withDefaults())
+                .formLogin()
+                    .loginPage("/login.html")
+                    .loginProcessingUrl("/login")
+                    .defaultSuccessUrl("/mainPage.html", true)
+                    .failureUrl("/login.html?error=true")
+                    .and()
+                .logout()
+                    .logoutUrl("/perform_logout")
+                    .deleteCookies("JSESSIONID")
+                    .and()
                 .httpBasic(withDefaults())
+                .exceptionHandling()
+                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
+                    .and()
                 .build();
     }
 }
