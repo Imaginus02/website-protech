@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.GetMapping; // Si formulaire envoyé avec GET
 import jakarta.servlet.http.HttpServletRequest;
+import java.util.logging.Logger;
 
 @Controller
 public class MonControleur {
@@ -22,6 +23,9 @@ public class MonControleur {
         for (String key : params.keySet()) {
             String[] values = params.get(key);
             for (String value : values) {
+                //if(value != null){
+                  //  Logger.getLogger(MonControleur.class.getName()).warning("Cette valeur n'est pas nulle");
+                //}
                 System.out.println("Paramètre " + key + " : " + value);
             }
         }

@@ -22,6 +22,10 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // libs to use JPA in your project
 	implementation("com.h2database:h2") // libs to use a H2 database
+
+	// Pour les couleurs des warns
+	//implementation('org.apache.logging.log4j:log4j-api:2.14.1')
+	// implementation('org.apache.logging.log4j:log4j-core:2.14.1')
 }
 
 tasks.withType<Test> {
