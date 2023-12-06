@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -16,6 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
+@EnableWebSecurity
 public class SpringSecurityConfig {
 
     public static final String ROLE_USER = "USER";
@@ -42,31 +45,44 @@ public class SpringSecurityConfig {
 //        return http.build();
 //    }
 
+//    @Bean
+//    @Order(1)
+//    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .authorizeHttpRequests((requests) ->
+//                        requests
+//                                .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_ADMIN)
+////                                .anyRequest().authenticated()
+//                );
+////                .exceptionHandling(exceptionHandling -> exceptionHandling
+////                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
+////                );
+//        return http.build();
+//    }
+
     @Bean
-    @Order(1)
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http
-                .csrf().disable()
-                .authorizeHttpRequests((requests) ->
-                        requests
-//                            .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_PROFESSOR) // (2)
-                            .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_ADMIN)
-                            .anyRequest().permitAll() // (3)
+    @Order(2)
+    public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests((requests) ->
+                requests
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login.html")).permitAll()
+                        .anyRequest().authenticated()
                 )
-                .formLogin()
-                    .loginPage("/login.html")
-                    .loginProcessingUrl("/login")
-                    .defaultSuccessUrl("/mainPage.html", true)
-                    .failureUrl("/login.html?error=true")
-                    .and()
-                .logout()
-                    .logoutUrl("/perform_logout")
-                    .deleteCookies("JSESSIONID")
-                    .and()
-                .httpBasic(withDefaults())
-                .exceptionHandling()
-                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
-                    .and()
-                .build();
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/login.html")
+                        .defaultSuccessUrl("/mainPage.html", true)
+                        .permitAll()
+                        .loginProcessingUrl("/login")
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .deleteCookies("JSESSIONID")
+                )
+                .httpBasic(withDefaults());
+//                .exceptionHandling(exceptionHandling -> exceptionHandling
+//                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
+//                );
+        return http.build();
     }
 }

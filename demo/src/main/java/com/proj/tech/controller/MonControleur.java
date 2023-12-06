@@ -39,4 +39,19 @@ public class MonControleur {
         // /!\ Si tu fais plusieurs tests, params ne sera pas rebouté, mais en faisant CTRL + F5 sur ta page web ça reboute je crois
         return "redirect:/result.html";
     }
+
+    @PostMapping("/login")
+    public String login(HttpServletRequest request) {
+        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+        params.remove("validForm");
+
+        for (String key : params.keySet()) {
+            String[] values = params.get(key);
+            for (String value : values) {
+                System.out.println("Paramètre " + key + " : " + value);
+            }
+        }
+
+        return "redirect:/mainPage.html";
+    }
 }
