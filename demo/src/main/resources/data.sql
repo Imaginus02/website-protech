@@ -1,0 +1,1 @@
+INSERT INTO SP_USER(id, email, password, username) VALUES (-1, 'tom.reynaud@etu.emse.fr', 'tomlebon', 'Imaginus');
