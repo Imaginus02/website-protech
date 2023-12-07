@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+    font-family: "Open Sans", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #fdeff1;
+    height:100%;
+    position: fixed;
+}
+
+
+.page {
+    display: flex;
+}
+
+#imgConnection{
+    /*max-width: 60%;*/
+    /*max-height:49vw;*/
+    height:auto;
+    overflow: hidden;
+}
+
+.image-container {
+    display: flex;
+    /*background-image: url("../../assets/img/loginBackground.png");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: left top;*/
+    /*position: absolute;*/
+    height: 100%;
+    /*width: auto;*/
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: auto;
+    margin-left: 0;
+    margin:auto;
+}
+
+.login-menu {
+    /*display: flex;*/
+    flex-direction: column;
+}
+
+.login-text {
+    background-color: #FDE107;
+    color: #FF7E00;
+    text-align: center;
+    line-height: 4.5vw;
+    width: 34vw;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+form[name="login"] {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    height: auto;
+    align-items: center;
+}
+
+.login-fields {
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-field-username {
+    margin-top: 100px;
+}
+
+.login-field-password {
+    margin-top: 75px;
+}
+
+input[name="username"] {
+    margin: auto;
+    width: auto;
+    font-size: 16px;
+    height:45px;
+    &:valid:focus {
+        outline: solid green;
+    }
+    &:invalid:focus {
+        outline: solid red;
+    }
+}
+
+input[name="password"] {
+    margin: auto;
+    width: auto;
+    font-size: 16px;
+    height:45px;
+    &:focus {
+        outline: solid green;
+    }
+}
+
+.login-button {
+    margin-top: 75px;
+    /*border-radius: 15px;*/
+    /*background-color: #00E7EE;*/
+    /*border: none;*/
+    /*padding: 12px;*/
+    /*justify-self: end;*/
+    width: 13vw;
+}

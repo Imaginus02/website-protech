@@ -25,7 +25,7 @@ public class SpringSecurityConfig {
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
 
-    /*@Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         // We create a password encoder
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -36,7 +36,6 @@ public class SpringSecurityConfig {
         return manager;
     }
 
-     */
 
 //    @Bean
 //    @Order(SecurityProperties.BASIC_AUTH_ORDER)
@@ -63,19 +62,14 @@ public class SpringSecurityConfig {
 //        return http.build();
 //    }
 
-    /*@Bean
+    @Bean
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         System.out.println("Building http");
         http.authorizeHttpRequests((requests) ->
                 requests
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login.html")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/error")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/img/**")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/stylesheets/**")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_PROFESSOR)
-                        .anyRequest().authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
+                        .anyRequest().permitAll()
                 )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login.html")
@@ -94,5 +88,4 @@ public class SpringSecurityConfig {
         return http.build();
     }
 
-     */
 }

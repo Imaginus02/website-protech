@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a98bd5-6bc4-4701-915e-1a268ab657e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coucou.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/demo/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/ProjTechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/ProjTechApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/JavaArduinoTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/InteractArduino.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/InteractArduino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -48,6 +52,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2WiFA40pSsuVfMZ5Nz2sdpFK8Wz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -61,8 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "database",
+    "git-widget-placeholder": "withJava-v1",
     "last_opened_file_path": "C:/Users/noset/Documents/ProjTech2/website-protech",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -193,5 +199,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
