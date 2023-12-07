@@ -1,3 +1,5 @@
+#include "Adafruit_TinyUSB.h"
+
 void setup()
 {
   Serial.begin(9600);

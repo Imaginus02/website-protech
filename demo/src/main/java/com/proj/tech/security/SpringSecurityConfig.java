@@ -25,7 +25,7 @@ public class SpringSecurityConfig {
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
 
-    @Bean
+    /*@Bean
     public UserDetailsService userDetailsService() {
         // We create a password encoder
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -35,6 +35,8 @@ public class SpringSecurityConfig {
         manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles(ROLE_ADMIN).build());
         return manager;
     }
+
+     */
 
 //    @Bean
 //    @Order(SecurityProperties.BASIC_AUTH_ORDER)
@@ -61,7 +63,7 @@ public class SpringSecurityConfig {
 //        return http.build();
 //    }
 
-    @Bean
+    /*@Bean
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests) ->
@@ -85,4 +87,6 @@ public class SpringSecurityConfig {
 //                );
         return http.build();
     }
+
+     */
 }

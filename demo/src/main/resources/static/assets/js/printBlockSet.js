@@ -2,11 +2,8 @@
 // Tableau des blocs que je veux tester 
 // Les clefs de tableBlock doivent correspondre avec le <aside> dans mainPage.html
 const tableBlock = {
-    "Arduino" : ["Clignoter 1 seconde", "Arreter 3 secondes", "Cloignoter 0.1 miliseconde", "Arreter 5 secondes", "Autres tests"],
-    "Tourner" : ["Tourner à droite 3 fois","Tourner à droite 5 fois", "Tourner à droite 10 fois", "Tourner à gauche 3 fois", "Tourner à gauche 5 fois","Tourner à gauche 10 fois"],
-    "Déplacer" : ["Avancer de 10", "Avancer de 20", "Reculer de 10", "Reculer de 20"],
-    "Attraper" : ["Resserrer la pince"] ,
-    "Relacher" : ["Déserrer la pince"]
+    "Allumer": ["Couleur Rouge", "Couleur Bleue", "Couleur Verte", "Couleur Blanche", "Eteindre"],
+    "Temps": ["1 seconde", "2 secondes", "3 secondes", "5 secondes"]
 }
 
 function changeOfSet(p){
