@@ -18,7 +18,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SpringSecurityConfig {
 
     public static final String ROLE_USER = "USER";
@@ -64,16 +64,22 @@ public class SpringSecurityConfig {
     @Bean
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
+        System.out.println("Building http");
         http.authorizeHttpRequests((requests) ->
                 requests
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login.html")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/error")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/img/**")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/stylesheets/**")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_PROFESSOR)
                         .anyRequest().authenticated()
                 )
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login.html")
                         .defaultSuccessUrl("/mainPage.html", true)
                         .permitAll()
-                        .loginProcessingUrl("/login")
+                        .failureUrl("/error")
                 )
                 .logout(logout -> logout
                         .logoutUrl("/logout")

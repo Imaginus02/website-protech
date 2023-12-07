@@ -40,18 +40,19 @@ public class MonControleur {
         return "redirect:/result.html";
     }
 
-    @PostMapping("/login")
-    public String login(HttpServletRequest request) {
-        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-        params.remove("validForm");
-
-        for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-            }
-        }
-
-        return "redirect:/mainPage.html";
-    }
+//    @PostMapping("/login")
+//    public String login(HttpServletRequest request) {
+//        System.out.println("Authentication attempt made");
+//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+//        params.remove("validForm");
+//
+//        for (String key : params.keySet()) {
+//            String[] values = params.get(key);
+//            for (String value : values) {
+//                System.out.println("Paramètre " + key + " : " + value);
+//            }
+//        }
+//
+//        return "redirect:/mainPage.html";
+//    }
 }
