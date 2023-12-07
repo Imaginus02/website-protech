@@ -18,6 +18,7 @@
 
     <!--    </div>-->
     <img class="login-image" src="assets/img/loginBackground.png" id="imgConnection">
+    <fieldset>
     <div class="login-menu">
         <div class="login-text">
             Connexion
@@ -32,20 +33,21 @@
         <form action="/login" method="post" name="login">
             <div class="login-fields">
                 <div class="mb-3">
-                    <p class="login-field-username form-label">Username :</p>
+                    <label for="username" class="login-field-username form-label">Username :</label>
                     <input type="text" placeholder="Username" name="username" id="username" class="input-field-login form-control" required>
                 </div>
                 <div class="mb-3">
-                    <p class="login-field-password form-label">Mot de passe :</p>
+                    <label for="password" class="login-field-password form-label">Mot de passe :</label>
                     <input type="password" placeholder="Password" id="password" name="password" class="input-field-password form-control" required>
                 </div>
             </div>
-            <button type="submit" value="submit" class="btn btn-primary login-button">
+            <button type="submit" class="btn btn-primary login-button">
                 Se connecter
             </button>
 
         </form>
     </div>
+    </fieldset>
 </div>
 </body>
 </html>

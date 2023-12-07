@@ -71,16 +71,16 @@ public class SpringSecurityConfig {
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
                         .anyRequest().permitAll()
                 )
-                .formLogin(formLogin -> formLogin
-                        .loginPage("/login.html")
-                        .defaultSuccessUrl("/mainPage.html", true)
-                        .permitAll()
-                        .failureUrl("/error")
-                )
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .deleteCookies("JSESSIONID")
-                )
+                .formLogin(withDefaults())
+//                .formLogin(formLogin -> formLogin
+//                        .loginPage("/login.html")
+//                        .defaultSuccessUrl("/mainPage.html", true)
+//                        .permitAll()
+//                        .passwordParameter("password")
+//                        .usernameParameter("username")
+//                        .failureUrl("/error")
+//                )
+                .logout(withDefaults())
                 .httpBasic(withDefaults());
 //                .exceptionHandling(exceptionHandling -> exceptionHandling
 //                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
