@@ -53,9 +53,16 @@ public class InstructionEntity {
 
     public InstructionEntity() {}
 
-    public InstructionEntity(Long id, String name, Character instruction) {
+    public InstructionEntity(String name, Character instruction, CodeEntity code) {
+        this.name = name;
+        this.instruction = instruction;
+        this.code = code;
+    }
+
+    public InstructionEntity(Long id, String name, Character instruction, CodeEntity code) {
         this.id = id;
         this.name = name;
         this.instruction = instruction;
+        this.code = code;
     }
 }

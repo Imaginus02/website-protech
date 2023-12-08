@@ -45,7 +45,20 @@ public class CodeEntity {
         this.instructions = instructions;
     }
 
+    public void addInstructions(InstructionEntity instruction) {
+        this.instructions.add(instruction);
+    }
+
     public CodeEntity() {
+    }
+
+    public CodeEntity(String name) {
+        this.name = name;
+    }
+
+    public CodeEntity(String name, Set<InstructionEntity> instructions) {
+        this.name = name;
+        this.instructions = instructions;
     }
 
     public CodeEntity(Long id, String name, Set<InstructionEntity> instructions) {

@@ -1,16 +1,20 @@
 package com.proj.tech.controller;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.fazecast.jSerialComm.SerialPort;
 import com.proj.tech.connectArduino.InteractArduino;
+import com.proj.tech.connectArduino.JavaArduinoTranslator;
+import com.proj.tech.dao.blocks.CodeDao;
+import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.User;
 import com.proj.tech.dao.UserDao;
+import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.UserMapper;
+import com.proj.tech.mapper.blocks.CodeMapper;
+import com.proj.tech.model.blocks.CodeEntity;
+import com.proj.tech.model.blocks.InstructionEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +25,16 @@ import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class MonControleur {
+
+    private final CodeDao codeDao;
+    private final InstructionDao instructionDao;
+
+    private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
+
+    public MonControleur(CodeDao codeDao, InstructionDao instructionDao) {
+        this.codeDao = codeDao;
+        this.instructionDao = instructionDao;
+    }
 
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
     public String maPage(HttpServletRequest request) throws IOException, InterruptedException {
@@ -97,4 +111,18 @@ public class MonControleur {
 //
 //        return "redirect:/mainPage.html";
 //    }
+
+    public Code saveCode(Map<String, String[]> params) {
+        Set<InstructionEntity> instructions = Set.of();
+        CodeEntity code = new CodeEntity(params.get("name")[0]);
+        params.remove("name");
+        for (String key : params.keySet()) {
+            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code));
+        }
+        instructionDao.saveAll(instructions);
+        code.setInstructions(instructions);
+
+        CodeEntity saved = codeDao.save(code);
+        return new CodeMapper().of(saved);
+    }
 }
