@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -67,19 +68,25 @@ public class SpringSecurityConfig {
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         System.out.println("Building http");
         http.authorizeHttpRequests((requests) ->
+
                 requests
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
                         .anyRequest().permitAll()
                 )
-                .formLogin(withDefaults())
-//                .formLogin(formLogin -> formLogin
-//                        .loginPage("/login.html")
-//                        .defaultSuccessUrl("/mainPage.html", true)
-//                        .permitAll()
-//                        .passwordParameter("password")
-//                        .usernameParameter("username")
-//                        .failureUrl("/error")
-//                )
+                .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/login.html")
+                        .defaultSuccessUrl("/mainPage.html", true)
+                        .loginProcessingUrl("/login")
+                        .permitAll()
+                        .passwordParameter("password")
+                        .usernameParameter("username")
+                        .failureUrl("/error")
+                )
+//                .formLogin(withDefaults())
+
                 .logout(withDefaults())
                 .httpBasic(withDefaults());
 //                .exceptionHandling(exceptionHandling -> exceptionHandling

@@ -22,13 +22,19 @@ import jakarta.servlet.http.HttpServletRequest;
 @Controller
 public class MonControleur {
 
-    @Autowired
-    private UserDao userDao;
-
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
     public String maPage(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         params.remove("validForm") ;
+
+        /*Map<String, String>
+        * [
+        *   "btnSave" => "Sauvegarder",
+        *   "bloc1" => "Couleur Rouge",
+        *   "bloc2" => "1 seconde"
+        *   ...
+        * ]
+         */
 
         // Transformer ["bloc1" => "Couleur Bleue"] en [1:"Couleur Bleue"]
         int compt = 0 ;
