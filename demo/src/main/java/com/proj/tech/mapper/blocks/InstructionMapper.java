@@ -8,7 +8,8 @@ public class InstructionMapper {
         return new Instruction(
                 instruction.getId(),
                 instruction.getName(),
-                instruction.getInstruction()
+                instruction.getInstruction(),
+                instruction.getCode().getId()
         );
     }
 }

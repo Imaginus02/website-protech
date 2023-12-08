@@ -3,6 +3,9 @@ package com.proj.tech.model.blocks;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
+
+import static jakarta.persistence.CascadeType.ALL;
 
 @Entity
 @Table(name = "SP_CODE")
@@ -15,8 +18,8 @@ public class CodeEntity {
     @Column
     private String name;
 
-    @OneToMany
-    private List<InstructionEntity> instructions;
+    @OneToMany(cascade = ALL, mappedBy = "code")
+    private Set<InstructionEntity> instructions = Set.of();
 
     public Long getId() {
         return id;
@@ -34,17 +37,18 @@ public class CodeEntity {
         this.name = name;
     }
 
-    public List<InstructionEntity> getInstructions() {
+    public Set<InstructionEntity> getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(List<InstructionEntity> instructions) {
+    public void setInstructions(Set<InstructionEntity> instructions) {
         this.instructions = instructions;
     }
 
-    public CodeEntity() {}
+    public CodeEntity() {
+    }
 
-    public CodeEntity(Long id, String name, List<InstructionEntity> instructions) {
+    public CodeEntity(Long id, String name, Set<InstructionEntity> instructions) {
         this.id = id;
         this.name = name;
         this.instructions = instructions;
