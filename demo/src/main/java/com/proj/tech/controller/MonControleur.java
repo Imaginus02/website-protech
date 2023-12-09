@@ -3,8 +3,8 @@ import java.io.IOException;
 import java.util.*;
 
 import com.fazecast.jSerialComm.SerialPort;
-import com.proj.tech.connectArduino.InteractArduino;
-import com.proj.tech.connectArduino.JavaArduinoTranslator;
+import com.proj.tech.services.connectArduino.InteractArduino;
+import com.proj.tech.services.JavaArduinoTranslator;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.blocks.Code;
@@ -99,8 +99,8 @@ public class MonControleur {
                 System.out.println("Paramètre " + key + " : " + value);
             }
         }
-
-//        saveCode(params);
+//        params = new LinkedHashMap<>();
+        saveCode(params);
         return "redirect:/mainPage.html" ;
     }
 
@@ -156,6 +156,7 @@ public class MonControleur {
     public Code saveCode(Map<String, String[]> params) {
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
         CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
+        CodeEntity saved = codeDao.save(code);
         params.remove("nameOfCode");
         int compteur = 0;
         for (String key : params.keySet()) {
@@ -165,7 +166,6 @@ public class MonControleur {
         instructionDao.saveAll(instructions);
         code.setInstructions(instructions);
 
-        CodeEntity saved = codeDao.save(code);
         return new CodeMapper().of(saved);
     }
 }

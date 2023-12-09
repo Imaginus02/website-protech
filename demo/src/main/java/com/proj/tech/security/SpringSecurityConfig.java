@@ -1,7 +1,5 @@
 package com.proj.tech.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -23,7 +21,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
-public class SpringSecurityConfig{
+public class SpringSecurityConfig {
 
     public static final String ROLE_USER = "USER";
     public static final String ROLE_PROFESSOR = "PROFESSOR";
@@ -31,10 +29,10 @@ public class SpringSecurityConfig{
 
     public static final String ROLE_STUDENT = "STUDENT";
 
-//    @Autowired
+    //    @Autowired
     private TeacherAuthenticationProvider teacherAuthenticationProvider;
 
-//    @Autowired
+    //    @Autowired
     private StudentAuthenticationProvider studentAuthenticationProvider;
 
     @Bean
@@ -49,7 +47,7 @@ public class SpringSecurityConfig{
         return manager;
     }
 
-//    @Override
+    //    @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
         authenticationManagerBuilder.authenticationProvider(teacherAuthenticationProvider)
                 .authenticationProvider(studentAuthenticationProvider);
@@ -59,14 +57,12 @@ public class SpringSecurityConfig{
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         System.out.println("Building http");
-        http.authorizeHttpRequests((requests) ->
-
-                requests
+        http.authorizeHttpRequests((requests) -> requests
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/register")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET,"/api/**")).hasRole(ROLE_ADMIN)
-                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.POST,"/api/users/new")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET, "/api/**")).hasRole(ROLE_ADMIN)
+                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.POST, "/api/users/new")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/**")).permitAll()
                         .anyRequest().authenticated()
