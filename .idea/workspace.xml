@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a98bd5-6bc4-4701-915e-1a268ab657e8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/JavaArduinoTranslator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/InteractArduino.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/connectArduino/InteractArduino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +46,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -67,9 +69,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "withJava-v1",
-    "last_opened_file_path": "C:/Users/noset/Documents/ProjTech2/website-protech",
+    "last_opened_file_path": "D:/tb3/git/pokemon-project/PokedexProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -194,6 +197,8 @@
       <workItem from="1700765967873" duration="3768000" />
       <workItem from="1700910501466" duration="1150000" />
       <workItem from="1701157648376" duration="1499000" />
+      <workItem from="1701944847450" duration="18000" />
+      <workItem from="1702039418728" duration="10434000" />
     </task>
     <servers />
   </component>
