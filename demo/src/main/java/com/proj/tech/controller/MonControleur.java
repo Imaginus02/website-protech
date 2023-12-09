@@ -89,16 +89,17 @@ public class MonControleur {
         ...
     ]
      */
-    @PostMapping("/saveguardPage")
-    public String saveguard(HttpServletRequest request) throws IOException, InterruptedException {
+    @PostMapping("/savePage")
+    public String save(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         // params.remove("validForm");
-        for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-            }
-        }
+//        for (String key : params.keySet()) {
+//            String[] values = params.get(key);
+//            for (String value : values) {
+//                System.out.println("Paramètre " + key + " : " + value);
+//            }
+//        }
+        saveCode(params);
         return "redirect:/mainPage.html" ;
     }
 
@@ -110,18 +111,18 @@ public class MonControleur {
         "numberStudent" => ...
      ]
      */
-    @PostMapping("/newSessionPage")
-    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
-        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-        // params.remove("validForm");
-        for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-            }
-        }
-        return "redirect:/mainPage.html" ;
-    }
+//    @PostMapping("/newSessionPage")
+//    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
+//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+//        // params.remove("validForm");
+//        for (String key : params.keySet()) {
+//            String[] values = params.get(key);
+//            for (String value : values) {
+//                System.out.println("Paramètre " + key + " : " + value);
+//            }
+//        }
+//        return "redirect:/mainPage.html" ;
+//    }
 
 
     public String PortOpen(){

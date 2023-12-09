@@ -68,6 +68,7 @@ public class SpringSecurityConfig{
                         .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET,"/api/**")).hasRole(ROLE_ADMIN)
                         .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.POST,"/api/users/new")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/**")).permitAll()
                         .anyRequest().authenticated()
                 )
                 .csrf(AbstractHttpConfigurer::disable)

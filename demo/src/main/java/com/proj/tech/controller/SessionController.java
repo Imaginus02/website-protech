@@ -3,19 +3,15 @@ package com.proj.tech.controller;
 import com.proj.tech.dao.SessionDao;
 import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dto.Session;
-import com.proj.tech.dto.SessionCommand;
-import com.proj.tech.dto.UserProfessor;
 import com.proj.tech.mapper.SessionMapper;
 import com.proj.tech.model.SessionEntity;
 import com.proj.tech.model.SessionStatus;
-import com.proj.tech.model.UserEntity;
 import com.proj.tech.model.UserProfessorEntity;
+import com.proj.tech.services.StringToDateConverter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
 
 @CrossOrigin
@@ -28,9 +24,12 @@ public class SessionController {
 
     private final UserProfessorDao userProfessorDao;
 
+    private final StringToDateConverter stringToDateConverter;
+
     public SessionController(SessionDao sessionDao, UserProfessorDao userProfessorDao) {
         this.sessionDao = sessionDao;
         this.userProfessorDao = userProfessorDao;
+        this.stringToDateConverter = new StringToDateConverter();
     }
 
     @GetMapping("/{username}")
@@ -61,9 +60,12 @@ public class SessionController {
 
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Session> createSession(@RequestBody SessionCommand session) {
-        UserProfessorEntity user = userProfessorDao.findByUsername(session.username());
-        SessionEntity saved = sessionDao.save(new SessionEntity(session.name(), user, session.maxUser(), session.endDate()));
+    public ResponseEntity<Session> createSession(@RequestParam String name,
+                                                 @RequestParam String username,
+                                                 @RequestParam Integer maxUser,
+                                                 @RequestParam String endDate) {
+        UserProfessorEntity user = userProfessorDao.findByUsername(username);
+        SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
 

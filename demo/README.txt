@@ -12,15 +12,7 @@ POST /api/users/new :
 GET /api/sessions/{username}(/active or /archived (optional))
 
 POST /api/sessions
-{
-    "name" : "Name of the session",
-    "username" : "Name of the user that created the session",
-    "maxUser" : "Number of maximum user allowed at the same time",
-    "endDate" : "2023-12-09T18:31:12.093+00:00"
-}
-The date will be in the same format as the one returned by (in JavaScript) :
-const currentDate = new Date();
-const formattedDate = currentDate.toISOString().replace('Z', '+00:00');
+name=nameOfTheSession&username=UsernameOfTheCreator&maxUser=NumberOfStudentConnectedAtTheSameTime&endDate=YYYY-MM-DD
 
 GET /api/codes :
 get the list of all codes
