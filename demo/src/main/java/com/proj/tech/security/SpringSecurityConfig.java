@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -18,14 +19,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SpringSecurityConfig {
 
     public static final String ROLE_USER = "USER";
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
 
-    /*@Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         // We create a password encoder
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -36,7 +37,6 @@ public class SpringSecurityConfig {
         return manager;
     }
 
-     */
 
 //    @Bean
 //    @Order(SecurityProperties.BASIC_AUTH_ORDER)
@@ -63,24 +63,31 @@ public class SpringSecurityConfig {
 //        return http.build();
 //    }
 
-    /*@Bean
+    @Bean
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
+        System.out.println("Building http");
         http.authorizeHttpRequests((requests) ->
+
                 requests
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login.html")).permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
+                        .anyRequest().permitAll()
                 )
+                .csrf(AbstractHttpConfigurer::disable)
+                .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login.html")
                         .defaultSuccessUrl("/mainPage.html", true)
-                        .permitAll()
                         .loginProcessingUrl("/login")
+                        .permitAll()
+                        .passwordParameter("password")
+                        .usernameParameter("username")
+                        .failureUrl("/error")
                 )
-                .logout(logout -> logout
-                        .logoutUrl("/logout")
-                        .deleteCookies("JSESSIONID")
-                )
+//                .formLogin(withDefaults())
+
+                .logout(withDefaults())
                 .httpBasic(withDefaults());
 //                .exceptionHandling(exceptionHandling -> exceptionHandling
 //                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
@@ -88,5 +95,4 @@ public class SpringSecurityConfig {
         return http.build();
     }
 
-     */
 }

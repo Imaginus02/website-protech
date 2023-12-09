@@ -1,16 +1,20 @@
 package com.proj.tech.controller;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import com.fazecast.jSerialComm.SerialPort;
 import com.proj.tech.connectArduino.InteractArduino;
+import com.proj.tech.connectArduino.JavaArduinoTranslator;
+import com.proj.tech.dao.blocks.CodeDao;
+import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.User;
 import com.proj.tech.dao.UserDao;
+import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.UserMapper;
+import com.proj.tech.mapper.blocks.CodeMapper;
+import com.proj.tech.model.blocks.CodeEntity;
+import com.proj.tech.model.blocks.InstructionEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,13 +26,29 @@ import jakarta.servlet.http.HttpServletRequest;
 @Controller
 public class MonControleur {
 
-    @Autowired
-    private UserDao userDao;
+    private final CodeDao codeDao;
+    private final InstructionDao instructionDao;
+
+    private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
+
+    public MonControleur(CodeDao codeDao, InstructionDao instructionDao) {
+        this.codeDao = codeDao;
+        this.instructionDao = instructionDao;
+    }
 
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
     public String maPage(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         params.remove("validForm") ;
+
+        /*Map<String, String>
+        * [
+        *   "btnSave" => "Sauvegarder",
+        *   "bloc1" => "Couleur Rouge",
+        *   "bloc2" => "1 seconde"
+        *   ...
+        * ]
+         */
 
         // Transformer ["bloc1" => "Couleur Bleue"] en [1:"Couleur Bleue"]
         int compt = 0 ;
@@ -77,18 +97,32 @@ public class MonControleur {
         return "Arret" ;
     }
 
-    @PostMapping("/login")
-    public String login(HttpServletRequest request) {
-        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-        params.remove("validForm");
+//    @PostMapping("/login")
+//    public String login(HttpServletRequest request) {
+//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+//        params.remove("validForm");
+//
+//        for (String key : params.keySet()) {
+//            String[] values = params.get(key);
+//            for (String value : values) {
+//                System.out.println("Paramètre " + key + " : " + value);
+//            }
+//        }
+//
+//        return "redirect:/mainPage.html";
+//    }
 
+    public Code saveCode(Map<String, String[]> params) {
+        Set<InstructionEntity> instructions = Set.of();
+        CodeEntity code = new CodeEntity(params.get("name")[0]);
+        params.remove("name");
         for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-            }
+            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code));
         }
+        instructionDao.saveAll(instructions);
+        code.setInstructions(instructions);
 
-        return "redirect:/mainPage.html";
+        CodeEntity saved = codeDao.save(code);
+        return new CodeMapper().of(saved);
     }
 }

@@ -29,6 +29,8 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	// implementation(files("""libs/jSerialComm-2.10.4.jar"""))
 	implementation("com.fazecast:jSerialComm:2.10.4")
+	implementation("org.springframework.security:spring-security-web")
+	implementation("org.springframework.security:spring-security-config")
 }
 
 tasks.withType<Test> {

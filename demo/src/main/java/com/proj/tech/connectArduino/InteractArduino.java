@@ -7,13 +7,17 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
 public class InteractArduino {
 
     private final List<String> params ;
+    private final JavaArduinoTranslator translator;
     private final String port ;
     public InteractArduino(String port, List<String> params){
         this.port = port ;
         this.params = params ;
+        this.translator = new JavaArduinoTranslator();
     }
 
     public void SendArduino() throws IOException, InterruptedException {
@@ -34,8 +38,10 @@ public class InteractArduino {
 
         // Définir commands, qui serait ["couleur bleue", "1 seconde", "eteindre" ....]
         // Problème avec char : il faut que ce soit "b" et pas "Couleur bleue"
-        for (char command : params) {
-            sp.getOutputStream().write(command);
+
+
+        for (String command : params) {
+            sp.getOutputStream().write(this.translator.translate(command));
             Thread.sleep(100); // Optionnel : Attente entre chaque commande
         }
 
