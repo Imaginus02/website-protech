@@ -83,7 +83,24 @@ public class MonControleur {
          */
 
         return "redirect:/result.html";
+
     }
+
+    // Code que je viens d'ajouter pour traiter la sauvegarde du code
+    // Tu peux voir dans la console le type de retour obtenu, je te laisse gérer avec le back-end.
+    @PostMapping("/saveguardPage")
+    public String saveguard(HttpServletRequest request) throws IOException, InterruptedException {
+        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+        // params.remove("validForm");
+        for (String key : params.keySet()) {
+            String[] values = params.get(key);
+            for (String value : values) {
+                System.out.println("Paramètre " + key + " : " + value);
+            }
+        }
+        return "C'est fait" ;
+    }
+
 
     public String PortOpen(){
         SerialPort[] ports = SerialPort.getCommPorts();

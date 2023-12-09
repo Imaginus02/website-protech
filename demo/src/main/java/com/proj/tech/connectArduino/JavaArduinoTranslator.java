@@ -11,6 +11,12 @@ public class JavaArduinoTranslator {
         dict.put("Couleur Rouge", 'r');
         dict.put("Couleur Bleue", 'b');
         dict.put("Couleur Verte", 'v');
+        dict.put("Couleur Blanche", 'w');
+        dict.put("Eteindre", 'e');
+        dict.put("1 seconce", '1');
+        dict.put("2 secondes", '2');
+        dict.put("3 secondes", '3');
+        dict.put("5 secondes", '5');
     }
 
     public Dictionary<String, Character> getDict() {

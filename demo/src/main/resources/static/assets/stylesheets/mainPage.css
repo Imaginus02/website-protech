@@ -199,22 +199,22 @@ h2 {
     cursor: pointer;
 }
 
-.Tester {
+.Allumer {
     background-color: rgb(70, 152, 253);
     border: rgb(55, 144, 253);
 }
 
-.Arduino {
+.jsdciusd {
     background-color: rgb(70, 152, 253);
     border: rgb(55, 144, 253);
 }
 
-.Tourner {
+.Tjnco {
     background-color: rgb(253, 222, 70);
     border: rgb(255, 218, 33);
 }
 
-.Déplacer {
+.Temps {
     background-color: rgb(137, 70, 253);
     border: rgb(122, 46, 255);
 }
@@ -299,7 +299,7 @@ input[type=submit].submitForm:hover {
 #popUp_overlay {
     position: absolute;
     z-index: 3;
-    top: 75px;
+    top: 90px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -311,9 +311,75 @@ input[type=submit].submitForm:hover {
     position: absolute;
     z-index: 4;
     background-color: white;
-    top: 85px;
+    top: 100px;
     bottom: 50px;
-    right: 12px;
+    right: 200px;
     left: 200px;
     display: none;
+}
+
+#popUpSaving{
+    display: none;
+    /* width:80%;
+    height:50vh;*/
+    position: absolute;
+    z-index: 4;
+    background-color: white;
+    top: 100px;
+    bottom: 50px;
+    left:300px;
+    right:300px;
+    margin:auto;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 0px black;
+}
+
+#popUpSaving{
+    & h3 {
+        font-family: 'Dancing Script', serif ;
+        text-align: center;
+        font-weight: 600;
+        font-size:32px;
+    }
+    & p{
+        width:80%;
+        margin:auto;
+    }
+    & form{
+        display: flex;
+        flex-direction: column;
+        & .toSend, .toCancel, .nameCode{
+            width:300px;
+        }
+         & .nameCode{
+             margin:auto;
+             margin-top:24px ;
+             height:40px;
+             border-radius: 10px;
+             border:1px solid black;
+         }
+        & .toSend, .toCancel{
+            height:30px;
+            margin:auto;
+            border-radius: 10px;
+            font-size:16px;
+            cursor: pointer;
+        }
+
+        & .toSend{
+            background-color: #029DEE;
+            color: white;
+            border:none;
+            margin-top:24px;
+
+        }
+        & .toCancel{
+            background-color: white;
+            color: #029DEE;
+            border:1px solid black;
+            margin-top:4px;
+
+        }
+    }
+
 }
