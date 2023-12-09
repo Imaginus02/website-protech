@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a98bd5-6bc4-4701-915e-1a268ab657e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/assets/img/classe_enfant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/assets/stylesheets/choose.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/assets/stylesheets/output.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/inscription.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/loginProf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/assets/stylesheets/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/static/assets/stylesheets/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/static/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +79,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "withJava-v1",
+    "git-widget-placeholder": "Merging withJava-v1",
     "last_opened_file_path": "D:/tb3/git/pokemon-project/PokedexProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -199,6 +207,7 @@
       <workItem from="1701157648376" duration="1499000" />
       <workItem from="1701944847450" duration="18000" />
       <workItem from="1702039418728" duration="10434000" />
+      <workItem from="1702134930921" duration="192000" />
     </task>
     <servers />
   </component>

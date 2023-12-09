@@ -10,13 +10,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="assets/stylesheets/login.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-image: url(./assets/img/loginBackground.png);
+        }
+    </style>
 </head>
 
 <body>
-<div class="page">
-    <!--    <div class="image-container">-->
+    <fieldset>
+        <header>
+        <p class="connexion"> Connexion </p>
+        <p> Elève </p>
+        </header>
+        <form action="/login" method="post" name="login">
+            <div class="login-fields">
+                <div class="contain-field">
+                    <label for="username" class="login-field-username form-label"> N° de Session :</label>
+                    <input type="text" placeholder="Ex : 7x4abg" name="username" id="username" class="input-field-login form-control" required>
+                </div>
+                <div class="contain-field">
+                    <label for="password" class="login-field-password form-label" > Mot de passe :</label>
+                    <input type="password" placeholder="Mot de passe" id="password" name="password" class="input-field-password form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary login-button">
+                    Se connecter
+                </button>
+            </div>
+        </form>
+    
+    </fieldset>
 
-    <!--    </div>-->
+<!-- <div class="page">
     <img class="login-image" src="assets/img/loginBackground.png" id="imgConnection">
     <fieldset>
     <div class="login-menu">
@@ -24,11 +51,11 @@
             Connexion
         </div>
 
-        <!-- <div class="menu">
+        <div class="menu">
             <ul>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./login.html">Login</a></li>
-            </ul> -->
+            </ul>
 
         <form action="/login" method="post" name="login">
             <div class="login-fields">
@@ -48,6 +75,11 @@
         </form>
     </div>
     </fieldset>
-</div>
+</div> -->
+
+
+<!-- <img class="login-image" src="assets/img/loginBackground.png"> -->
+
+
 </body>
 </html>

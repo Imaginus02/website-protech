@@ -1,108 +1,71 @@
-@charset "UTF-8";
-body {
-    font-family: "Open Sans", sans-serif;
+body{
+    margin:0;
     padding: 0;
-    margin: 0;
-    background-color: #fdeff1;
-    height:100%;
-    position: fixed;
-}
+    width:100%;
+    height:100vh;
 
-
-.page {
     display: flex;
-}
-
-#imgConnection{
-    /*max-width: 60%;*/
-    /*max-height:49vw;*/
-    height:auto;
-    overflow: hidden;
-}
-
-.image-container {
-    display: flex;
-    /*background-image: url("../../assets/img/loginBackground.png");*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: left top;*/
-    /*position: absolute;*/
-    height: 100%;
-    /*width: auto;*/
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+}
+
+fieldset{
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px 1px black;
+    width:30%;
+    min-width: 400px;
+    margin-left: auto;
     margin-top: auto;
-    margin-left: 0;
-    margin:auto;
+    margin-right:20px ;
+    margin-bottom: auto;
+    height:80vh;
 }
 
-.login-menu {
-    /*display: flex;*/
-    flex-direction: column;
+.InscriptionFieldset{
+    height:100vh;
 }
 
-.login-text {
-    background-color: #FDE107;
-    color: #FF7E00;
-    text-align: center;
-    line-height: 4.5vw;
-    width: 34vw;
-    margin: auto;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-form[name="login"] {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    height: auto;
-    align-items: center;
+.contain-field{
+    height:20vh;
 }
 
 .login-fields {
     margin:auto;
     display: flex;
     flex-direction: column;
+    width:80%;
+    margin-top: 24px;
 }
 
-.login-field-username {
-    margin-top: 100px;
+header{
+    width:80%;
+    margin:auto;
+    margin-top:24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.login-field-password {
-    margin-top: 75px;
+header p{
+    margin:0;
+    font-family: 'Dancing Script',serif;
 }
 
-input[name="username"] {
-    margin: auto;
-    width: auto;
-    font-size: 16px;
-    height:45px;
-    &:valid:focus {
-        outline: solid green;
-    }
-    &:invalid:focus {
-        outline: solid red;
-    }
+.connexion{
+    font-size: 32px;
+    font-weight: 600;
 }
 
-input[name="password"] {
-    margin: auto;
-    width: auto;
-    font-size: 16px;
-    height:45px;
-    &:focus {
-        outline: solid green;
-    }
+.passwordForgot{
+    color: grey;
+    cursor: pointer;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
 }
 
-.login-button {
-    margin-top: 75px;
-    /*border-radius: 15px;*/
-    /*background-color: #00E7EE;*/
-    /*border: none;*/
-    /*padding: 12px;*/
-    /*justify-self: end;*/
-    width: 13vw;
+.toCenter{
+    text-align: center;
 }
