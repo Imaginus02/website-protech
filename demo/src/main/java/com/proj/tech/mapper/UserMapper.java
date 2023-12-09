@@ -11,9 +11,7 @@ public class UserMapper {
                 user.getId(),
                 user.getEmail(),
                 user.getPassword(),
-                user.getUsername(),
-                user.getActiveSessions().stream().map(SessionMapper::of).collect(Collectors.toList()),
-                user.getArchivedSessions().stream().map(SessionMapper::of).collect(Collectors.toList())
+                user.getUsername()
         );
     }
 }

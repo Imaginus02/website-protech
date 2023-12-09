@@ -2,8 +2,10 @@ package com.proj.tech.model.blocks;
 
 import jakarta.persistence.*;
 
-import java.util.List;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import static jakarta.persistence.CascadeType.ALL;
 
@@ -43,6 +45,7 @@ public class CodeEntity {
 
     public void setInstructions(Set<InstructionEntity> instructions) {
         this.instructions = instructions;
+        this.instructions = this.instructions.stream().sorted(Comparator.comparing(InstructionEntity::getOrderInCode)).collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
     public void addInstructions(InstructionEntity instruction) {

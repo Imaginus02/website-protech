@@ -1,12 +1,36 @@
 API :
-/api/users :
+GET /api/users :
 get the list of all users
 
-/api/codes :
+POST /api/users/new :
+{
+    "email" : "email",
+    "username" "username",
+    "password" : "password"
+}
+
+GET /api/sessions/{username}(/active or /archived (optional))
+
+POST /api/sessions
+{
+    "name" : "Name of the session",
+    "username" : "Name of the user that created the session",
+    "maxUser" : "Number of maximum user allowed at the same time",
+    "endDate" : "2023-12-09T18:31:12.093+00:00"
+}
+The date will be in the same format as the one returned by (in JavaScript) :
+const currentDate = new Date();
+const formattedDate = currentDate.toISOString().replace('Z', '+00:00');
+
+GET /api/codes :
 get the list of all codes
 
-/api/codes/{id} :
+GET /api/codes/{id} :
 get the code with the {id}
+
+
+
+A Session has only an end date : the start date is the actual time at which it was created.
 
 Todo Code:
 1 - Complete the dictionary in JavaArduinoTranslator - J

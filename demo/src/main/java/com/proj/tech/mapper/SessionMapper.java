@@ -11,7 +11,7 @@ public class SessionMapper {
             session.getUser().getId(),
             session.getStatus(),
             session.getPassword(),
-            session.getNombreMax(),
+            session.getMaxUser(),
             session.getStartDate(),
             session.getEndDate()
         );

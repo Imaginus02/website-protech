@@ -1,9 +1,12 @@
 package com.proj.tech.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -19,12 +22,20 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
-//@EnableWebSecurity
-public class SpringSecurityConfig {
+@EnableWebSecurity
+public class SpringSecurityConfig{
 
     public static final String ROLE_USER = "USER";
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
+
+    public static final String ROLE_STUDENT = "STUDENT";
+
+//    @Autowired
+    private TeacherAuthenticationProvider teacherAuthenticationProvider;
+
+//    @Autowired
+    private StudentAuthenticationProvider studentAuthenticationProvider;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -34,34 +45,15 @@ public class SpringSecurityConfig {
         manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
         manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());
         manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles(ROLE_ADMIN).build());
+//        manager.createUser(User.withUsername("student").roles(ROLE_STUDENT).build());
         return manager;
     }
 
-
-//    @Bean
-//    @Order(SecurityProperties.BASIC_AUTH_ORDER)
-//    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-//        http.authorizeHttpRequests((requests) -> requests.anyRequest().authenticated());
-//        http.formLogin(withDefaults());
-//        http.httpBasic(withDefaults());
-//        return http.build();
-//    }
-
-//    @Bean
-//    @Order(1)
-//    public SecurityFilterChain adminFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests((requests) ->
-//                        requests
-//                                .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).hasRole(ROLE_ADMIN)
-////                                .anyRequest().authenticated()
-//                );
-////                .exceptionHandling(exceptionHandling -> exceptionHandling
-////                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
-////                );
-//        return http.build();
-//    }
+//    @Override
+    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
+        authenticationManagerBuilder.authenticationProvider(teacherAuthenticationProvider)
+                .authenticationProvider(studentAuthenticationProvider);
+    }
 
     @Bean
     @Order(2)
@@ -72,7 +64,11 @@ public class SpringSecurityConfig {
                 requests
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login")).permitAll()
-                        .anyRequest().permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/register")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET,"/api/**")).hasRole(ROLE_ADMIN)
+                        .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.POST,"/api/users/new")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).permitAll()
+                        .anyRequest().authenticated()
                 )
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))

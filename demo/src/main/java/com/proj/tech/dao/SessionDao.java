@@ -19,4 +19,11 @@ public interface SessionDao extends JpaRepository<SessionEntity, Long> {
     @Modifying
     @Query("delete from SessionEntity s where s.name = ?1")
     void deleteByName(String name);
+
+    @Query("select s from SessionEntity s where s.user.username=:username")
+    List<SessionEntity> findByUser(@Param("username") String username);
+
+    @Query("select s from SessionEntity s where s.user.username=:username and s.status=:status")
+    List<SessionEntity> findByUserAndStatus(@Param("username") String username, @Param("status") SessionStatus status);
+
 }
