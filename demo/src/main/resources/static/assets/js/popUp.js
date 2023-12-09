@@ -35,3 +35,19 @@ function closeSafeguard(){
     const page = document.getElementById("popUpSaving") ;
     page.style.display = "none" ;
 }
+
+function toSession(){
+    const overlay = document.getElementById("popUp_overlay") ;
+    overlay.style.display = "block" ;
+
+    const page = document.getElementById("popUpNewSession") ;
+    page.style.display = "block" ;
+}
+
+function closetoSession() {
+    const overlay = document.getElementById("popUp_overlay") ;
+    overlay.style.display = "none" ;
+
+    const page = document.getElementById("popUpNewSession") ;
+    page.style.display = "none" ;
+}

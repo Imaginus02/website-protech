@@ -88,6 +88,14 @@ public class MonControleur {
 
     // Code que je viens d'ajouter pour traiter la sauvegarde du code
     // Tu peux voir dans la console le type de retour obtenu, je te laisse gérer avec le back-end.
+    /*
+    [
+        "nameOfCode" => ....,
+        "bloc1" => "Couleur Rouge",
+        "bloc2 => "1 seconde"
+        ...
+    ]
+     */
     @PostMapping("/saveguardPage")
     public String saveguard(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
@@ -98,7 +106,28 @@ public class MonControleur {
                 System.out.println("Paramètre " + key + " : " + value);
             }
         }
-        return "C'est fait" ;
+        return "redirect:/mainPage.html" ;
+    }
+
+    // Je te laisse gérer le fait de mettre dans la BDD les données
+    /*
+    [
+        "password"=>...,
+        "password-confirm" => ...,
+        "numberStudent" => ...
+     ]
+     */
+    @PostMapping("/newSessionPage")
+    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
+        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+        // params.remove("validForm");
+        for (String key : params.keySet()) {
+            String[] values = params.get(key);
+            for (String value : values) {
+                System.out.println("Paramètre " + key + " : " + value);
+            }
+        }
+        return "redirect:/mainPage.html" ;
     }
 
 

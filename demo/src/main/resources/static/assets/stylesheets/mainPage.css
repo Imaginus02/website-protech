@@ -318,23 +318,24 @@ input[type=submit].submitForm:hover {
     display: none;
 }
 
-#popUpSaving{
+.toNavigate .createSession{
+    font-weight: 400;
+    font-size:12px;
+    text-align: center;
+}
+
+.cssPopUp{
     display: none;
-    /* width:80%;
-    height:50vh;*/
     position: absolute;
     z-index: 4;
     background-color: white;
     top: 100px;
-    bottom: 50px;
-    left:300px;
-    right:300px;
-    margin:auto;
+    left:20%;
+    right:20%;
+    min-height: 70vh;
     border-radius: 20px;
     box-shadow: 1px 1px 1px 0px black;
-}
 
-#popUpSaving{
     & h3 {
         font-family: 'Dancing Script', serif ;
         text-align: center;
