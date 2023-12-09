@@ -16,7 +16,6 @@ Todo Code:
 10 - Add a way to create new users and use them in Spring security - T
 13 - Add a way to login as a student or as a professor (students without password) - T
 14 - Add tests to make professors happy - J&T
-15 - Faire dijonction de cas code Arduino J
 
 Todo Do :
 1 - Complete the dictionary in JavaArduinoTranslator - J
@@ -27,6 +26,7 @@ Todo Do :
 11 - Add a login page for students and another one for teachers - J OK
 12 - Add a save button on mainPage.html, when clicked it should open a dialog box where you can put a string, and another save button. If the text box is empty, no request should be sent - J OK
     <-- Pour 12, tu peux examiner le rendu dans le terminal (petit controller dans MonControleur l.89)
+15 - Faire dijonction de cas code Arduino J
 
 Todo Rendu :
 1 - Finir le rapport
