@@ -14,20 +14,18 @@ GET /api/sessions/{username}(/active or /archived (optional))
 POST /api/sessions
 name=nameOfTheSession&username=UsernameOfTheCreator&maxUser=NumberOfStudentConnectedAtTheSameTime&endDate=YYYY-MM-DD
 
+A Session has only an end date : the start date is the actual time at which it was created.
+
 GET /api/codes :
 get the list of all codes
 
 GET /api/codes/{id} :
 get the code with the {id}
 
-
-
-A Session has only an end date : the start date is the actual time at which it was created.
-
 Todo Code:
-3 - Add a new page to the web App to see all registered code - J|T
-5 - Use the mobile App to send a POST a request - J|T
-6 - Once a request is in the database we need to run it - J|T
+3 - Add a new page to the web App to see all registered code - J|T - OK
+5 - Use the mobile App to send a POST a request to execute code - J|T
+6 - Once a request is in the database we need to run it  --> Add a POST endpoint at /api/request - J|T
 7 - Add Post and Update method to /api/users to be able to modify user profile - T
 10 - Add a way to create new users and use them in Spring security - T
 13 - Add a way to login as a student or as a professor (students without password) - T
