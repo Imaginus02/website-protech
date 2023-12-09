@@ -93,13 +93,14 @@ public class MonControleur {
     public String save(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         // params.remove("validForm");
-//        for (String key : params.keySet()) {
-//            String[] values = params.get(key);
-//            for (String value : values) {
-//                System.out.println("Paramètre " + key + " : " + value);
-//            }
-//        }
-        saveCode(params);
+        for (String key : params.keySet()) {
+            String[] values = params.get(key);
+            for (String value : values) {
+                System.out.println("Paramètre " + key + " : " + value);
+            }
+        }
+
+//        saveCode(params);
         return "redirect:/mainPage.html" ;
     }
 
@@ -154,8 +155,8 @@ public class MonControleur {
 
     public Code saveCode(Map<String, String[]> params) {
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
-        CodeEntity code = new CodeEntity(params.get("name")[0]);
-        params.remove("name");
+        CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
+        params.remove("nameOfCode");
         int compteur = 0;
         for (String key : params.keySet()) {
             instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code, Long.valueOf(compteur)));
