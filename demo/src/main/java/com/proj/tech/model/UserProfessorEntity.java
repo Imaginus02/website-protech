@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "SP_USER_PROFESSOR")
-public class UserProfessorEntity extends UserEntity implements UserDetails {
+public class UserProfessorEntity extends UserEntity {//implements UserDetails {
 
     @Id
     @GeneratedValue

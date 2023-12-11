@@ -54,6 +54,7 @@ public class MonControleur {
         }
 
         // Pour affichage dans le Terminal
+        //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
         InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
         arduino.SendArduino();
 

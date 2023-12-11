@@ -4,19 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -29,14 +25,8 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
     public static final String ROLE_USER = "USER";
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
-
     public static final String ROLE_STUDENT = "STUDENT";
 
-    //    @Autowired
-//    private TeacherAuthenticationProvider teacherAuthenticationProvider;
-
-    //    @Autowired
-    private StudentAuthenticationProvider studentAuthenticationProvider;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -46,23 +36,9 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
         manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
         manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());
         manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles(ROLE_ADMIN).build());
-//        manager.createUser(User.withUsername("student").roles(ROLE_STUDENT).build());
         return manager;
-//        return new JdbcUserDetailsManager();
     }
 
-
-
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-
-    //    @Override
-//    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) {
-//        authenticationManagerBuilder.authenticationProvider(teacherAuthenticationProvider)
-//                .authenticationProvider(studentAuthenticationProvider);
-//    }
 
     @Bean
     @Order(2)
@@ -93,7 +69,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
                 )
                 .logout(withDefaults())
                 .exceptionHandling(exceptionHandling -> exceptionHandling
-                    .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
+                        .authenticationEntryPoint((request, response, authException) -> response.sendRedirect("/choose"))
                 );
         return http.build();
     }
