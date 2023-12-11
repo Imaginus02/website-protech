@@ -22,6 +22,8 @@ get the list of all codes
 GET /api/codes/{id} :
 get the code with the {id}
 
+Maintenant pour se connecter il faut aller sur /login/professor et /login/student et non plus /login.html
+
 Todo Code:
 3 - Add a new page to the web App to see all registered code - J|T - OK
 5 - Use the mobile App to send a POST a request to execute code - J|T

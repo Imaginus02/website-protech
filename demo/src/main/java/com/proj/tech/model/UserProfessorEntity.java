@@ -4,6 +4,7 @@ import com.proj.tech.security.SpringSecurityConfig;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "SP_USER_PROFESSOR")
-public class UserProfessorEntity extends UserEntity {
+public class UserProfessorEntity extends UserEntity implements UserDetails {
 
     @Id
     @GeneratedValue

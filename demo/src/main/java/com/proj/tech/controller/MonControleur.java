@@ -12,11 +12,14 @@ import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.GetMapping; // Si formulaire envoyé avec GET
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
+@CrossOrigin
 public class MonControleur {
 
     private final CodeDao codeDao;
@@ -103,6 +106,22 @@ public class MonControleur {
         saveCode(params);
         return "redirect:/mainPage.html" ;
     }
+
+    @GetMapping("/login/student")
+    public String showLoginStudentPage() {
+        return "login.html"; // Returns login.html
+    }
+
+    @GetMapping("/login/professor")
+    public String showLoginProfessorPage() {
+        return "loginProf.html"; // Returns login.html
+    }
+
+    @GetMapping("/choose")
+    public String showChoosePage() {
+        return "choose.html"; // Returns login.html
+    }
+
 
     // Je te laisse gérer le fait de mettre dans la BDD les données
     /*
