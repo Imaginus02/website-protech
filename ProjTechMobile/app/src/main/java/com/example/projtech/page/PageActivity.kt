@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projtech.ProTechApplication
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdaptater
 
@@ -12,7 +13,7 @@ class PageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
-
+        val windowDao = ProTechApplication.database.windowDao()
         val roomsAdapter = ActionsAdaptater()
 
         findViewById<RecyclerView>(R.id.list_actions).also { recyclerView -> // (1)

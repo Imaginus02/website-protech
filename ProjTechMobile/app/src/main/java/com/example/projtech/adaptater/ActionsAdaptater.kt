@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
-import com.example.projtech.model.ActionDTO
+import com.example.projtech.database.dto.ActionDto
 
 class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>() { // (1)
 
@@ -15,9 +15,9 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
         val action: TextView = view.findViewById(R.id.txt_action)
     }
 
-    private val items = mutableListOf<ActionDTO>() // (3)
+    private val items = mutableListOf<ActionDto>() // (3)
 
-    fun setItems(rooms: List<ActionDTO>) {  // (4)
+    fun setItems(rooms: List<ActionDto>) {  // (4)
         items.clear()
         items.addAll(rooms)
         notifyDataSetChanged()
