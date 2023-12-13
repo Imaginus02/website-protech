@@ -13,7 +13,7 @@ class PageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
-        val windowDao = ProTechApplication.database.windowDao()
+//        val windowDao = ProTechApplication
         val roomsAdapter = ActionsAdaptater()
 
         findViewById<RecyclerView>(R.id.list_actions).also { recyclerView -> // (1)

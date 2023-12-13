@@ -9,8 +9,9 @@ import com.example.projtech.database.dto.ActionDto
 data class Action(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo val name: String,
-    @ColumnInfo val action: String
+    @ColumnInfo val action: String,
+    @ColumnInfo val order: Int
 ) {
     fun toDto(): ActionDto =
-        ActionDto(id, name, action)
+        ActionDto(id, name, action, order)
 }
