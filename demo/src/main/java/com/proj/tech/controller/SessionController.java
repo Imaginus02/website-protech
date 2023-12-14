@@ -7,8 +7,15 @@ import com.proj.tech.mapper.SessionMapper;
 import com.proj.tech.model.SessionEntity;
 import com.proj.tech.model.SessionStatus;
 import com.proj.tech.model.UserProfessorEntity;
+import com.proj.tech.security.SpringSecurityConfig;
 import com.proj.tech.services.StringToDateConverter;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +33,23 @@ public class SessionController {
 
     private final StringToDateConverter stringToDateConverter;
 
-    public SessionController(SessionDao sessionDao, UserProfessorDao userProfessorDao) {
+    private final UserDetailsService userDetailsService;
+
+    public SessionController(SessionDao sessionDao,
+                             UserProfessorDao userProfessorDao,
+                             UserDetailsService userDetailsService) {
         this.sessionDao = sessionDao;
         this.userProfessorDao = userProfessorDao;
         this.stringToDateConverter = new StringToDateConverter();
+        this.userDetailsService = userDetailsService;
+    }
+
+    @GetMapping()
+    public List<Session> listSessions() {
+        return sessionDao.findAll()
+                .stream()
+                .map(SessionMapper::of)
+                .toList();
     }
 
     @GetMapping("/{username}")
@@ -66,12 +86,15 @@ public class SessionController {
                                                  @RequestParam String endDate) {
         UserProfessorEntity user = userProfessorDao.findByUsername(username);
         SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
+
+        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        UserDetails sessionUser = User.withUsername("sessions")
+                .password(encoder.encode(saved.getPassword()))
+                .roles(SpringSecurityConfig.ROLE_STUDENT)
+                .build();
+        if (userDetailsService instanceof InMemoryUserDetailsManager) {
+            ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
+        }
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
-
-//    @GetMapping
-//    @ResponseBody
-//    public Date now() {
-//        return Date.from(Instant.now());
-//    }
 }

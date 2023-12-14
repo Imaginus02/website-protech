@@ -1,22 +1,22 @@
 package com.proj.tech.controller;
-import java.io.IOException;
-import java.util.*;
 
 import com.fazecast.jSerialComm.SerialPort;
-import com.proj.tech.services.connectArduino.InteractArduino;
-import com.proj.tech.services.JavaArduinoTranslator;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
+import com.proj.tech.services.JavaArduinoTranslator;
+import com.proj.tech.services.connectArduino.InteractArduino;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.GetMapping; // Si formulaire envoyé avec GET
-import jakarta.servlet.http.HttpServletRequest;
+
+import java.io.IOException;
+import java.util.*;
 
 @Controller
 @CrossOrigin
@@ -35,27 +35,27 @@ public class MonControleur {
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
     public String maPage(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-        params.remove("validForm") ;
+        params.remove("validForm");
 
         /*Map<String, String>
-        * [
-        *   "btnSave" => "Sauvegarder",
-        *   "bloc1" => "Couleur Rouge",
-        *   "bloc2" => "1 seconde"
-        *   ...
-        * ]
+         * [
+         *   "btnSave" => "Sauvegarder",
+         *   "bloc1" => "Couleur Rouge",
+         *   "bloc2" => "1 seconde"
+         *   ...
+         * ]
          */
 
         // Transformer ["bloc1" => "Couleur Bleue"] en [1:"Couleur Bleue"]
-        int compt = 0 ;
-        List<String> newList = new ArrayList<>() ;
+        int compt = 0;
+        List<String> newList = new ArrayList<>();
         for (String key : params.keySet()) {
-            newList.add(params.get(key)[0]) ;
+            newList.add(params.get(key)[0]);
         }
 
         // Pour affichage dans le Terminal
         //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
-        InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
+        InteractArduino arduino = new InteractArduino(PortOpen(), newList);
         arduino.SendArduino();
 
         /* ANCIEN Code
@@ -105,7 +105,7 @@ public class MonControleur {
         }
 //        params = new LinkedHashMap<>();
         saveCode(params);
-        return "redirect:/mainPage.html" ;
+        return "redirect:/mainPage.html";
     }
 
     @GetMapping("/login/student")
@@ -121,6 +121,11 @@ public class MonControleur {
     @GetMapping("/choose")
     public String showChoosePage() {
         return "choose.html"; // Returns login.html
+    }
+
+    @GetMapping("/inscription")
+    public String showRegisterPage() {
+        return "inscription.html"; // Returns login.html
     }
 
 
@@ -146,16 +151,16 @@ public class MonControleur {
 //    }
 
 
-    public String PortOpen(){
+    public String PortOpen() {
         SerialPort[] ports = SerialPort.getCommPorts();
         for (SerialPort port : ports) {
             if (port.isOpen()) {
                 System.out.println("- " + port.getSystemPortName());
-                return port.getSystemPortName() ;
+                return port.getSystemPortName();
             }
         }
         System.exit(0); // Arrete toute l'appli, un peu vache mais pas grave
-        return "Arret" ;
+        return "Arret";
     }
 
 //    @PostMapping("/login")
@@ -180,7 +185,7 @@ public class MonControleur {
         params.remove("nameOfCode");
         int compteur = 0;
         for (String key : params.keySet()) {
-            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code, Long.valueOf(compteur)));
+            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]), code, Long.valueOf(compteur)));
             compteur += 1;
         }
         instructionDao.saveAll(instructions);
