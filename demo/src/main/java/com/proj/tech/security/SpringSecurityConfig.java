@@ -32,6 +32,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
     public static final String ROLE_PROFESSOR = "PROFESSOR";
     public static final String ROLE_ADMIN = "ADMIN";
     public static final String ROLE_STUDENT = "STUDENT";
+    public static final String ROLE_MOBILE_APP = "MOBILE_APP";
 
     public SpringSecurityConfig(SessionDao sessionDao) {
         this.sessionDao = sessionDao;
@@ -47,7 +48,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
         for (SessionEntity session : sessions) {
             manager.createUser(User.withUsername("session").password(encoder.encode(session.getPassword())).roles(ROLE_STUDENT).build());
         }
-
+        manager.createUser(User.withUsername("LappliMobileTropBien").password(encoder.encode("UnMotD3Pass3Securis3")).roles(ROLE_MOBILE_APP).build());
         manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
         manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());
         manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles(ROLE_ADMIN, ROLE_USER, ROLE_STUDENT, ROLE_PROFESSOR).build());

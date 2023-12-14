@@ -1,15 +1,20 @@
 package com.proj.tech.controller;
 
 import com.fazecast.jSerialComm.SerialPort;
+import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
+import com.proj.tech.dto.User;
 import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.blocks.CodeMapper;
+import com.proj.tech.model.UserEntity;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
 import com.proj.tech.services.connectArduino.InteractArduino;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +28,15 @@ import java.util.*;
 public class MonControleur {
 
     private final CodeDao codeDao;
+    private final UserProfessorDao userProfessorDao;
     private final InstructionDao instructionDao;
 
     private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
 
-    public MonControleur(CodeDao codeDao, InstructionDao instructionDao) {
+    public MonControleur(CodeDao codeDao, InstructionDao instructionDao, UserProfessorDao userProfessorDao) {
         this.codeDao = codeDao;
         this.instructionDao = instructionDao;
+        this.userProfessorDao = userProfessorDao;
     }
 
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
@@ -55,19 +62,13 @@ public class MonControleur {
 
         // Pour affichage dans le Terminal
         //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
-<<<<<<< HEAD
-        InteractArduino arduino = new InteractArduino(PortOpen(), newList);
-        arduino.SendArduino();
-=======
-
-        if(PortOpen().equals("Arret")){
+        if (PortOpen().equals("Arret")) {
             return "redirect:/mainPage.html?popup=true";
-        }else {
-            InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
+        } else {
+            InteractArduino arduino = new InteractArduino(PortOpen(), newList);
             arduino.SendArduino();
             return "redirect:/result.html";
         }
->>>>>>> ba54108df9c37e00947fa8d8ea47323d7fe5ca7a
 
         /* ANCIEN Code
         for (String key : params.keySet()) {
@@ -89,7 +90,6 @@ public class MonControleur {
         - un bloc "Temps"
         Si le code n'est pas un ensemble de ce type de code, alors ce n'est pas bon !
          */
-
 
 
     }
@@ -190,6 +190,8 @@ public class MonControleur {
 //    }
 
     public Code saveCode(Map<String, String[]> params) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserEntity user = userProfessorDao.findByUsername(authentication.getName());
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
         CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
         CodeEntity saved = codeDao.save(code);

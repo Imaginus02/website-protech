@@ -45,4 +45,15 @@
     
     </fieldset>
 </body>
+
+<script>
+    const error = urlParams.get('error');
+    // const buttonSession = document.getElementById("newSession");
+    if (error === "true") {
+        console.log("Error while submitting")
+        // buttonSession.style.display = "block";
+    } else {
+        // buttonSession.style.display = "none";
+    }
+</script>
 </html>

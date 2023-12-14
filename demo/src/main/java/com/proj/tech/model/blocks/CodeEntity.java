@@ -1,5 +1,6 @@
 package com.proj.tech.model.blocks;
 
+import com.proj.tech.model.UserProfessorEntity;
 import jakarta.persistence.*;
 
 import java.util.Comparator;
@@ -22,6 +23,9 @@ public class CodeEntity {
 
     @OneToMany(cascade = ALL, mappedBy = "code")
     private Set<InstructionEntity> instructions = Set.of();
+
+    @ManyToOne
+    private UserProfessorEntity creator;
 
     public Long getId() {
         return id;
@@ -46,6 +50,14 @@ public class CodeEntity {
     public void setInstructions(Set<InstructionEntity> instructions) {
         this.instructions = instructions;
         this.instructions = this.instructions.stream().sorted(Comparator.comparing(InstructionEntity::getOrderInCode)).collect(Collectors.toCollection(LinkedHashSet::new));
+    }
+
+    public UserProfessorEntity getCreator() {
+        return this.creator;
+    }
+
+    public void setCreator(UserProfessorEntity creator) {
+        this.creator = creator;
     }
 
     public void addInstructions(InstructionEntity instruction) {

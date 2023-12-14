@@ -10,7 +10,8 @@ public class CodeMapper {
         return new Code(
                 code.getId(),
                 code.getName(),
-                code.getInstructions().stream().map(InstructionMapper::of).collect(Collectors.toList())
+                code.getInstructions().stream().map(InstructionMapper::of).collect(Collectors.toList()),
+                code.getCreator().getId()
         );
     }
 }
