@@ -55,8 +55,14 @@ public class MonControleur {
 
         // Pour affichage dans le Terminal
         //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
-        InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
-        arduino.SendArduino();
+
+        if(PortOpen().equals("Arret")){
+            return "redirect:/mainPage.html?popup=true";
+        }else {
+            InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
+            arduino.SendArduino();
+            return "redirect:/result.html";
+        }
 
         /* ANCIEN Code
         for (String key : params.keySet()) {
@@ -79,7 +85,7 @@ public class MonControleur {
         Si le code n'est pas un ensemble de ce type de code, alors ce n'est pas bon !
          */
 
-        return "redirect:/result.html";
+
 
     }
 
@@ -154,7 +160,7 @@ public class MonControleur {
                 return port.getSystemPortName() ;
             }
         }
-        System.exit(0); // Arrete toute l'appli, un peu vache mais pas grave
+      //  System.exit(0); // Arrete toute l'appli, un peu vache mais pas grave
         return "Arret" ;
     }
 

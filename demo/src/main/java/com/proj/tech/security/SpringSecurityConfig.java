@@ -60,7 +60,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login/professor")
-                        .defaultSuccessUrl("/mainPage.html", true)
+                        .defaultSuccessUrl("/mainPage.html?prof=true", true)
                         .loginProcessingUrl("/login")
                         .permitAll()
                         .passwordParameter("password")
