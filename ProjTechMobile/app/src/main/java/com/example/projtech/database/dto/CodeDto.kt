@@ -5,3 +5,6 @@ data class CodeDto(
     val name:String,
     val actions:List<ActionDto>
 )
+data class CodeCommandDto(
+    val name: String,
+)

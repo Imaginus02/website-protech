@@ -10,6 +10,6 @@ interface CodeDao {
     @Query("select * from rcode order by name")
     fun findAll(): List<Code>
 
-    @Query("select * from rcode where id = codeId")
-    fun findById(codeId: Long): List<Code>
+    @Query("select * from rcode where id = id")
+    fun findById(id: Long): Code
 }

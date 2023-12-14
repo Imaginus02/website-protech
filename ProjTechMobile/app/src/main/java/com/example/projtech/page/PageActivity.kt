@@ -23,6 +23,8 @@ class PageActivity : AppCompatActivity() {
             recyclerView.adapter = roomsAdapter // (5)
         }
 
+
+
         roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
     }
 }

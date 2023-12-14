@@ -10,7 +10,6 @@ import java.util.stream.Collectors
 data class Code(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo val name: String,
-    @ColumnInfo val codeId: Long,
     @ColumnInfo val actions: List<Action>
 ) {
     fun toDto():
