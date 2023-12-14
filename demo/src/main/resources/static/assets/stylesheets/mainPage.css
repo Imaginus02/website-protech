@@ -83,6 +83,10 @@ nav img {
     height: 50px;
     padding: 0 24px;
     margin-right: 16px;
+
+    display: flex;
+    justify-content:center ;
+    align-items: center;
 }
 
 .containConnect button:hover {
@@ -318,11 +322,6 @@ input[type=submit].submitForm:hover {
     display: none;
 }
 
-.toNavigate .createSession{
-    font-weight: 400;
-    font-size:12px;
-    text-align: center;
-}
 
 .cssPopUp{
     display: none;

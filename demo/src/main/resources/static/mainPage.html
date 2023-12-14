@@ -55,10 +55,10 @@ i
                 <div onclick="showWebCam()"> &#x1F3A5;</div>
                 <div onclick="deleteWebCam()"> &#x274C;   </div>
                 <div onclick="toSafeguard()"> &#x2B73; </div>
-                <div onclick="toSession()" class="createSession"> Créer une session </div>
+                <div onclick="toSession()" class="createSession" id="newSession"> &#x1F4F0;  </div>
             </div>
             <div class="containConnect">
-                <p class="pseudo"> jJoey </p>
+                <!-- <p class="pseudo"> jJoey </p> -->
                 <a href="/logout" type="button" class="logOut"> &#x21F0; </a>
             </div>
         </nav>
@@ -97,6 +97,7 @@ i
 <script src="assets/js/popUp.js"></script>
 <script src="assets/js/playWithBlock.js"></script>
 
+
 <script>
     const containBloc = document.getElementById("contain-bloc") ;
     printSetBlock("Allumer",containBloc);
@@ -132,5 +133,22 @@ i
         form.appendChild(inputHidden) ;
     }
 </script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const showPopup = urlParams.get('popup');
+    if (showPopup === 'true') {
+        alert("Nous n'avons pas détecté de robot connecté. Veuillez vérfifier vos connections, puis réessayez."); // Ou tout autre code pour afficher la popup
+    }
+
+    const isProfessor = urlParams.get('prof') ;
+    const buttonSession = document.getElementById("newSession") ;
+    if(isProfessor === "true"){
+        buttonSession.style.display = "block" ;
+    }else{
+        buttonSession.style.display = "none" ;
+    }
+</script>
+
 </body>
 </html>
