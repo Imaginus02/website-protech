@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a98bd5-6bc4-4701-915e-1a268ab657e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjTechMobile/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjTechMobile/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     "WebServerToolWindowFactoryState": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "mobileApp",
-    "last_opened_file_path": "C:/Users/noset/Documents/ProjTech",
+    "last_opened_file_path": "C:/Users/noset/Documents/MajeureInfo/renduArchitecture/cours-SOLID",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -144,6 +144,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="demo [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -228,6 +229,8 @@
     <list>
       <item itemvalue="Application.ProjTechApplication" />
       <item itemvalue="Gradle.demo [build]" />
+      <item itemvalue="Spring Boot.ProjTechApplication" />
+      <item itemvalue="Spring Boot.ProjTechApplication (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -265,6 +268,8 @@
       <workItem from="1702133157095" duration="9406000" />
       <workItem from="1702150676797" duration="355000" />
       <workItem from="1702537688171" duration="3530000" />
+      <workItem from="1702543755183" duration="66000" />
+      <workItem from="1702544131189" duration="32000" />
     </task>
     <servers />
   </component>
@@ -272,6 +277,26 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="database" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="withJava-v1" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -289,26 +314,6 @@
                 </map>
               </option>
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="database" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="withJava-v1" />
-                </option>
-              </RecentGroup>
-            </list>
           </value>
         </entry>
       </map>
