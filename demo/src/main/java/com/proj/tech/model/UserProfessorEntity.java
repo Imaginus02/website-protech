@@ -1,5 +1,6 @@
 package com.proj.tech.model;
 
+import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.security.SpringSecurityConfig;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,9 +25,20 @@ public class UserProfessorEntity extends UserEntity {//implements UserDetails {
     @OneToMany
     private Set<SessionEntity> archivedSessions;
 
+    @OneToMany(mappedBy = "creator")
+    private Set<CodeEntity> codes;
+
     @Override
     public Long getId() {
         return id;
+    }
+
+    public Set<CodeEntity> getCodes() {
+        return this.codes;
+    }
+
+    public void setCodes(Set<CodeEntity> codes) {
+        this.codes = codes;
     }
 
     @Override
