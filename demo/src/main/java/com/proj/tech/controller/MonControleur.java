@@ -1,5 +1,6 @@
 package com.proj.tech.controller;
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.*;
 
 import com.fazecast.jSerialComm.SerialPort;
@@ -11,6 +12,18 @@ import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
+=======
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import com.proj.tech.arduinoInteraction.ArduinoInteract;
+import com.proj.tech.dto.User;
+import com.proj.tech.dao.UserDao;
+import com.proj.tech.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> 46ff1917079ec8f418180ef9c5b14444fc567117
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -107,6 +120,13 @@ public class MonControleur {
             String[] values = params.get(key);
             for (String value : values) {
                 System.out.println("Paramètre " + key + " : " + value);
+
+                if(value.equals("Tourner à droite 3 fois")){
+                    ArduinoInteract arduino = new ArduinoInteract("COM8") ;
+                    System.out.println("Jes uis yuezfu");
+                    arduino.SendArduino();
+                }
+
             }
         }
 //        params = new LinkedHashMap<>();
