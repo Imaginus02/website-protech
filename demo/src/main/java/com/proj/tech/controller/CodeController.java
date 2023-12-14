@@ -32,6 +32,7 @@ public class CodeController {
 
     @GetMapping("/{id}")
     public Code getCode(@PathVariable Long id) {
+
         return codeDao.findById(id).map(CodeMapper::of).orElse(null);
     }
 }

@@ -3,7 +3,9 @@ package com.proj.tech.model;
 
 import jakarta.persistence.*;
 
-import java.sql.Date;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -18,7 +20,7 @@ public class SessionEntity {
 	private String name;
 
 	@ManyToOne(optional = false)
-	private UserEntity user;
+	private UserProfessorEntity user;
 
 	@Column(nullable = false)
 	private SessionStatus status;
@@ -27,7 +29,7 @@ public class SessionEntity {
 	private String password;
 
 	@Column(nullable = true)
-	private Integer nombreMax;
+	private Integer maxUser;
 
 	@Column(nullable = false)
 	private Date startDate;
@@ -55,7 +57,7 @@ public class SessionEntity {
 		return user;
 	}
 
-	public void setUser(UserEntity user) {
+	public void setUser(UserProfessorEntity user) {
 		this.user = user;
 	}
 
@@ -75,12 +77,12 @@ public class SessionEntity {
 		this.password = password;
 	}
 
-	public Integer getNombreMax() {
-		return nombreMax;
+	public Integer getMaxUser() {
+		return maxUser;
 	}
 
-	public void setNombreMax(Integer nombreMax) {
-		this.nombreMax = nombreMax;
+	public void setMaxUser(Integer maxUser) {
+		this.maxUser = maxUser;
 	}
 
 	public Date getStartDate() {
@@ -102,14 +104,26 @@ public class SessionEntity {
 	public SessionEntity() {
 	}
 
-	public SessionEntity(Long id, String name, UserEntity user, SessionStatus status, String password, Date startDate, Date endDate) {
+	public SessionEntity(Long id, String name, UserProfessorEntity user, SessionStatus status, String password, Integer maxUser, Date startDate, Date endDate) {
 		this.id = id;
 		this.name = name;
 		this.user = user;
 		this.status = status;
 		this.password = password;
+		this.maxUser = maxUser;
 		this.startDate = startDate;
 		this.endDate = endDate;
+	}
+
+	public SessionEntity(String name, UserProfessorEntity user, Integer maxUser, Date endDate) {
+		this.name = name;
+		this.user = user;
+		this.maxUser = maxUser;
+		this.endDate = endDate;
+
+		this.status = SessionStatus.ACTIVE;
+		this.startDate = Date.from(Instant.now());
+		this.password = "password";
 	}
 
 

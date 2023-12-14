@@ -1,29 +1,25 @@
 package com.proj.tech.controller;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import com.fazecast.jSerialComm.SerialPort;
-import com.proj.tech.connectArduino.InteractArduino;
-import com.proj.tech.connectArduino.JavaArduinoTranslator;
+import com.proj.tech.services.connectArduino.InteractArduino;
+import com.proj.tech.services.JavaArduinoTranslator;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
-import com.proj.tech.dto.User;
-import com.proj.tech.dao.UserDao;
 import com.proj.tech.dto.blocks.Code;
-import com.proj.tech.mapper.UserMapper;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.GetMapping; // Si formulaire envoyé avec GET
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
+@CrossOrigin
 public class MonControleur {
 
     private final CodeDao codeDao;
@@ -58,6 +54,7 @@ public class MonControleur {
         }
 
         // Pour affichage dans le Terminal
+        //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
         InteractArduino arduino = new InteractArduino(PortOpen(), newList) ;
         arduino.SendArduino();
 
@@ -96,8 +93,8 @@ public class MonControleur {
         ...
     ]
      */
-    @PostMapping("/saveguardPage")
-    public String saveguard(HttpServletRequest request) throws IOException, InterruptedException {
+    @PostMapping("/savePage")
+    public String save(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         // params.remove("validForm");
         for (String key : params.keySet()) {
@@ -106,8 +103,26 @@ public class MonControleur {
                 System.out.println("Paramètre " + key + " : " + value);
             }
         }
+//        params = new LinkedHashMap<>();
+        saveCode(params);
         return "redirect:/mainPage.html" ;
     }
+
+    @GetMapping("/login/student")
+    public String showLoginStudentPage() {
+        return "login.html"; // Returns login.html
+    }
+
+    @GetMapping("/login/professor")
+    public String showLoginProfessorPage() {
+        return "loginProf.html"; // Returns login.html
+    }
+
+    @GetMapping("/choose")
+    public String showChoosePage() {
+        return "choose.html"; // Returns login.html
+    }
+
 
     // Je te laisse gérer le fait de mettre dans la BDD les données
     /*
@@ -117,18 +132,18 @@ public class MonControleur {
         "numberStudent" => ...
      ]
      */
-    @PostMapping("/newSessionPage")
-    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
-        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-        // params.remove("validForm");
-        for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-            }
-        }
-        return "redirect:/mainPage.html" ;
-    }
+//    @PostMapping("/newSessionPage")
+//    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
+//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
+//        // params.remove("validForm");
+//        for (String key : params.keySet()) {
+//            String[] values = params.get(key);
+//            for (String value : values) {
+//                System.out.println("Paramètre " + key + " : " + value);
+//            }
+//        }
+//        return "redirect:/mainPage.html" ;
+//    }
 
 
     public String PortOpen(){
@@ -159,16 +174,18 @@ public class MonControleur {
 //    }
 
     public Code saveCode(Map<String, String[]> params) {
-        Set<InstructionEntity> instructions = Set.of();
-        CodeEntity code = new CodeEntity(params.get("name")[0]);
-        params.remove("name");
+        Set<InstructionEntity> instructions = new HashSet<>(Set.of());
+        CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
+        CodeEntity saved = codeDao.save(code);
+        params.remove("nameOfCode");
+        int compteur = 0;
         for (String key : params.keySet()) {
-            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code));
+            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]),code, Long.valueOf(compteur)));
+            compteur += 1;
         }
         instructionDao.saveAll(instructions);
         code.setInstructions(instructions);
 
-        CodeEntity saved = codeDao.save(code);
         return new CodeMapper().of(saved);
     }
 }

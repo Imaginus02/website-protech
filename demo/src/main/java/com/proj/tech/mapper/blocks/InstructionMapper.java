@@ -9,7 +9,8 @@ public class InstructionMapper {
                 instruction.getId(),
                 instruction.getName(),
                 instruction.getInstruction(),
-                instruction.getCode().getId()
+                instruction.getCode().getId(),
+                instruction.getOrderInCode()
         );
     }
 }

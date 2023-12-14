@@ -19,6 +19,9 @@ public class InstructionEntity {
     @ManyToOne(optional = false)
     private CodeEntity code;
 
+    @Column
+    private Long orderInCode;
+
     public Long getId() {
         return id;
     }
@@ -33,6 +36,10 @@ public class InstructionEntity {
 
     public CodeEntity getCode() {
         return code;
+    }
+
+    public Long getOrderInCode() {
+        return this.orderInCode;
     }
 
     public void setId(Long id) {
@@ -51,18 +58,25 @@ public class InstructionEntity {
         this.code = code;
     }
 
-    public InstructionEntity() {}
+    public void setOrderInCode(Long order) {
+        this.orderInCode = order;
+    }
 
-    public InstructionEntity(String name, Character instruction, CodeEntity code) {
+    public InstructionEntity() {
+    }
+
+    public InstructionEntity(String name, Character instruction, CodeEntity code, Long orderInCode) {
         this.name = name;
         this.instruction = instruction;
         this.code = code;
+        this.orderInCode = orderInCode;
     }
 
-    public InstructionEntity(Long id, String name, Character instruction, CodeEntity code) {
+    public InstructionEntity(Long id, String name, Character instruction, CodeEntity code, Long orderInCode) {
         this.id = id;
         this.name = name;
         this.instruction = instruction;
         this.code = code;
+        this.orderInCode = orderInCode;
     }
 }

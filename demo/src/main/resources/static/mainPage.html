@@ -21,7 +21,7 @@ i
     <div id="popUpSaving" class="cssPopUp">
         <h3> Nom du code </h3>
         <p> Tu es entrain de sauvegarder ton code, pour pouvoir y accéder sur l'application mobile. Choisit un nom pour ce code. </p>
-        <form action="/saveguardPage" method="post" id="formSafeguard">
+        <form action="/savePage" method="post" id="formSafeguard">
             <input type="text" placeholder="Nom de ton code" class="form-control nameCode" name="nameOfCode" required>
             <button type="submit" class="toSend" id="submitSafeguard"> Sauvegarder </button>
             <button type="button" class="toCancel" onclick="closeSafeguard()"> Annuler </button>
@@ -32,10 +32,11 @@ i
         <h3> Nouvelle Session </h3>
         <p> Pour que vos élèves puissent apprendre à coder, il faut tout d'abord créer une session.  </p>
 
-        <form action="/newSessionPage" method="post">
-            <input type="password" placeholder="Créer un mot de passe" class="form-control nameCode" name="password" required>
-            <input type="password" placeholder="Confirmer le mot de passe" class="form-control nameCode" name="password-confirm" required>
-            <input type="number" placeholder="Nombre maximal d'élève" class="nameCode" min="5" max="200" step="10" name="numberStudent">
+        <form action="/api/sessions" method="post">
+            <input type="text" placeholder="Nom de la session" class="form-control nameCode" name="name" required>
+            <input type="text" placeholder="Nom de l'utilisateur" class="form-control nameCode" name="username" required>
+            <input type="number" placeholder="Nombre maximal d'élève" class="nameCode" min="5" max="200" step="10" name="maxUser">
+            <input type="date" class="nameCode" name="endDate">
             <button type="submit" class="toSend" > Créer la session </button>
             <button type="button" class="toCancel" onclick="closetoSession()"> Annuler </button>
         </form>
