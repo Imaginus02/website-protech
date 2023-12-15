@@ -31,6 +31,8 @@ public class MonControleur {
     private final UserProfessorDao userProfessorDao;
     private final InstructionDao instructionDao;
 
+    private final InteractArduino arduino = new InteractArduino(PortOpen());
+
     private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
 
     public MonControleur(CodeDao codeDao, InstructionDao instructionDao, UserProfessorDao userProfessorDao) {
@@ -58,16 +60,22 @@ public class MonControleur {
         List<String> newList = new ArrayList<>();
         for (String key : params.keySet()) {
             newList.add(params.get(key)[0]);
+            // System.out.println(newList.get(key));
         }
+
+        System.out.println(newList);
 
         // Pour affichage dans le Terminal
         //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
-        if (PortOpen().equals("Arret")) {
+        // if (PortOpen().equals("Arret")) {
+
+        // System.out.println(PortOpen()) ;
+        if (false){
             return "redirect:/mainPage.html?popup=true";
         } else {
-            InteractArduino arduino = new InteractArduino(PortOpen(), newList);
-            arduino.SendArduino();
-            return "redirect:/result.html";
+            // InteractArduino arduino = new InteractArduino("COM10", newList);
+            arduino.SendArduino(newList);
+            return "redirect:/mainPage.html";
         }
 
         /* ANCIEN Code
@@ -161,18 +169,31 @@ public class MonControleur {
 //        return "redirect:/mainPage.html" ;
 //    }
 
-
+    // System.out.println(PortOpen()) ;
+   String coucou =  PortOpen() ;
     public String PortOpen() {
+        SerialPort[] ports = SerialPort.getCommPorts();
+        System.out.println("Les ports sont : "+ ports) ;
+        System.out.println("jhdfcuidsuhisdvksdv");
+        for (SerialPort port : ports) {
+            System.out.println("Nom des ports : " + port.getSystemPortName());
+            return port.getSystemPortName() ;
+        }
+        return "Arret";
+    }
+
+    /*
+    public static String getOpenPortName() {
         SerialPort[] ports = SerialPort.getCommPorts();
         for (SerialPort port : ports) {
             if (port.isOpen()) {
-                System.out.println("- " + port.getSystemPortName());
+                System.out.println("Le port ouvert est : " + port.getSystemPortName());
                 return port.getSystemPortName();
             }
         }
-        System.exit(0); // Arrete toute l'appli, un peu vache mais pas grave
-        return "Arret";
+        return "Aucun port ouvert";
     }
+     */
 
 //    @PostMapping("/login")
 //    public String login(HttpServletRequest request) {
