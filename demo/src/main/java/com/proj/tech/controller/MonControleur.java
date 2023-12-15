@@ -198,7 +198,7 @@ public class MonControleur {
         params.remove("nameOfCode");
         int compteur = 0;
         for (String key : params.keySet()) {
-            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]), code, Long.valueOf(compteur)));
+            instructions.add(new InstructionEntity(params.get(key)[0], javaArduinoTranslator.translate(params.get(key)[0]), code, compteur));
             compteur += 1;
         }
         instructionDao.saveAll(instructions);

@@ -20,7 +20,7 @@ public class InstructionEntity {
     private CodeEntity code;
 
     @Column
-    private Long orderInCode;
+    private Integer orderInCode;
 
     public Long getId() {
         return id;
@@ -38,7 +38,7 @@ public class InstructionEntity {
         return code;
     }
 
-    public Long getOrderInCode() {
+    public Integer getOrderInCode() {
         return this.orderInCode;
     }
 
@@ -58,21 +58,21 @@ public class InstructionEntity {
         this.code = code;
     }
 
-    public void setOrderInCode(Long order) {
+    public void setOrderInCode(Integer order) {
         this.orderInCode = order;
     }
 
     public InstructionEntity() {
     }
 
-    public InstructionEntity(String name, Character instruction, CodeEntity code, Long orderInCode) {
+    public InstructionEntity(String name, Character instruction, CodeEntity code, Integer orderInCode) {
         this.name = name;
         this.instruction = instruction;
         this.code = code;
         this.orderInCode = orderInCode;
     }
 
-    public InstructionEntity(Long id, String name, Character instruction, CodeEntity code, Long orderInCode) {
+    public InstructionEntity(Long id, String name, Character instruction, CodeEntity code, Integer orderInCode) {
         this.id = id;
         this.name = name;
         this.instruction = instruction;

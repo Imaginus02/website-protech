@@ -37,20 +37,24 @@ get the list of all codes
 GET /api/codes/{id} :
 get the code with the {id}
 
-GET /api/codes/{username} : --> TODO
+(ADMIN, MOBILE_APP)
+GET /api/codes/{username} :
 Get the codes created by {username}
 
 (ADMIN, MOBILE_APP)
-Request to run code :
 POST /api/request
 code=id
+Request to run code
+
+(ADMIN, MOBILE_APP, ARDUINO)
+GET /api/request
+Get the code that we need to run
 
 Maintenant pour se connecter il faut aller sur /login/professor et /login/student et non plus /login.html
 
 Todo Code:
-3 - Add a new page to the web App to see all registered code - J|T - OK
 5 - Use the mobile App to send a POST a request to execute code - J|T
-6 - Once a request is in the database we need to run it  --> Add a POST endpoint at /api/request - J|T - OK
+
 7 - Add Post and Update method to /api/users to be able to modify user profile - T
 10 - Add a way to create new users and use them in Spring security - T - OK
 13 - Add a way to login as a student or as a professor (students without password) - T
@@ -58,10 +62,12 @@ Todo Code:
 14 - Add tests to make professors happy - J&T
 16 - Change the way InteractArduino works by making it accept code, and when we submit the code, a new instance of code should be created then passed to InteractArduino
 
-Todo Do :
-1 - Complete the dictionary in JavaArduinoTranslator - J
+Done :
+1 - Complete the dictionary in JavaArduinoTranslator - J - OK
 2 - Add a function to save a new code in MonController - T - OK
+3 - Add a new page to the web App to see all registered code - J|T - OK
 4 - Add a controller to receive post request to /api/request - T - OK
+6 - Once a request is in the database we need to run it  --> Add a POST endpoint at /api/request - J|T - OK
 8 - Add a Vue.js page to make a profile page - J OK - J'ai fait la page de création de session
 9 - Add a register page for professor - J OK
 11 - Add a login page for students and another one for teachers - J OK

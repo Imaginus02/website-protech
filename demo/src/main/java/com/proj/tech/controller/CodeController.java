@@ -35,4 +35,9 @@ public class CodeController {
 
         return codeDao.findById(id).map(CodeMapper::of).orElse(null);
     }
+
+    @GetMapping("/{username}")
+    public List<Code> getCodeByUsername(@PathVariable String username) {
+        return codeDao.findByUsername(username).stream().map(CodeMapper::of).collect(Collectors.toList());
+    }
 }

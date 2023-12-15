@@ -10,7 +10,7 @@ public class InstructionMapper {
                 instruction.getName(),
                 instruction.getInstruction(),
                 instruction.getCode().getId(),
-                instruction.getOrderInCode()
+                instruction.getOrderInCode().longValue()
         );
     }
 }
