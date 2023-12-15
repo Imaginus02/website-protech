@@ -73,6 +73,7 @@ Todo Code:
     --> In the /login/student remove the username case and pre-register "session"
 14 - Add tests to make professors happy - J&T
 16 - Change the way InteractArduino works by making it accept code, and when we submit the code, a new instance of code should be created then passed to InteractArduino
+17 - Use the singleton pattern seen with Quentin RICHAUD with the Interact Arduino class - J|T
 
 Done :
 1 - Complete the dictionary in JavaArduinoTranslator - J - OK

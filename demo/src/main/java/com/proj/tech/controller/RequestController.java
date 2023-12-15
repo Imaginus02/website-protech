@@ -6,6 +6,7 @@ import com.proj.tech.dto.blocks.Instruction;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
+import com.proj.tech.services.CodeToStringTranslator;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,11 @@ public class RequestController {
 
     private final CodeDao codeDao;
 
+    private final CodeToStringTranslator codeToStringTranslator;
+
     public RequestController(CodeDao codeDao) {
         this.codeDao = codeDao;
+        this.codeToStringTranslator = new CodeToStringTranslator();
     }
 
     @PostMapping
@@ -44,15 +48,7 @@ public class RequestController {
         List<CodeEntity> codes = codeDao.findAll();
         List<String> result = new java.util.ArrayList<>(List.of());
         for (CodeEntity code : codes) {
-            StringBuilder tempo = new StringBuilder();
-            List<InstructionEntity> sortedInstructions = code.getInstructions()
-            .stream()
-                    .sorted(Comparator.comparingInt((InstructionEntity::getOrderInCode)))
-                    .toList();
-            for (InstructionEntity instruction : code.getInstructions()) {
-                tempo.append(instruction.getInstruction());
-            }
-            result.add(tempo.toString());
+            result.add(codeToStringTranslator.translate(code));
         }
         return result;
     }
