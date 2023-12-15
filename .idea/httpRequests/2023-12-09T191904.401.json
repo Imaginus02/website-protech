@@ -1,0 +1,7 @@
+{
+  "timestamp": "2023-12-09T18:19:04.377+00:00",
+  "status": 401,
+  "error": "Unauthorized",
+  "message": "Unauthorized",
+  "path": "/api/windows"
+}
