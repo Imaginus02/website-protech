@@ -1,5 +1,3 @@
-import java.net.URL
-
 plugins {
 	java
 	id("org.springframework.boot") version "3.1.4"
@@ -27,7 +25,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:3.0.4")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	testImplementation("org.springframework.security:spring-security-test")
-	// implementation(files("""libs/jSerialComm-2.10.4.jar"""))
 	implementation("com.fazecast:jSerialComm:2.10.4")
 	implementation("org.springframework.security:spring-security-web")
 	implementation("org.springframework.security:spring-security-config")
