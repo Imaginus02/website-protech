@@ -3,4 +3,6 @@ mockups/*.odg
 *.css
 *.css.map
 
-demo/build
+demo
+ProjTechMobile/app/build
+
