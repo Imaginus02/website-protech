@@ -4,5 +4,6 @@ data class ActionDto(
     val id: Long,
     val name: String,
     val action: String,
-    val order: Int
+    val order: Int,
+    val codeId: Long
 )

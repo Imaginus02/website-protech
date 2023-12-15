@@ -10,8 +10,9 @@ data class Action(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo val name: String,
     @ColumnInfo val action: String,
-    @ColumnInfo val order: Int
+    @ColumnInfo val order: Int,
+    @ColumnInfo val codeId: Long
 ) {
     fun toDto(): ActionDto =
-        ActionDto(id, name, action, order)
+        ActionDto(id, name, action, order, codeId)
 }

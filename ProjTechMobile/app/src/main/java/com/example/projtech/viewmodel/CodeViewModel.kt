@@ -28,7 +28,7 @@ class CodeViewModel(private val codeDao: CodeDao) : ViewModel() {
             val code = Code(
                 id = codeId,
                 name = command.name,
-                actions = emptyList<Action>()
+//                actions = emptyList<Action>()
             )
             emit(code.toDto())
         }
