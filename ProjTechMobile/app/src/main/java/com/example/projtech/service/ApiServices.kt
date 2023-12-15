@@ -11,8 +11,8 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.X509TrustManager
 
 object ApiServices {
-    const val API_USERNAME = "mobile"
-    const val API_PASSWORD = "MotDePasseDeLAppli"
+    const val API_USERNAME = "LappliMobileTropBien"
+    const val API_PASSWORD = "UnMotD3Pass3Securis3"
 
     val codesApiService: CodeApiService by lazy {
         val client = getUnsafeOkHttpClientBuilder().addInterceptor(

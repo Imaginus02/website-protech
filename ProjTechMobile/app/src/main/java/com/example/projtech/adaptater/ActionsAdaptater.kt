@@ -38,4 +38,5 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
             action.text = actionsDto.action
         }
     }
+
 }
