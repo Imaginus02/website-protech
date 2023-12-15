@@ -25,7 +25,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:3.0.4")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	testImplementation("org.springframework.security:spring-security-test")
-	implementation("com.fazecast:jSerialComm:2.10.4")
 	implementation("org.springframework.security:spring-security-web")
 	implementation("org.springframework.security:spring-security-config")
 }

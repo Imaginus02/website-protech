@@ -1,6 +1,5 @@
 package com.proj.tech.controller;
 
-import com.fazecast.jSerialComm.SerialPort;
 import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
@@ -11,7 +10,6 @@ import com.proj.tech.model.UserEntity;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
-import com.proj.tech.services.connectArduino.InteractArduino;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -31,7 +29,6 @@ public class MonControleur {
     private final UserProfessorDao userProfessorDao;
     private final InstructionDao instructionDao;
 
-    private final InteractArduino arduino = new InteractArduino(PortOpen());
 
     private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
 
@@ -46,72 +43,17 @@ public class MonControleur {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
         params.remove("validForm");
 
-        /*Map<String, String>
-         * [
-         *   "btnSave" => "Sauvegarder",
-         *   "bloc1" => "Couleur Rouge",
-         *   "bloc2" => "1 seconde"
-         *   ...
-         * ]
-         */
-
-        // Transformer ["bloc1" => "Couleur Bleue"] en [1:"Couleur Bleue"]
-        int compt = 0;
         List<String> newList = new ArrayList<>();
         for (String key : params.keySet()) {
             newList.add(params.get(key)[0]);
-            // System.out.println(newList.get(key));
         }
 
         System.out.println(newList);
 
-        // Pour affichage dans le Terminal
-        //Il faut changer ce code pour qu'il prenne en entrer un Code au list d'une liste
-        // if (PortOpen().equals("Arret")) {
-
-        // System.out.println(PortOpen()) ;
-        if (false){
-            return "redirect:/mainPage.html?popup=true";
-        } else {
-            // InteractArduino arduino = new InteractArduino("COM10", newList);
-            arduino.SendArduino(newList);
-            return "redirect:/mainPage.html";
-        }
-
-        /* ANCIEN Code
-        for (String key : params.keySet()) {
-            String[] values = params.get(key);
-            for (String value : values) {
-                System.out.println("Paramètre " + key + " : " + value);
-
-                if(value.equals("Tourner à droite 3 fois")){
-                    System.out.println("Coucou");
-                }
-
-            }
-        }
-         */
-
-        /*
-        Il faut, pour la gestion du code, mettre des conditions : par exemple, je pense que la personne doit respecter cette ordre :
-        - un bloc "Allumer"
-        - un bloc "Temps"
-        Si le code n'est pas un ensemble de ce type de code, alors ce n'est pas bon !
-         */
-
+        return "redirect:/mainPage.html";
 
     }
 
-    // Code que je viens d'ajouter pour traiter la sauvegarde du code
-    // Tu peux voir dans la console le type de retour obtenu, je te laisse gérer avec le back-end.
-    /*
-    [
-        "nameOfCode" => ....,
-        "bloc1" => "Couleur Rouge",
-        "bloc2 => "1 seconde"
-        ...
-    ]
-     */
     @PostMapping("/savePage")
     public String save(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
@@ -147,68 +89,6 @@ public class MonControleur {
         return "inscription.html"; // Returns login.html
     }
 
-
-    // Je te laisse gérer le fait de mettre dans la BDD les données
-    /*
-    [
-        "password"=>...,
-        "password-confirm" => ...,
-        "numberStudent" => ...
-     ]
-     */
-//    @PostMapping("/newSessionPage")
-//    public String newSession(HttpServletRequest request) throws IOException, InterruptedException {
-//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-//        // params.remove("validForm");
-//        for (String key : params.keySet()) {
-//            String[] values = params.get(key);
-//            for (String value : values) {
-//                System.out.println("Paramètre " + key + " : " + value);
-//            }
-//        }
-//        return "redirect:/mainPage.html" ;
-//    }
-
-    // System.out.println(PortOpen()) ;
-   String coucou =  PortOpen() ;
-    public String PortOpen() {
-        SerialPort[] ports = SerialPort.getCommPorts();
-        System.out.println("Les ports sont : "+ ports) ;
-        System.out.println("jhdfcuidsuhisdvksdv");
-        for (SerialPort port : ports) {
-            System.out.println("Nom des ports : " + port.getSystemPortName());
-            return port.getSystemPortName() ;
-        }
-        return "Arret";
-    }
-
-    /*
-    public static String getOpenPortName() {
-        SerialPort[] ports = SerialPort.getCommPorts();
-        for (SerialPort port : ports) {
-            if (port.isOpen()) {
-                System.out.println("Le port ouvert est : " + port.getSystemPortName());
-                return port.getSystemPortName();
-            }
-        }
-        return "Aucun port ouvert";
-    }
-     */
-
-//    @PostMapping("/login")
-//    public String login(HttpServletRequest request) {
-//        Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
-//        params.remove("validForm");
-//
-//        for (String key : params.keySet()) {
-//            String[] values = params.get(key);
-//            for (String value : values) {
-//                System.out.println("Paramètre " + key + " : " + value);
-//            }
-//        }
-//
-//        return "redirect:/mainPage.html";
-//    }
 
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
