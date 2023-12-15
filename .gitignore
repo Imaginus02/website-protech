@@ -3,3 +3,4 @@ mockups/*.odg
 *.css
 *.css.map
 
+demo/build
