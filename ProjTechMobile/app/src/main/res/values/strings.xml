@@ -9,6 +9,6 @@
     <string name="nameEleve"> Choisit un nom : </string>
     <string name="nameSession"> Session ID :</string>
 
-    <string name="mailProf"> Adresse Mail : </string>
+    <string name="mailProf"> Username : </string>
     <string name="mdp"> Mot de passe :</string>
 </resources>

@@ -1,0 +1,8 @@
+mockups/*.odg
+
+*.css
+*.css.map
+
+demo
+ProjTechMobile/app/build
+

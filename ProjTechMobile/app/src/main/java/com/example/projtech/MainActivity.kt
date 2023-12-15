@@ -13,10 +13,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    /*
     companion object {
         const val WINDOW_NAME_PARAM = "com.automacorp.windowname.attribute"
         const val ROOM_ID_PARAM = "com.automacorp.windowname.attribute"
     }
+     */
 
     fun openStudent(view: View) {
         val intent = Intent(this, EleveActivity::class.java).apply {

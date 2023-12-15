@@ -1,3 +1,4 @@
+
 package com.example.projtech.database.model
 
 import androidx.room.ColumnInfo
@@ -10,13 +11,13 @@ import java.util.stream.Collectors
 data class Code(
     @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo val name: String,
-    @ColumnInfo val actions: List<Action>
+//    @ColumnInfo val actions: List<Action>
 ) {
     fun toDto():
             CodeDto =
         CodeDto(
             id,
-            name,
-            actions.stream().map(Action::toDto).collect(Collectors.toList())
+            name
+//            actions.stream().map(Action::toDto).collect(Collectors.toList())
         )
 }

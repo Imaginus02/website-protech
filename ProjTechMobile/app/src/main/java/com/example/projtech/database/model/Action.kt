@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.projtech.database.model
 
 import androidx.room.ColumnInfo
@@ -14,4 +15,23 @@ data class Action(
 ) {
     fun toDto(): ActionDto =
         ActionDto(id, name, action, order)
+=======
+package com.example.projtech.database.model
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.example.projtech.database.dto.ActionDto
+
+@Entity(tableName = "raction")
+data class Action(
+    @PrimaryKey(autoGenerate = true) val id: Long,
+    @ColumnInfo val name: String,
+    @ColumnInfo val action: String,
+    @ColumnInfo val order: Int,
+    @ColumnInfo val codeId: Long
+) {
+    fun toDto(): ActionDto =
+        ActionDto(id, name, action, order, codeId)
+>>>>>>> 8b5c35ae595e4f2ae8bc689bff642416e97bce8b
 }
