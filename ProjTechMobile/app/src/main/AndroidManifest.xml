@@ -19,9 +19,11 @@
             android:exported="false" />
         <activity
             android:name=".connexion.Professeur"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".connexion.EleveActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
