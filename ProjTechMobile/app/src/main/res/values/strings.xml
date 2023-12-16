@@ -11,4 +11,5 @@
 
     <string name="mailProf"> Username : </string>
     <string name="mdp"> Mot de passe :</string>
+    <string name="haveClick"> Vous avez bien clické sur : </string>
 </resources>

@@ -16,11 +16,16 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
     }
 
     private val items = mutableListOf<ActionDto>() // (3)
+    private var itemClickListener: OnItemClickListener? = null
 
     fun setItems(rooms: List<ActionDto>) {  // (4)
         items.clear()
         items.addAll(rooms)
         notifyDataSetChanged()
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.itemClickListener = listener
     }
 
     override fun getItemCount(): Int = items.size // (5)
@@ -36,7 +41,11 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
         holder.apply {
             name.text = actionsDto.name
             action.text = actionsDto.action
+            itemView.setOnClickListener {
+                itemClickListener?.onItemClick(actionsDto)
+            }
         }
     }
+
 
 }

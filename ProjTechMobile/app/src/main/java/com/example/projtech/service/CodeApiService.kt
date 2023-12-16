@@ -1,8 +1,11 @@
 package com.example.projtech.service
 
 import com.example.projtech.database.dto.CodeDto
+import com.example.projtech.database.dto.StockIdDTO
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface CodeApiService {
@@ -14,4 +17,7 @@ interface CodeApiService {
 
     @GET("codes/{id}")
     fun findById(@Path("id") id: Long): Call<CodeDto>
+
+    @POST("execute")
+    fun addExecution(@Body stockID: StockIdDTO): Call<CodeDto>
 }

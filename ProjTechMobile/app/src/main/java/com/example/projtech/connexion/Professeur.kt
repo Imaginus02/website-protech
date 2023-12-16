@@ -18,11 +18,10 @@ class Professeur : AppCompatActivity() {
     }
 
     fun connexionProf(view: View) {
-       // val usernameProf = findViewById<EditText>(R.id.mailProf).text.toString()
+       val usernameProf = findViewById<EditText>(R.id.mailProf).text.toString()
 
         val intent = Intent(this, PageActivity::class.java).apply {
-            // putExtra(USER_PROF, usernameProf)
-        }
+            putExtra(USER_PROF, usernameProf)        }
 
         startActivity(intent)
     }
