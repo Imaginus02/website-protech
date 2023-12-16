@@ -14,7 +14,11 @@
         android:theme="@style/Theme.ProjTech"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".code_actions_item"
+=======
+            android:name=".page.ClickOnActivity"
+>>>>>>> d296cebc8434d7c07ac7726bea8d8ea80ba322c4
             android:exported="false" />
         <activity
             android:name=".page.PageActivity"
