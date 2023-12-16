@@ -3,6 +3,7 @@ package com.example.projtech.page
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.example.projtech.ProTechApplication
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdaptater
 import com.example.projtech.connexion.Professeur
+import com.example.projtech.service.ApiServices
 
 class PageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,14 @@ class PageActivity : AppCompatActivity() {
 
 
 
-        roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
+        //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
+        runCatching { // (1)
+            ApiServices.codesApiService.findAll().execute() // (2)
+        }
+            .onSuccess { roomsAdapter.setItems(it.body() ?: emptyList()) }  // (3)
+            .onFailure {
+                it.printStackTrace() (4)
+                Toast.makeText(this, "Error on rooms loading $it", Toast.LENGTH_LONG).show()  // (5)
+            }
     }
 }

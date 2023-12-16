@@ -14,17 +14,20 @@
         android:theme="@style/Theme.ProjTech"
         tools:targetApi="31">
         <activity
-            android:name=".page.PageActivity"
-            android:parentActivityName=".connexion.Professeur"
+            android:name=".code_actions_item"
             android:exported="false" />
+        <activity
+            android:name=".page.PageActivity"
+            android:exported="false"
+            android:parentActivityName=".connexion.Professeur" />
         <activity
             android:name=".connexion.Professeur"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".connexion.EleveActivity"
-            android:parentActivityName=".MainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -16,16 +16,16 @@ object ApiServices {
 
     val codesApiService: CodeApiService by lazy {
         val client = getUnsafeOkHttpClientBuilder().addInterceptor(
-                BasicAuthInterceptor(
-                    API_USERNAME,
-                    API_PASSWORD
-                )
-            ).build()
+            BasicAuthInterceptor(
+                API_USERNAME,
+                API_PASSWORD
+            )
+        ).build()
 
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
-            .baseUrl("localhost:8080/api/")
+            .baseUrl("app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
             .build()
             .create(CodeApiService::class.java)
     }
@@ -55,8 +55,11 @@ object ApiServices {
 
 class BasicAuthInterceptor(val username: String, val password: String) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-        val request = chain.request().newBuilder()
-            .header("Authorization", Credentials.basic(username, password)).build()
+        val request = chain
+            .request()
+            .newBuilder()
+            .header("Authorization", Credentials.basic(username, password))
+            .build()
         return chain.proceed(request)
     }
 }

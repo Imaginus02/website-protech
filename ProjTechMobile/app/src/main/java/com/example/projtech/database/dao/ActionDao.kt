@@ -11,6 +11,6 @@ interface ActionDao {
     @Query("select * from raction order by `order` and id")
     fun findAll(): List<Action>
 
-    //@Query("select * from rcode where id=:id")
-    //fun findById(actionId: Long): List<Action>
+    @Query("select * from raction where codeId=:id")
+    fun findByCodeId(id: Long): List<Action>
 }
