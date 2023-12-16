@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
 import com.example.projtech.database.dto.ActionDto
+import com.example.projtech.database.dto.CodeDto
 
 class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>() { // (1)
 
@@ -15,10 +16,10 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
         val action: TextView = view.findViewById(R.id.txt_action)
     }
 
-    private val items = mutableListOf<ActionDto>() // (3)
+    private val items = mutableListOf<CodeDto>() // (3)
     private var itemClickListener: OnItemClickListener? = null
 
-    fun setItems(rooms: List<ActionDto>) {  // (4)
+    fun setItems(rooms: List<CodeDto>) {  // (4)
         items.clear()
         items.addAll(rooms)
         notifyDataSetChanged()
@@ -37,12 +38,12 @@ class ActionsAdaptater : RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>(
     }
 
     override fun onBindViewHolder(holder: RoomsViewHolder, position: Int) {  // (7)
-        val actionsDto = items[position]
+        val codeDto = items[position]
         holder.apply {
-            name.text = actionsDto.name
-            action.text = actionsDto.action
+            name.text = codeDto.name
+            action.text = codeDto.id.toString()
             itemView.setOnClickListener {
-                itemClickListener?.onItemClick(actionsDto)
+                itemClickListener?.onItemClick(codeDto)
             }
         }
     }

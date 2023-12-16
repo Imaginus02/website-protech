@@ -1,5 +1,6 @@
 package com.example.projtech.page
 
+import CodesAdaptater
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -12,6 +13,7 @@ import com.example.projtech.adaptater.ActionsAdaptater
 import com.example.projtech.adaptater.OnItemClickListener
 import com.example.projtech.connexion.Professeur
 import com.example.projtech.database.dto.ActionDto
+import com.example.projtech.database.dto.CodeDto
 import com.example.projtech.service.ApiServices.codesApiService
 
 class PageActivity : AppCompatActivity() {
@@ -19,7 +21,7 @@ class PageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
 //        val windowDao = ProTechApplication
-        val roomsAdapter = ActionsAdaptater()
+        val roomsAdapter = CodesAdaptater()
 
         val param = intent.getStringExtra(Professeur.USER_PROF)
         val profName = findViewById<TextView>(R.id.idNameProf)
@@ -27,13 +29,12 @@ class PageActivity : AppCompatActivity() {
 
 
         roomsAdapter.setOnItemClickListener(object : OnItemClickListener {
-            override fun onItemClick(actionDto: ActionDto) {
-                val actionName = actionDto.name
-                val idAction = actionDto.id ;
+            override fun onItemClick(codeDto: CodeDto) {
+                val actionName = codeDto.name
+                val idAction = codeDto.id ;
                 Toast.makeText(this@PageActivity, "You choose $actionName, d'id $idAction", Toast.LENGTH_LONG).show()
 
                 // FAIRE UNE METHODE POST
-
                 try {
                     val response = codesApiService.addExecution(idAction).execute()
                     if (response.isSuccessful) {
@@ -54,7 +55,9 @@ class PageActivity : AppCompatActivity() {
             recyclerView.adapter = roomsAdapter // (5)
         }
 
-        roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
+
+        // roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
+        roomsAdapter.setItems(CodeSource.CODES)  // (6)
 
 
     }
