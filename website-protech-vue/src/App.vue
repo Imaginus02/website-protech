@@ -2,16 +2,19 @@
   <section class="main-content w-50 mx-auto">
     <MainNavigation @sessions="show('sessions')" @codes="show('codes')"
                     @profile="show('profile')"/>
+    <SessionList v-if="this.selected === 'sessions'"></SessionList>
   </section>
 </template>
 
 
 <script>
 import MainNavigation from "./components/MainNavigation.vue";
+import SessionList from "@/components/sessions/SessionList.vue";
 
 export default {
   name: 'App',
   components: {
+    SessionList,
     MainNavigation
   },
   data: function () {

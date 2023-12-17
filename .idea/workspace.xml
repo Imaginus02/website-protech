@@ -5,35 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.426d8e4e.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionListItem.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/ProjTechApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/proj/tech/ProjTechApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.426d8e4e.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +60,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -123,6 +114,11 @@
     "spring.configuration.checksum": "ffd8af8551c61e7556e8d068b05f8554",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -215,7 +211,7 @@
       <updated>1702648823666</updated>
       <workItem from="1702648828584" duration="2305000" />
       <workItem from="1702655061548" duration="655000" />
-      <workItem from="1702824238971" duration="6438000" />
+      <workItem from="1702824238971" duration="11599000" />
     </task>
     <servers />
   </component>

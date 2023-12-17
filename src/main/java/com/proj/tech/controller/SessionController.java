@@ -10,6 +10,9 @@ import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.security.SpringSecurityConfig;
 import com.proj.tech.services.StringToDateConverter;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,6 +23,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.proj.tech.security.SpringSecurityConfig.ROLE_ADMIN;
 
 @CrossOrigin
 @RestController
@@ -46,10 +52,21 @@ public class SessionController {
 
     @GetMapping()
     public List<Session> listSessions() {
-        return sessionDao.findAll()
-                .stream()
-                .map(SessionMapper::of)
-                .toList();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
+            System.out.println("Admin here, providing full session list");
+            return sessionDao.findAll()
+                    .stream()
+                    .map(SessionMapper::of)
+                    .toList();
+        } else {
+            System.out.println("Simple user, providing only session created by this user");
+            UserProfessorEntity userProfessor = userProfessorDao.findByUsername(authentication.getName());
+            return sessionDao.findByUser(userProfessor.getUsername())
+                    .stream()
+                    .map(SessionMapper::of)
+                    .toList();
+        }
     }
 
     @GetMapping("/{username}")
