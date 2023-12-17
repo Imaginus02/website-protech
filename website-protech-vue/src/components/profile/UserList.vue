@@ -1,27 +1,22 @@
 <template>
-  <div class="sessions-list pt-3">
-    <div v-if="sessions.isEmpty">Aucune Session créé</div>
-    <session-list-item v-else v-for="session in sessions" :session="session" :key="session.id"></session-list-item>
+  <div class="user-list pt-3">
+    <UserListItem v-for="user in users"></UserListItem>
   </div>
 </template>
 
 <script>
-
-
-import SessionListItem from "@/components/sessions/SessionListItem.vue";
+import UserListItem from "@/components/profile/UserListItem.vue";
 
 export default {
-  components: {
-    SessionListItem,
-  },
-  name: "SessionList",
+  name: "UserList",
+  components: {UserListItem},
   data: function () {
     return {
-      sessions: []
+      users: []
     }
   },
   created: async function () {
-    fetch('/api/sessions')
+    fetch('/api/users')
         .then(response => {
           if (!response.ok) {
             throw new Error("Server response was not ok");
@@ -31,11 +26,10 @@ export default {
         })
         .then(data => {
           console.log(data)
-          this.sessions = data;
+          this.users = data;
         })
   }
 }
-
 </script>
 
 <style scoped lang="scss">

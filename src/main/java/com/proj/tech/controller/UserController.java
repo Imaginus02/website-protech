@@ -1,5 +1,6 @@
 package com.proj.tech.controller;
 
+import com.proj.tech.dao.UserDao;
 import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dto.User;
 import com.proj.tech.dto.UserProfessor;
@@ -9,6 +10,9 @@ import com.proj.tech.mapper.UserProfessorMapper;
 import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.security.SpringSecurityConfig;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
@@ -27,11 +31,14 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserController {
 
+    private final UserDao userDao;
     private final UserProfessorDao userProfessorDao;
     private final UserDetailsService userDetailsService;
 
-    public UserController(UserProfessorDao userProfessorDao,
+    public UserController(UserDao userDao,
+                          UserProfessorDao userProfessorDao,
                           UserDetailsService userDetailsService) {
+        this.userDao = userDao;
         this.userProfessorDao = userProfessorDao;
         this.userDetailsService = userDetailsService;
     }
@@ -41,15 +48,23 @@ public class UserController {
 //        return "userList";
 //    }
 
+    /*
+     * Si L'utilisateur a le rôle admin, alors il on lui envoit tout les users, sinon on lui renvoit que lui dans une liste
+     */
     @GetMapping
     @ResponseBody
     public List<User> listUsers() {
-        List<User> users = userProfessorDao.findAll().stream()
-                .map(UserMapper::of)
-                .collect(Collectors.toList());
-        System.out.println("Acceding to users page");
-        System.out.println(users);
-        return users;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
+            System.out.println("Admin here, providing full session list");
+            return userDao.findAll().stream()
+                    .map(UserMapper::of)
+                    .toList();
+        } else {
+            System.out.println("Simple user, providing only session created by this user");
+            return List.of(UserMapper.of(userDao.findByUsername(authentication.getName())));
+
+        }
     }
 
     @GetMapping("/{id}")

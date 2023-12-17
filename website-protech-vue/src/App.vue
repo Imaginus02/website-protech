@@ -3,6 +3,7 @@
     <MainNavigation @sessions="show('sessions')" @codes="show('codes')"
                     @profile="show('profile')"/>
     <SessionList v-if="this.selected === 'sessions'"></SessionList>
+    <CodeList v-if="this.selected === 'codes'"></CodeList>
   </section>
 </template>
 
@@ -10,10 +11,12 @@
 <script>
 import MainNavigation from "./components/MainNavigation.vue";
 import SessionList from "@/components/sessions/SessionList.vue";
+import CodeList from "@/components/codes/CodeList.vue";
 
 export default {
   name: 'App',
   components: {
+    CodeList,
     SessionList,
     MainNavigation
   },

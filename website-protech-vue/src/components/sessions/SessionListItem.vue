@@ -1,11 +1,11 @@
 <template>
   <div class="building border border-secondary rounded p-2 mb-2">
     <div class="top-row d-flex">
-      <div class="window-name fw-bold pe-3">{{session.name}}</div>
-      <div class="room-name text-muted">Id de la session : {{session.password}}</div>
-      <div class="room-name text-muted">Date de création : {{session.startDate}}</div>
-      <div class="room-name text-muted">Date de fin : {{session.endDate}}</div>
-      <div class="room-name text-muted">Nombre d'utilisateur maximum : {{session.nombreMax}}</div>
+      <div class="fw-bold pe-3">{{session.name}}</div>
+      <div class="text-muted">Id de la session : {{session.password}}</div>
+      <div class="text-muted">Date de création : {{session.startDate}}</div>
+      <div class="text-muted">Date de fin : {{session.endDate}}</div>
+      <div class="text-muted">Nombre d'utilisateur maximum : {{session.nombreMax}}</div>
     </div>
   </div>
 
