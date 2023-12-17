@@ -6,3 +6,4 @@ INSERT INTO SP_INSTRUCTION(id, name, instruction, code_id, order_in_code) VALUES
 INSERT INTO SP_INSTRUCTION(id, name, instruction, code_id, order_in_code) VALUES (-2, 'Attendre 1 seconde', '1', -1, 1);
 INSERT INTO SP_INSTRUCTION(id, name, instruction, code_id, order_in_code) VALUES (-3, 'Eteindre', 'e', -1, 2);
 
+-- INSERT INTO SP_SESSION(id, name, status) VALUES(-1, 'CM1 METARE', 'ACTIVE');

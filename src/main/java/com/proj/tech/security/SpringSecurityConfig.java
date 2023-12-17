@@ -69,7 +69,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/register")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/choose")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher(HttpMethod.GET, "/api/**")).hasRole(ROLE_ADMIN)
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).permitAll()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).hasRole(ROLE_PROFESSOR)
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/**")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/static/**")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/inscription")).permitAll()
