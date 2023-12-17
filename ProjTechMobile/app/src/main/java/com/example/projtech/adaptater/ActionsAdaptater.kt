@@ -9,7 +9,7 @@ import com.example.projtech.R
 import com.example.projtech.database.dao.ActionDao
 import com.example.projtech.database.dto.CodeDto
 
-class ActionsAdaptater(private val actionDao: ActionDao) :
+class ActionsAdaptater() :
     RecyclerView.Adapter<ActionsAdaptater.RoomsViewHolder>() { // (1)
 
     inner class RoomsViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
