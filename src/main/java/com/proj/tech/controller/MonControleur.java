@@ -89,6 +89,11 @@ public class MonControleur {
         return "inscription.html"; // Returns login.html
     }
 
+    @GetMapping("/profile")
+    public String showProfilePage() {
+        return "profile.html";
+    }
+
 
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

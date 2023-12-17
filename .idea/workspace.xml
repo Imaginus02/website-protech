@@ -5,14 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.426d8e4e.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.e9c60a2e.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.88762475.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/connectArduino/GestionBlocs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/connectArduino/InteractArduino.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/demo/ProjTechApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/proj/tech/ProjTechApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +54,9 @@
         <task path="$PROJECT_DIR$/demo">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -42,11 +66,24 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/static/dist/js/app.27890c9c.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -64,6 +101,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -72,22 +110,32 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "android.gradle.sync.needed": "true",
-    "git-widget-placeholder": "withoutPort",
-    "last_opened_file_path": "C:/Users/noset/Documents/ProjTech",
+    "git-widget-placeholder": "Vue.JS",
+    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "9b2d13a60748dbc4df4a225cb01b807c",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "spring.configuration.checksum": "ffd8af8551c61e7556e8d068b05f8554",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
+      <recent name="D:\tb3\git\website-protech\src\main\resources\static\dist" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\tb3\git\website-protech\website-protech-vue\src\components" />
+      <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
+      <recent name="D:\tb3\git\website-protech\src\main\resources" />
       <recent name="D:\tb3\git\website-protech\demo" />
       <recent name="D:\tb3\git\website-protech" />
-      <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjTechApplication">
@@ -113,6 +161,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="website-protech [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ProjTechApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="com.proj.tech.tech.main" />
@@ -123,6 +193,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.website-protech [build]" />
         <item itemvalue="Gradle.demo [assemble]" />
       </list>
     </recent_temporary>
@@ -144,6 +215,7 @@
       <updated>1702648823666</updated>
       <workItem from="1702648828584" duration="2305000" />
       <workItem from="1702655061548" duration="655000" />
+      <workItem from="1702824238971" duration="6438000" />
     </task>
     <servers />
   </component>
@@ -152,5 +224,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
