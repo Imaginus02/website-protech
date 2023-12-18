@@ -4,9 +4,12 @@ import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.User;
+import com.proj.tech.dto.UserProfessor;
 import com.proj.tech.dto.blocks.Code;
+import com.proj.tech.mapper.UserProfessorMapper;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.UserEntity;
+import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
@@ -92,9 +95,10 @@ public class MonControleur {
 
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserEntity user = userProfessorDao.findByUsername(authentication.getName());
+        UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
         CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
+        code.setCreator(user);
         CodeEntity saved = codeDao.save(code);
         params.remove("nameOfCode");
         int compteur = 0;
