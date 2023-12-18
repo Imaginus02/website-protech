@@ -41,9 +41,6 @@ class CodesAdaptater : RecyclerView.Adapter<CodesAdaptater.CodesViewHolder>() {
         holder.apply {
             name.text = codeDto.name
             action.text = "Ce code a pour id : ${codeDto.id.toString()}"
-            itemView.setOnClickListener {
-                itemClickListener?.onItemClick(codeDto)
-            }
         }
     }
 }

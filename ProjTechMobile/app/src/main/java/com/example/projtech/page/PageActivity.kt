@@ -1,6 +1,5 @@
 package com.example.projtech.page
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,17 +7,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.automacorp.OnActionClickListener
-import com.example.projtech.MainActivity
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdapter
 import com.example.projtech.service.ApiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.IOException
 
-class PageActivity() : AppCompatActivity(){//, OnActionClickListener {
+class PageActivity() : AppCompatActivity() {//, OnActionClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,8 +58,6 @@ class PageActivity() : AppCompatActivity(){//, OnActionClickListener {
                     }
                 }
         }
-
-
 
 
         //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
