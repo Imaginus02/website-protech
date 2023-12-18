@@ -1,6 +1,6 @@
 <template>
   <div class="user-list pt-3">
-    <UserListItem v-for="user in users" :user="user" :key="user.id"></UserListItem>
+    <UserListItem v-for="user in users" :user="user" :key="user.id" @update-user="updateUser"></UserListItem>
   </div>
 </template>
 
@@ -28,6 +28,14 @@ export default {
           console.log(data)
           this.users = data;
         })
+  },
+  methods: {
+    updateUser(data) {
+      const index = this.users.findIndex((user) => user.id === data.id);
+      if (index !== -1) {
+        this.users[index] = data;
+      }
+    }
   }
 }
 </script>

@@ -10,7 +10,11 @@
 <script>
 export default {
   name: "UserForm",
-  props: ['usage','id'],
+  props: ['usage', 'id'],
+  created() {
+    console.log('Received prop usage:', this.usage);
+    console.log('Received prop usage:', this.id);
+  },
   data() {
     return {
       userInput: '',
@@ -21,14 +25,17 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      this.endpoint = '/api/users/'+String(this.id);
+      this.endpoint = '/api/users/' + String(this.id);
       if (this.userInput === '') {
         console.log('Missing argument')
       } else {
-        this.dataToSend = {usage: this.userInput}
+        console.log(this.userInput)
+        console.log(this.usage)
+        this.dataToSend = {[this.usage]: this.userInput}
+        console.log(this.dataToSend)
         fetch(this.endpoint,
             {
-              method: 'PATCH',
+              method: 'POST',
               headers: {
                 'Content-type': 'application/json',
               },
@@ -42,6 +49,8 @@ export default {
             })
             .then(data => {
               console.log('Update successful:', data);
+              //TODO : also emit this.usage
+              this.$emit("update-success", data)
             })
             .catch(error => {
               // Handle errors

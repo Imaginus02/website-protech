@@ -34,14 +34,11 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserController {
 
-    private final UserDao userDao;
     private final UserProfessorDao userProfessorDao;
     private final UserDetailsService userDetailsService;
 
-    public UserController(UserDao userDao,
-                          UserProfessorDao userProfessorDao,
+    public UserController(UserProfessorDao userProfessorDao,
                           UserDetailsService userDetailsService) {
-        this.userDao = userDao;
         this.userProfessorDao = userProfessorDao;
         this.userDetailsService = userDetailsService;
     }
@@ -70,15 +67,19 @@ public class UserController {
         }
     }
 
-    @PatchMapping("/{id}")
+    @PostMapping("/{id}")
     @ResponseBody
     public UserProfessor updateUser(@PathVariable Long id, @RequestBody UserUpdate userUpdate) {
+        System.out.println("Post request received");
         UserProfessorEntity user = userProfessorDao.findById(id).get();
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
+        System.out.println("Json received :");
+        System.out.println(userUpdate);
         Map<String, Object> properties = userUpdate.getProperties();
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
         if (properties.containsKey("username")) {
+            System.out.println("Changing username");
             String newUsername = (String) properties.get("username");
             user.setUsername(newUsername);
             UserDetails updatedUserDetails = new User(newUsername, encoder.encode(user.getPassword()), userDetails.getAuthorities());
@@ -86,9 +87,11 @@ public class UserController {
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         }
         if (properties.containsKey("email")) {
+            System.out.println("Changing email");
             user.setEmail((String) properties.get("email"));
         }
         if (properties.containsKey("password")) {
+            System.out.println("Changing password");
             String newPassword = (String) properties.get("password");
             user.setPassword((String) properties.get("password"));
             UserDetails updatedUserDetails = new User(user.getUsername(), encoder.encode(newPassword), userDetails.getAuthorities());
