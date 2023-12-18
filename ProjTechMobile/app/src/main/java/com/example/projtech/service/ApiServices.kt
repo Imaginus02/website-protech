@@ -11,8 +11,13 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.X509TrustManager
 
 object ApiServices {
+<<<<<<< HEAD
+    const val API_USERNAME = "admin"
+    const val API_PASSWORD = "admin"
+=======
 //    const val API_USERNAME = "LappliMobileTropBien"
 //    const val API_PASSWORD = "UnMotD3Pass3Securis3"
+>>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
 
     const val API_USERNAME = "admin"
     const val API_PASSWORD = "admin"
@@ -28,7 +33,12 @@ object ApiServices {
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
+<<<<<<< HEAD
+            //.baseUrl("https://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
+            .baseUrl("http://localhost:8080/api/")
+=======
             .baseUrl("http://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
+>>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
             .build()
             .create(ActionApiService::class.java)
     }
