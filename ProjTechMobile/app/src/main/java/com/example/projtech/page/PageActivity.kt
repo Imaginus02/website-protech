@@ -7,15 +7,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.RoomDatabase
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdaptater
-import com.example.projtech.database.ProTechDatabase
-import com.example.projtech.database.dao.ActionDao
 import com.example.projtech.service.ApiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.IOException
 
 class PageActivity() : AppCompatActivity() {
 
@@ -41,6 +39,8 @@ class PageActivity() : AppCompatActivity() {
             recyclerView.adapter = roomsAdapter // (5)
         }
 
+//        CodeSource.fetchCodes()
+
 
         //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
 //        runCatching { // (1)
@@ -56,12 +56,25 @@ class PageActivity() : AppCompatActivity() {
             runCatching { ApiServices.codesApiService.findAll().execute() }
                 .onSuccess {
                     withContext(context = Dispatchers.Main) { // (2)
-                        roomsAdapter.setItems(it.body() ?: emptyList()) }
+                        println(it.body())
+                        roomsAdapter.setItems(it.body() ?: emptyList())
+                    }
+
                 }
                 .onFailure {
                     withContext(context = Dispatchers.Main) {
+                        println("On est dans la bonne fonction mais ça a pas marché")
+
+                        if (it is IOException) {
+                            // Handle IO-related exceptions
+                        }
+
                         it.printStackTrace()
-                        Toast.makeText(applicationContext, "Error on rooms loading $it", Toast.LENGTH_LONG)
+                        Toast.makeText(
+                            applicationContext,
+                            "Error on rooms loading $it",
+                            Toast.LENGTH_LONG
+                        )
                             .show()  // (3)
                     }
                 }

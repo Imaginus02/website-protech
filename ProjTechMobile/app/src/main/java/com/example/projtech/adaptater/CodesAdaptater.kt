@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
 import com.example.projtech.adaptater.OnItemClickListener
+import com.example.projtech.database.dto.ActionDto
 import com.example.projtech.database.dto.CodeDto
 
 class CodesAdaptater : RecyclerView.Adapter<CodesAdaptater.CodesViewHolder>() {
@@ -14,10 +15,10 @@ class CodesAdaptater : RecyclerView.Adapter<CodesAdaptater.CodesViewHolder>() {
         val action: TextView = view.findViewById(R.id.txt_action)
     }
 
-    private val items = mutableListOf<CodeDto>()
+    private val items = mutableListOf<ActionDto>()
     private var itemClickListener: OnItemClickListener? = null
 
-    fun setItems(codes: List<CodeDto>) {
+    fun setItems(codes: List<ActionDto>) {
         items.clear()
         items.addAll(codes)
         notifyDataSetChanged()

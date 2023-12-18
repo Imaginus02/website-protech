@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
 import com.example.projtech.database.dao.ActionDao
+import com.example.projtech.database.dto.ActionDto
 import com.example.projtech.database.dto.CodeDto
 
 class ActionsAdaptater() :
@@ -17,11 +18,11 @@ class ActionsAdaptater() :
         val action: TextView = view.findViewById(R.id.txt_action)
     }
 
-    private val items = mutableListOf<CodeDto>() // (3)
+    private val items = mutableListOf<ActionDto>() // (3)
 
     private var itemClickListener: OnItemClickListener? = null
 
-    fun setItems(codes: List<CodeDto>) {  // (4)
+    fun setItems(codes: List<ActionDto>) {  // (4)
         items.clear()
 //        for (code in codes) {
 //            items.addAll(actionDao.findByCodeId(code.id))

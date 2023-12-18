@@ -11,8 +11,11 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.X509TrustManager
 
 object ApiServices {
-    const val API_USERNAME = "LappliMobileTropBien"
-    const val API_PASSWORD = "UnMotD3Pass3Securis3"
+//    const val API_USERNAME = "LappliMobileTropBien"
+//    const val API_PASSWORD = "UnMotD3Pass3Securis3"
+
+    const val API_USERNAME = "admin"
+    const val API_PASSWORD = "admin"
 
     val codesApiService: CodeApiService by lazy {
         val client = getUnsafeOkHttpClientBuilder().addInterceptor(
@@ -22,10 +25,14 @@ object ApiServices {
             )
         ).build()
 
+        Gson gson = new GsonBuilder()
+            .setLenient()
+            .create();
+
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
-            .baseUrl("https://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
+            .baseUrl("http://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
             .build()
             .create(CodeApiService::class.java)
     }
