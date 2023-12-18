@@ -55,6 +55,9 @@ class PageActivity : AppCompatActivity() {
             recyclerView.adapter = roomsAdapter // (5)
         }
 
+        CodeSource.fetchCodes()
+        println("coucou")
+        println(CodeSource.CODES)
 
         // roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
         roomsAdapter.setItems(CodeSource.CODES)  // (6)

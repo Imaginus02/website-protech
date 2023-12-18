@@ -9,30 +9,30 @@ import javax.security.auth.callback.Callback
 import retrofit2.Call
 import retrofit2.Response
 object CodeSource {
+    var CODES: List<CodeDto> = emptyList() // Initialisation avec une liste vide
 
-    var CODES: List<CodeDto> = ApiServices.codesApiService.findAll().execute().body() ?: emptyList()
-
-
-
-    // var CODES: List<CodeDto> = emptyList() // Initialisez votre liste de codes vide
-    /* fun loadCodes() {
-        ApiServices.codesApiService.findAll().enqueue(object : retrofit2.Callback<List<CodeDto>> {
-            override fun onResponse(call: Call<List<CodeDto>>, response: Response<List<CodeDto>>) {
-                if (response.isSuccessful) {
-                    val codeDtoList = response.body()
-                    codeDtoList?.let {
-                        CODES = it // Mettez à jour la liste de codes avec les données reçues
-                    }
+    fun fetchCodes() {
+        try {
+            val response = ApiServices.codesApiService.findAll().execute()
+            if (response.isSuccessful) {
+                val codes = response.body()
+                if (codes != null) {
+                    CODES = codes // Mettre à jour les codes dans l'objet CodeSource
+                    println("Données récupérées avec succès : $codes")
                 } else {
-                    // Gérer les erreurs de requête ici
+                    println("Réponse vide")
                 }
+            } else {
+                println("Réponse non réussie : ${response.code()}")
             }
-
-            override fun onFailure(call: Call<List<CodeDto>>, t: Throwable) {
-                // Gérer les échecs de requête ici
-            }
-        })
+        } catch (e: Exception) {
+            println("Erreur lors de la récupération des données : ${e}")
+            e.printStackTrace()
+        }
     }
-
-     */
 }
+
+
+    // var CODES: List<CodeDto> = ApiServices.codesApiService.findAll().execute().body() ?: emptyList()
+
+
