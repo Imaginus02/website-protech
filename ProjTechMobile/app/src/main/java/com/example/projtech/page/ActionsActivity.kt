@@ -51,7 +51,7 @@ class ActionsActivity() : AppCompatActivity() {//, OnActionClickListener {
                         it.printStackTrace()
                         Toast.makeText(
                             applicationContext,
-                            "Error on rooms loading $it",
+                            "Error on actions loading $it",
                             Toast.LENGTH_LONG
                         )
                             .show()  // (3)

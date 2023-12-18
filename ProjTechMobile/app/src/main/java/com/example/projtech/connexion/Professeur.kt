@@ -12,17 +12,19 @@ class Professeur : AppCompatActivity() {
     companion object {
         const val USER_PROF = "com.automacorp.windowname.attribute"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_professeur)
     }
 
     fun connexionProf(view: View) {
-       val usernameProf = findViewById<EditText>(R.id.mailProf).text.toString()
+        val usernameProf = findViewById<EditText>(R.id.mailProf).text.toString()
 
-        val intent = Intent(this, ActionsActivity::class.java).apply {
-            putExtra(USER_PROF, usernameProf)        }
-
-        startActivity(intent)
+//        val intent = Intent(this, ActionsActivity::class.java)
+////            .apply {putExtra(USER_PROF, usernameProf) }
+//
+//        startActivity(intent)
+        startActivity(Intent(this, ActionsActivity::class.java))
     }
 }
