@@ -4,7 +4,7 @@ import com.example.projtech.database.dto.ActionDto
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface ActionApiServices {
+interface ActionApiService {
 
     data class ActionRequest(val name: String, val instruction: String, val orderInCode: Int, val codeId: Int)
 

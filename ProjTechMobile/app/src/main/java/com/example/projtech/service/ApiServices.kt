@@ -17,7 +17,7 @@ object ApiServices {
     const val API_USERNAME = "admin"
     const val API_PASSWORD = "admin"
 
-    val codesApiService: CodeApiService by lazy {
+    val actionApiService: ActionApiService by lazy {
         val client = getUnsafeOkHttpClientBuilder().addInterceptor(
             BasicAuthInterceptor(
                 API_USERNAME,
@@ -25,16 +25,12 @@ object ApiServices {
             )
         ).build()
 
-        Gson gson = new GsonBuilder()
-            .setLenient()
-            .create();
-
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
             .baseUrl("http://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
             .build()
-            .create(CodeApiService::class.java)
+            .create(ActionApiService::class.java)
     }
 
     private fun getUnsafeOkHttpClientBuilder(): OkHttpClient.Builder =
@@ -42,7 +38,7 @@ object ApiServices {
             val trustManager = createTrustManager()
             val sslContext = createSSLContext(trustManager)
             sslSocketFactory(sslContext.socketFactory, trustManager)
-//            hostnameVerifier { hostname, _ -> hostname.contains("cleverapps.io") }
+            hostnameVerifier { hostname, _ -> hostname.contains("cleverapps.io") }
             addInterceptor(BasicAuthInterceptor(API_USERNAME, API_PASSWORD))
         }
 
