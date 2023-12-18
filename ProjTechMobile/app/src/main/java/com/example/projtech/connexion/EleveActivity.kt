@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import com.example.projtech.MainActivity
 import com.example.projtech.R
-import com.example.projtech.page.PageActivity
+import com.example.projtech.page.ActionsActivity
 
 class EleveActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +18,7 @@ class EleveActivity : AppCompatActivity() {
        //  windowName.text =
 
     fun connexionEleve(view: View) {
-        val intent = Intent(this, PageActivity::class.java).apply {
+        val intent = Intent(this, ActionsActivity::class.java).apply {
         }
         startActivity(intent)
     }

@@ -20,7 +20,7 @@
             android:name=".code_actions_item"
             android:exported="false" />-->
         <activity
-            android:name=".page.PageActivity"
+            android:name=".page.ActionsActivity"
             android:exported="false"
             android:parentActivityName=".connexion.Professeur" />
         <activity

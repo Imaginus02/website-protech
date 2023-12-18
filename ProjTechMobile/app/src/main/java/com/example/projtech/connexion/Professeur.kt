@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import com.example.projtech.R
-import com.example.projtech.page.PageActivity
+import com.example.projtech.page.ActionsActivity
 
 class Professeur : AppCompatActivity() {
     companion object {
@@ -20,7 +20,7 @@ class Professeur : AppCompatActivity() {
     fun connexionProf(view: View) {
        val usernameProf = findViewById<EditText>(R.id.mailProf).text.toString()
 
-        val intent = Intent(this, PageActivity::class.java).apply {
+        val intent = Intent(this, ActionsActivity::class.java).apply {
             putExtra(USER_PROF, usernameProf)        }
 
         startActivity(intent)
