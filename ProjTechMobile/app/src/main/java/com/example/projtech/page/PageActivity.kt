@@ -1,67 +1,92 @@
 package com.example.projtech.page
 
-import CodesAdaptater
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdaptater
-import com.example.projtech.adaptater.OnItemClickListener
-import com.example.projtech.connexion.Professeur
-import com.example.projtech.database.dto.ActionDto
-import com.example.projtech.database.dto.CodeDto
-import com.example.projtech.service.ApiServices.codesApiService
+import com.example.projtech.service.ApiServices
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.IOException
 
-class PageActivity : AppCompatActivity() {
+class PageActivity() : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
 //        val windowDao = ProTechApplication
-        val roomsAdapter = CodesAdaptater()
+        val roomsAdapter = ActionsAdaptater()
 
-        val param = intent.getStringExtra(Professeur.USER_PROF)
-        val profName = findViewById<TextView>(R.id.idNameProf)
-        profName.text = param
-
-
-        roomsAdapter.setOnItemClickListener(object : OnItemClickListener {
-            override fun onItemClick(codeDto: CodeDto) {
-                val actionName = codeDto.name
-                val idAction = codeDto.id ;
-                Toast.makeText(this@PageActivity, "You choose $actionName, d'id $idAction", Toast.LENGTH_LONG).show()
-
-                // FAIRE UNE METHODE POST
-                try {
-                    val response = codesApiService.addExecution(idAction).execute()
-                    if (response.isSuccessful) {
-                        Toast.makeText(this@PageActivity, "La commande est dans la file d'attente", Toast.LENGTH_LONG).show()
-                    } else {
-                        Toast.makeText(this@PageActivity, "Problème dans l'envoi de la donnée", Toast.LENGTH_LONG).show()
-                    }
-                } catch (e: Exception) {
-                    Toast.makeText(this@PageActivity, "Problème", Toast.LENGTH_LONG).show()
-                }
-            }
-        })
+        // val param = intent.getStringExtra(Professeur.USER_PROF)
+        // val windowName = findViewById<TextView>(R.id.idUserProf)
+        // windowName.text = param
 
         findViewById<RecyclerView>(R.id.list_actions).also { recyclerView -> // (1)
             recyclerView.layoutManager = LinearLayoutManager(this) // (2)
-            recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL)) // (3)
+            recyclerView.addItemDecoration(
+                DividerItemDecoration(
+                    this,
+                    DividerItemDecoration.VERTICAL
+                )
+            ) // (3)
             recyclerView.setHasFixedSize(true) // (4)
             recyclerView.adapter = roomsAdapter // (5)
         }
 
+<<<<<<< HEAD
         CodeSource.fetchCodes()
         println("coucou")
         println(CodeSource.CODES)
 
         // roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
         roomsAdapter.setItems(CodeSource.CODES)  // (6)
+=======
+//        CodeSource.fetchCodes()
+>>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
 
 
+        //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
+//        runCatching { // (1)
+//            ApiServices.codesApiService.findAll().execute() // (2)
+//        }
+//            .onSuccess { roomsAdapter.setItems(it.body() ?: emptyList()) }  // (3)
+//            .onFailure {
+//                it.printStackTrace() //(4)
+//                Toast.makeText(this, "Error on rooms loading $it", Toast.LENGTH_LONG).show()  // (5)
+//            }
+
+        lifecycleScope.launch(context = Dispatchers.IO) { // (1)
+            runCatching { ApiServices.codesApiService.findAll().execute() }
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) { // (2)
+                        println(it.body())
+                        roomsAdapter.setItems(it.body() ?: emptyList())
+                    }
+
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) {
+                        println("On est dans la bonne fonction mais ça a pas marché")
+
+                        if (it is IOException) {
+                            // Handle IO-related exceptions
+                        }
+
+                        it.printStackTrace()
+                        Toast.makeText(
+                            applicationContext,
+                            "Error on rooms loading $it",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()  // (3)
+                    }
+                }
+        }
     }
 }

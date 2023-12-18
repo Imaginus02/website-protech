@@ -11,24 +11,36 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.X509TrustManager
 
 object ApiServices {
+<<<<<<< HEAD
+    const val API_USERNAME = "admin"
+    const val API_PASSWORD = "admin"
+=======
+//    const val API_USERNAME = "LappliMobileTropBien"
+//    const val API_PASSWORD = "UnMotD3Pass3Securis3"
+>>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
+
     const val API_USERNAME = "admin"
     const val API_PASSWORD = "admin"
 
-    val codesApiService: CodeApiService by lazy {
+    val actionApiService: ActionApiService by lazy {
         val client = getUnsafeOkHttpClientBuilder().addInterceptor(
-                BasicAuthInterceptor(
-                    API_USERNAME,
-                    API_PASSWORD
-                )
-            ).build()
+            BasicAuthInterceptor(
+                API_USERNAME,
+                API_PASSWORD
+            )
+        ).build()
 
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .client(client)
+<<<<<<< HEAD
             //.baseUrl("https://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
             .baseUrl("http://localhost:8080/api/")
+=======
+            .baseUrl("http://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io/api/")
+>>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
             .build()
-            .create(CodeApiService::class.java)
+            .create(ActionApiService::class.java)
     }
 
     private fun getUnsafeOkHttpClientBuilder(): OkHttpClient.Builder =
@@ -36,7 +48,7 @@ object ApiServices {
             val trustManager = createTrustManager()
             val sslContext = createSSLContext(trustManager)
             sslSocketFactory(sslContext.socketFactory, trustManager)
-//            hostnameVerifier { hostname, _ -> hostname.contains("cleverapps.io") }
+            hostnameVerifier { hostname, _ -> hostname.contains("cleverapps.io") }
             addInterceptor(BasicAuthInterceptor(API_USERNAME, API_PASSWORD))
         }
 
@@ -56,8 +68,11 @@ object ApiServices {
 
 class BasicAuthInterceptor(val username: String, val password: String) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
-        val request = chain.request().newBuilder()
-            .header("Authorization", Credentials.basic(username, password)).build()
+        val request = chain
+            .request()
+            .newBuilder()
+            .header("Authorization", Credentials.basic(username, password))
+            .build()
         return chain.proceed(request)
     }
 }
