@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ActionApiService {
 
-    data class ActionRequest(val name: String, val instruction: String, val orderInCode: Int, val codeId: Int)
+    data class ActionRequest(val name: String, val instruction: String, val orderInCode: Int, val codeId: Long)
 
     @GET("instructions")
     fun findAll(): Call<List<ActionDto>>
