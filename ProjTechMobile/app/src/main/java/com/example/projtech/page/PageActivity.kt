@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
-import com.example.projtech.adaptater.ActionsAdaptater
+import com.example.projtech.adaptater.ActionsAdapter
 import com.example.projtech.service.ApiServices
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,7 +21,7 @@ class PageActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
 //        val windowDao = ProTechApplication
-        val roomsAdapter = ActionsAdaptater()
+        val roomsAdapter = ActionsAdapter()
 
         // val param = intent.getStringExtra(Professeur.USER_PROF)
         // val windowName = findViewById<TextView>(R.id.idUserProf)
