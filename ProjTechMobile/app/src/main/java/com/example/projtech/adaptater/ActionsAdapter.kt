@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projtech.R
 import com.example.projtech.database.dto.ActionDto
 
-class ActionsAdapter(val listener: OnItemClickListener) :
+class ActionsAdapter()://val listener: OnItemClickListener) :
     RecyclerView.Adapter<ActionsAdapter.ActionsViewHolder>() { // (1)
 
     inner class ActionsViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
@@ -37,9 +37,9 @@ class ActionsAdapter(val listener: OnItemClickListener) :
         holder.apply {
             name.text = actionDto.name
             action.text = actionDto.action
-            itemView.setOnClickListener {
-                listener.selectAction(actionDto.id)
-            }
+//            itemView.setOnClickListener {
+//                listener.selectAction(actionDto.id)
+//            }
         }
     }
 

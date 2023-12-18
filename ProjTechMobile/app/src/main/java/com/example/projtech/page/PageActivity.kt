@@ -1,5 +1,6 @@
 package com.example.projtech.page
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.automacorp.OnActionClickListener
+import com.example.projtech.MainActivity
 import com.example.projtech.R
 import com.example.projtech.adaptater.ActionsAdapter
 import com.example.projtech.service.ApiServices
@@ -15,14 +18,13 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.IOException
 
-class PageActivity() : AppCompatActivity() {
+class PageActivity() : AppCompatActivity(){//, OnActionClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
-//        val windowDao = ProTechApplication
-        
-        val actionsAdapter = ActionsAdaptater()
+
+        val actionsAdapter = ActionsAdapter()
 
 
         // val param = intent.getStringExtra(Professeur.USER_PROF)
@@ -45,16 +47,23 @@ class PageActivity() : AppCompatActivity() {
             runCatching { ApiServices.actionApiService.findAll().execute() }
                 .onSuccess {
                     withContext(context = Dispatchers.Main) { // (2)
-                        actionsAdapter.setItems(it.body() ?: emptyList()) }
+                        actionsAdapter.setItems(it.body() ?: emptyList())
+                    }
                 }
                 .onFailure {
                     withContext(context = Dispatchers.Main) {
                         it.printStackTrace()
-                        Toast.makeText(applicationContext, "Error on rooms loading $it", Toast.LENGTH_LONG)
+                        Toast.makeText(
+                            applicationContext,
+                            "Error on rooms loading $it",
+                            Toast.LENGTH_LONG
+                        )
                             .show()  // (3)
                     }
                 }
         }
+
+
 
 
         //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
@@ -67,42 +76,40 @@ class PageActivity() : AppCompatActivity() {
 //                Toast.makeText(this, "Error on rooms loading $it", Toast.LENGTH_LONG).show()  // (5)
 //            }
 
-      /*  lifecycleScope.launch(context = Dispatchers.IO) { // (1)
-            runCatching { ApiServices.actionApiService.findAll().execute() }
-                .onSuccess {
-                    withContext(context = Dispatchers.Main) { // (2)
-                        println(it.body())
-                        actionsAdapter.setItems(it.body() ?: emptyList())
-                    }
+        /*  lifecycleScope.launch(context = Dispatchers.IO) { // (1)
+              runCatching { ApiServices.actionApiService.findAll().execute() }
+                  .onSuccess {
+                      withContext(context = Dispatchers.Main) { // (2)
+                          println(it.body())
+                          actionsAdapter.setItems(it.body() ?: emptyList())
+                      }
 
-                }
-                .onFailure {
-                    withContext(context = Dispatchers.Main) {
-                        println("On est dans la bonne fonction mais ça a pas marché")
+                  }
+                  .onFailure {
+                      withContext(context = Dispatchers.Main) {
+                          println("On est dans la bonne fonction mais ça a pas marché")
 
-                        if (it is IOException) {
-                            // Handle IO-related exceptions
-                        }
+                          if (it is IOException) {
+                              // Handle IO-related exceptions
+                          }
 
-                        it.printStackTrace()
-                        Toast.makeText(
-                            applicationContext,
-                            "Error on rooms loading $it",
-                            Toast.LENGTH_LONG
-                        )
-                            .show()  // (3)
-                    }
-                }
-        }
+                          it.printStackTrace()
+                          Toast.makeText(
+                              applicationContext,
+                              "Error on rooms loading $it",
+                              Toast.LENGTH_LONG
+                          )
+                              .show()  // (3)
+                      }
+                  }
+          }
 
-       */
-    }
-    /*
-    override fun selectAction(id: Long) {
-        val intent = Intent(this, ActionActivity::class.java).putExtra(MainActivity.ROOM_ID_PARAM, id)
-        startActivity(intent)
+         */
     }
 
-     */
-
+//    override fun selectAction(id: Long) {
+//        val intent =
+//            Intent(this, ActionActivity::class.java).putExtra(MainActivity.ROOM_ID_PARAM, id)
+//        startActivity(intent)
+//    }
 }
