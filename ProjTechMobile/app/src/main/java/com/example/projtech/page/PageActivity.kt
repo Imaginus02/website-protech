@@ -21,7 +21,7 @@ class PageActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page)
 //        val windowDao = ProTechApplication
-        val roomsAdapter = ActionsAdaptater()
+        val actionsAdapter = ActionsAdaptater()
 
         // val param = intent.getStringExtra(Professeur.USER_PROF)
         // val windowName = findViewById<TextView>(R.id.idUserProf)
@@ -36,19 +36,23 @@ class PageActivity() : AppCompatActivity() {
                 )
             ) // (3)
             recyclerView.setHasFixedSize(true) // (4)
-            recyclerView.adapter = roomsAdapter // (5)
+            recyclerView.adapter = actionsAdapter // (5)
         }
 
-<<<<<<< HEAD
-        CodeSource.fetchCodes()
-        println("coucou")
-        println(CodeSource.CODES)
-
-        // roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
-        roomsAdapter.setItems(CodeSource.CODES)  // (6)
-=======
-//        CodeSource.fetchCodes()
->>>>>>> 8c3aca9d796ae01bf8337331e37b5e2b0251afdc
+        lifecycleScope.launch(context = Dispatchers.IO) { // (1)
+            runCatching { ApiServices.actionApiService.findAll().execute() }
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) { // (2)
+                        actionsAdapter.setItems(it.body() ?: emptyList()) }
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) {
+                        it.printStackTrace()
+                        Toast.makeText(applicationContext, "Error on rooms loading $it", Toast.LENGTH_LONG)
+                            .show()  // (3)
+                    }
+                }
+        }
 
 
         //roomsAdapter.setItems(ActionSource.ACTIONS)  // (6)
@@ -61,12 +65,12 @@ class PageActivity() : AppCompatActivity() {
 //                Toast.makeText(this, "Error on rooms loading $it", Toast.LENGTH_LONG).show()  // (5)
 //            }
 
-        lifecycleScope.launch(context = Dispatchers.IO) { // (1)
-            runCatching { ApiServices.codesApiService.findAll().execute() }
+      /*  lifecycleScope.launch(context = Dispatchers.IO) { // (1)
+            runCatching { ApiServices.actionApiService.findAll().execute() }
                 .onSuccess {
                     withContext(context = Dispatchers.Main) { // (2)
                         println(it.body())
-                        roomsAdapter.setItems(it.body() ?: emptyList())
+                        actionsAdapter.setItems(it.body() ?: emptyList())
                     }
 
                 }
@@ -88,5 +92,15 @@ class PageActivity() : AppCompatActivity() {
                     }
                 }
         }
+
+       */
     }
+    /*
+    override fun selectAction(id: Long) {
+        val intent = Intent(this, ActionActivity::class.java).putExtra(MainActivity.ROOM_ID_PARAM, id)
+        startActivity(intent)
+    }
+
+     */
+
 }
