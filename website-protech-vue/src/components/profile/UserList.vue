@@ -1,6 +1,6 @@
 <template>
   <div class="user-list pt-3">
-    <UserListItem v-for="user in users"></UserListItem>
+    <UserListItem v-for="user in users" :user="user" :key="user.id"></UserListItem>
   </div>
 </template>
 

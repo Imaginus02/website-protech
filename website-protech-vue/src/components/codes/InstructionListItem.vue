@@ -1,7 +1,8 @@
 <template>
-  <div class="building border border-secondary rounded p-2 mb-2">
-    <div class="text-muted">{{instruction.name}}</div>
-  </div>
+  <!--  <div class="building border border-secondary rounded p-2 mb-2">-->
+  <hr/>
+  <div class="text-muted">{{ instruction.name }}</div>
+  <!--  </div>-->
 </template>
 
 <script>

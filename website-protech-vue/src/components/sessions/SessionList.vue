@@ -1,6 +1,6 @@
 <template>
   <div class="sessions-list pt-3">
-    <div v-if="sessions.isEmpty">Aucune Session créé</div>
+    <p v-if="sessions.length === 0" class="fw-bold">Aucune Session créée</p>
     <session-list-item v-else v-for="session in sessions" :session="session" :key="session.id"></session-list-item>
   </div>
 </template>

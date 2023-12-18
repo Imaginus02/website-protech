@@ -4,6 +4,7 @@
                     @profile="show('profile')"/>
     <SessionList v-if="this.selected === 'sessions'"></SessionList>
     <CodeList v-if="this.selected === 'codes'"></CodeList>
+    <UserList v-if="this.selected === 'profile'"></UserList>
   </section>
 </template>
 
@@ -12,10 +13,12 @@
 import MainNavigation from "./components/MainNavigation.vue";
 import SessionList from "@/components/sessions/SessionList.vue";
 import CodeList from "@/components/codes/CodeList.vue";
+import UserList from "@/components/profile/UserList.vue";
 
 export default {
   name: 'App',
   components: {
+    UserList,
     CodeList,
     SessionList,
     MainNavigation
