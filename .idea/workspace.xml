@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,16 +19,10 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/demo">
-      <ProjectState />
-    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$/demo">
-          <activation />
-        </task>
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
@@ -63,9 +58,9 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 1
-}</component>
+        &quot;customColor&quot;: &quot;&quot;,
+        &quot;associatedIndex&quot;: 1
+        }</component>
   <component name="ProjectId" id="2Za8RTiGPuT7jIauip8e6wiSJ3D" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -74,41 +69,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "withoutPort",
-    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "spring.configuration.checksum": "ffd8af8551c61e7556e8d068b05f8554",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
-    ],
-    "vue.recent.templates": [
-      "Vue Composition API Component"
-    ]
-  }
-}]]></component>
+  <component name="PropertiesComponent">{
+        &quot;keyToString&quot;: {
+        &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+        &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+        &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+        &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+        &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+        &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+        &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+        &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+        &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+        &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+        &quot;git-widget-placeholder&quot;: &quot;withoutPort&quot;,
+        &quot;last_opened_file_path&quot;: &quot;D:/tb3/git/website-protech/src/main/resources/static&quot;,
+        &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+        &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+        &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+        &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+        &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+        &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+        &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+        &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+        &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+        &quot;spring.configuration.checksum&quot;: &quot;ffd8af8551c61e7556e8d068b05f8554&quot;,
+        &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA
+        2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+        &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+        },
+        &quot;keyToStringList&quot;: {
+        &quot;DatabaseDriversLRU&quot;: [
+        &quot;h2&quot;
+        ],
+        &quot;vue.recent.templates&quot;: [
+        &quot;Vue Composition API Component&quot;
+        ]
+        }
+        }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
@@ -119,15 +116,36 @@
       <recent name="D:\tb3\git\website-protech\website-protech-vue\src\components" />
       <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
       <recent name="D:\tb3\git\website-protech\src\main\resources" />
-      <recent name="D:\tb3\git\website-protech\demo" />
       <recent name="D:\tb3\git\website-protech" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjTechApplication">
+  <component name="RunManager" selected="Gradle.demo [assemble]">
     <configuration name="demo [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="website-protech [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -178,8 +196,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.website-protech [assemble]" />
         <item itemvalue="Gradle.website-protech [build]" />
-        <item itemvalue="Gradle.demo [assemble]" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +205,7 @@
   <component name="StandaloneScriptsStorage">
     <option name="files">
       <set>
-        <option value="$PROJECT_DIR$/demo/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
       </set>
     </option>
   </component>
