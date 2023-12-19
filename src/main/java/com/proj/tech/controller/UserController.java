@@ -74,7 +74,7 @@ public class UserController {
         UserProfessorEntity user = userProfessorDao.findById(id).get();
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
         System.out.println("Json received :");
-        System.out.println(userUpdate);
+        System.out.println(userUpdate.getProperties());
         Map<String, Object> properties = userUpdate.getProperties();
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 

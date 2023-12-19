@@ -12,6 +12,7 @@ import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -92,6 +93,16 @@ public class MonControleur {
     @GetMapping("/profile")
     public String showProfilePage() {
         return "profile.html";
+    }
+
+    @GetMapping("/login-successful")
+    public String redirectWithAuthority() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_PROFESSOR")) {
+            return "redirect:/mainPage.html?prof=true";
+        } else {
+            return "redirect:/mainPage.html";
+        }
     }
 
 

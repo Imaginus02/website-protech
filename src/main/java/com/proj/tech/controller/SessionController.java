@@ -98,10 +98,10 @@ public class SessionController {
     @PostMapping
     @ResponseBody
     public ResponseEntity<Session> createSession(@RequestParam String name,
-                                                 @RequestParam String username,
                                                  @RequestParam Integer maxUser,
                                                  @RequestParam String endDate) {
-        UserProfessorEntity user = userProfessorDao.findByUsername(username);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
         SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
 
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -112,6 +112,7 @@ public class SessionController {
         if (userDetailsService instanceof InMemoryUserDetailsManager) {
             ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
         }
+        System.out.println("Created new user with credentials: "+sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
 }
