@@ -2,11 +2,9 @@ package com.proj.tech.security;
 
 import com.proj.tech.dao.SessionDao;
 import com.proj.tech.model.SessionEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -48,7 +46,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
         for (SessionEntity session : sessions) {
             manager.createUser(User.withUsername("session").password(encoder.encode(session.getPassword())).roles(ROLE_STUDENT).build());
         }
-            manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles(ROLE_PROFESSOR).build());
+        manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles(ROLE_PROFESSOR).build());
         manager.createUser(User.withUsername("LappliMobileTropBien").password(encoder.encode("UnMotD3Pass3Securis3")).roles(ROLE_MOBILE_APP).build());
         manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
         manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());

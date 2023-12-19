@@ -23,9 +23,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static com.proj.tech.security.SpringSecurityConfig.ROLE_ADMIN;
 
 @CrossOrigin
 @RestController
@@ -112,7 +109,7 @@ public class SessionController {
         if (userDetailsService instanceof InMemoryUserDetailsManager) {
             ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
         }
-        System.out.println("Created new user with credentials: "+sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
+        System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
 }
