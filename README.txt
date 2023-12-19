@@ -27,9 +27,9 @@ POST /api/users/new :
     "password" : "password"
 }
 
-(ADMIN)
+(ADMIN, PROFESSOR)
 GET /api/sessions
-get the list of all sessions
+get the list of all sessions, if you are not the ADMIN, you will see only sessions you created
 
 (ADMIN)
 GET /api/sessions/{username}(/active or /archived (optional)):

@@ -27,6 +27,7 @@ dependencies {
 	testImplementation("org.springframework.security:spring-security-test")
 	implementation("org.springframework.security:spring-security-web")
 	implementation("org.springframework.security:spring-security-config")
+	implementation("org.webjars.npm:vue:2.6.14")
 }
 
 tasks.withType<Test> {

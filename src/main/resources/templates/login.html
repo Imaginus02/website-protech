@@ -27,13 +27,14 @@
         </header>
         <form action="/login" method="post" name="login">
             <div class="login-fields">
+                <input type="hidden" name="username" id="username" value="sessions">
+<!--                <div class="contain-field">-->
+<!--                    <label for="username" class="login-field-username form-label"> N° de Session :</label>-->
+<!--                    <input type="text" placeholder="Ex : 7x4abg" name="username" id="username" class="input-field-login form-control">-->
+<!--                </div>-->
                 <div class="contain-field">
-                    <label for="username" class="login-field-username form-label"> N° de Session :</label>
-                    <input type="text" placeholder="Ex : 7x4abg" name="username" id="username" class="input-field-login form-control">
-                </div>
-                <div class="contain-field">
-                    <label for="password" class="login-field-password form-label" > Mot de passe :</label>
-                    <input type="password" placeholder="Mot de passe" id="password" name="password" class="input-field-password form-control">
+                    <label for="password" class="login-field-password form-label" > Session :</label>
+                    <input type="password" placeholder="xjdlo9" id="password" name="password" class="input-field-password form-control">
                 </div>
                 <button type="submit" class="btn btn-primary login-button">
                     Se connecter
