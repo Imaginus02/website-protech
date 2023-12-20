@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logoProTech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pageStudent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pageTeacher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/mainPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,41 +92,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Vue.JS",
-    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "spring.configuration.checksum": "ffd8af8551c61e7556e8d068b05f8554",
-    "ts.external.directory.path": "C:\\Users\\noset\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Vue.JS&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/noset/Documents/ProjTech&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;64a9982c3c501192996d5bbf6eec99bb&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\noset\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ],
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
@@ -206,6 +224,8 @@
       <workItem from="1702892340070" duration="10265000" />
       <workItem from="1702926605289" duration="5414000" />
       <workItem from="1702972962757" duration="6716000" />
+      <workItem from="1702996031372" duration="2704000" />
+      <workItem from="1703057498437" duration="4239000" />
     </task>
     <servers />
   </component>

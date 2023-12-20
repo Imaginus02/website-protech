@@ -47,5 +47,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.sessions-list{
+    width: 50% ;
+    margin: auto;
+}
 </style>

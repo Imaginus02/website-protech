@@ -44,5 +44,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.codes-list{
+    width:50%;
+    margin: auto;
+}
 
 </style>

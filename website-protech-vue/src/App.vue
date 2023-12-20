@@ -1,5 +1,5 @@
 <template>
-  <section class="main-content w-50 mx-auto">
+  <section class="content">
     <MainNavigation @sessions="show('sessions')" @codes="show('codes')"
                     @profile="show('profile')"/>
     <SessionList v-if="this.selected === 'sessions'"></SessionList>
@@ -43,5 +43,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+.content{
+    width:100%;
+    background-color: white;
+    height:75px;
 }
 </style>
