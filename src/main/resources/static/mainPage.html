@@ -15,7 +15,7 @@
 <body>
 <div id="popUp_overlay"></div>
 <div id="watchCamera">
-    <img src="assets/img/imgRobotPoppy.jpg" style="height:80%; width:auto;margin-left:300px;margin-top: 20px;">
+    <img src="assets/img/imgRobotPoppy.jpg">
 </div>
 
 <div id="popUpSaving" class="cssPopUp">
@@ -60,7 +60,7 @@
             <div onclick="toSession()" class="createSession" id="newSession"> &#x1F4F0;</div>
         </div>
         <div class="containConnect">
-            <!-- <p class="pseudo"> jJoey </p> -->
+            <a href="../profile"> <img src="assets/img/compte.png" alt="image compte" class="imgProfil"></a>
             <a href="/logout" type="button" class="logOut"> &#x21F0; </a>
         </div>
     </nav>
@@ -135,6 +135,7 @@
         form.appendChild(inputHidden);
     }
 </script>
+
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
