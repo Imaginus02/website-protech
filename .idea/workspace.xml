@@ -5,46 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc8f48d-146d-4291-8d74-66816e039c65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/compte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pageStudent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/DeletePopup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/mainPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/result.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pageTeacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/AlertPopUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/AlertPopUp.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/InstructionListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/InstructionListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserForm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionListItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/TeacherAuthenticationProvider.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,11 +76,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "Merging withoutPort",
+    "git-widget-placeholder": "withoutPort",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
   <component name="RecentsManager">
