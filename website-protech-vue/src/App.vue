@@ -1,5 +1,5 @@
 <template>
-  <section class="main-content w-50 mx-auto" :class="backgroundVisibility ? 'radial-gradient(black, transparent)'">
+  <section class="content w-50 mx-auto" :class="backgroundVisibility ? 'radial-gradient(black, transparent)'">
     <DeletePopup v-if="this.deletePopupVisible" :element="this.elementToDelete" @deletion-confirmed="confirmDeletion"
                  @deletion-canceled="hideDeletePopup"></DeletePopup>
     <MainNavigation @sessions="show('sessions')" @codes="show('codes')"
@@ -64,4 +64,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.content {
+  width: 100%;
+  background-color: white;
+  height: 75px;
+}
 </style>
+

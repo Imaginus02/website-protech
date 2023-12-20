@@ -5,16 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f389e92-428d-4b2d-ae6a-7c8638d96082" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/DeletePopup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/logoProTech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pageStudent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/mainPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/result.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pageTeacher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,13 +97,13 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "git-widget-placeholder": "Vue.JS",
+    "git-widget-placeholder": "Merging Vue.JS",
     "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA\n        2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
   },
   "keyToStringList": {
     "vue.recent.templates": [
@@ -206,6 +216,8 @@
       <workItem from="1702892340070" duration="10265000" />
       <workItem from="1702926605289" duration="5414000" />
       <workItem from="1702972962757" duration="6716000" />
+      <workItem from="1702996031372" duration="2704000" />
+      <workItem from="1703057498437" duration="4239000" />
     </task>
     <servers />
   </component>

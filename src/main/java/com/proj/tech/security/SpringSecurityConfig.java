@@ -62,7 +62,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         System.out.println("Building http");
         http.authorizeHttpRequests((requests) -> requests
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/pageTeacher.html")).authenticated()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/professor")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/student")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/professor?error=true")).permitAll()

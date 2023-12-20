@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <AlertPopUp v-if="alertMessage !== ''" :message="this.alertMessage" :type="this.alertType"
               @close-alert="this.alertMessage = ''; this.alertType = ''"></AlertPopUp>
@@ -67,4 +68,8 @@ export default {
 
 <style scoped lang="scss">
 
+.user-list {
+  width: 50%;
+  margin: auto;
+}
 </style>
