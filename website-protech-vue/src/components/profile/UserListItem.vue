@@ -64,7 +64,9 @@ export default {
       this.alertType = 'danger';
     },
     handleDeleteClick() {
+      console.log("UserListItem : user clicked on delete button")
       this.$emit("delete-click", this.user);
+      console.log("UserListItem : emitted delete-click to UserList with user attached")
     },
   }
 }

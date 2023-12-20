@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <input v-model="userInput" type="text" class="form-control mb-3 space-between-elements">
-    <button type="submit" class="btn btn-primary">Modifier</button>
+    <button type="submit" class="btn btn-primary me-5">Modifier</button>
     <button type="button" class="btn btn-secondary" @click="this.$emit('cancel')">Annuler</button>
   </form>
 
@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       userInput: '',
-      // TODO Modify this by the real URL when pushing to clevercloud
       endpoint: '/api/users',
       dataToSend: {}
     }

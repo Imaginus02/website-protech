@@ -1,12 +1,12 @@
 <template>
-  <section class="content w-50 mx-auto" :class="backgroundVisibility ? 'radial-gradient(black, transparent)'">
+  <section class="content w-100 mx-auto">
     <DeletePopup v-if="this.deletePopupVisible" :element="this.elementToDelete" @deletion-confirmed="confirmDeletion"
                  @deletion-canceled="hideDeletePopup"></DeletePopup>
     <MainNavigation @sessions="show('sessions')" @codes="show('codes')"
                     @profile="show('profile')"/>
-    <SessionList v-if="this.selected === 'sessions'" @show-delete-popup="showDeletePopup"></SessionList>
-    <CodeList v-if="this.selected === 'codes'"></CodeList>
-    <UserList v-if="this.selected === 'profile'" :elementToDelete="this.elementToDelete" @done-deleting="hideDeletePopup"></UserList>
+    <SessionList v-if="this.selected === 'sessions'" :elementToDelete="this.deletedElement" @done-deleting="hideDeletePopup" @show-delete-popup="showDeletePopup"></SessionList>
+    <CodeList v-if="this.selected === 'codes' " :elementToDelete="this.deletedElement" @done-deleting="hideDeletePopup" @show-delete-popup="showDeletePopup"></CodeList>
+    <UserList v-if="this.selected === 'profile'" :elementToDelete="this.deletedElement" @done-deleting="hideDeletePopup" @show-delete-popup="showDeletePopup"></UserList>
   </section>
 </template>
 
@@ -30,27 +30,35 @@ export default {
   data: function () {
     return {
       selected: 'sessions',
-      backgroundVisibility: 0,
+      backgroundVisibility: false,
       deletePopupVisible: false,
       elementToDelete: null,
+      deletedElement: null
     }
   },
   methods: {
     show(string) {
       this.selected = string;
+      this.hideDeletePopup();
     },
     showDeletePopup(element) {
-      this.backgroundVisibility = 0.5;
+      console.log("App : Received show-delete-popup from UserList, showing deletePopup and changing elementToDelete variable");
+      console.log("App : concercened element :");
+      console.log(element);
+      this.backgroundVisibility = true;
       this.deletePopupVisible = true;
       this.elementToDelete = element;
     },
     hideDeletePopup() {
-      this.backgroundVisibility = 0;
+      console.log("App : received deletion-canceled from DeletionPopup, hiding DeletePopup");
+      this.backgroundVisibility = false;
       this.deletePopupVisible = false;
       this.elementToDelete = null;
     },
     confirmDeletion(user) {
-      this.elementToDelete = user;
+      console.log("App : received deletion-confirmed from DeletionPopup, changed deletedElement to user and hiding DeletePopup")
+      this.deletedElement = user;
+      this.hideDeletePopup()
     }
   }
 }

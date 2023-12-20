@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <AlertPopUp v-if="alertMessage !== ''" :message="this.alertMessage" :type="this.alertType"
               @close-alert="this.alertMessage = ''; this.alertType = ''"></AlertPopUp>
@@ -13,7 +12,6 @@
 <script>
 import UserListItem from "@/components/profile/UserListItem.vue";
 import AlertPopUp from "@/components/AlertPopUp.vue";
-import {watch} from "vue";
 
 export default {
   name: "UserList",
@@ -26,12 +24,14 @@ export default {
       alertType: ''
     }
   },
-  setup(props) {
-    watch(() => props.elementToDelete, (newValue, oldValue) => {
-      if (newValue !== oldValue) {
-        this.handleDeleteConfirmed(newValue);
+  watch: {
+    elementToDelete: function (value) {
+      console.log("UserList : ElementToDelete changed")
+      if (Object.prototype.hasOwnProperty.call(value, "username")) {
+        console.log("UserList : value changed to user, deleting it")
+        this.handleDeleteConfirmed(value);
       }
-    })
+    }
   },
   created: async function () {
     fetch('/api/users')
@@ -57,10 +57,16 @@ export default {
       }
     },
     handleDelete(user) {
-      this.$emit("show-delete-popup", user.name);
+      console.log("UserList : received delete-click from UserListItem")
+      this.$emit("show-delete-popup", user);
+      console.log("UserList : emitted show-delete-popup to App with user attached")
     },
     handleDeleteConfirmed(element) {
-      this.userList = this.userList.filter(user => user.name !== element.name);
+      const index = this.users.findIndex((user) => user.id === element.id);
+      if (index !== -1) {
+        this.users.splice(index, 1)
+      }
+      console.log("UserList : Element deleted from users")
     },
   },
 }
