@@ -24,7 +24,7 @@
     </div>
     <hr/>
     <div class="bottom-row d-flew">
-      <button class="btn btn-danger">Supprimer</button>
+      <button class="btn btn-danger" @click="handleDeleteClick">Supprimer</button>
     </div>
   </div>
 </template>
@@ -60,10 +60,14 @@ export default {
       }
     },
     handleUpdateFail(error) {
-      this.$emit("error", error)
       this.alertMessage = error;
       this.alertType = 'danger';
-    }
+    },
+    handleDeleteClick() {
+      console.log("UserListItem : user clicked on delete button")
+      this.$emit("delete-click", this.user);
+      console.log("UserListItem : emitted delete-click to UserList with user attached")
+    },
   }
 }
 </script>

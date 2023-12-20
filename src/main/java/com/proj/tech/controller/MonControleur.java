@@ -3,6 +3,7 @@ package com.proj.tech.controller;
 import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
+import com.proj.tech.dto.User;
 import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.UserEntity;
@@ -50,7 +51,7 @@ public class MonControleur {
 
         System.out.println(newList);
 
-        return "redirect:/mainPage.html";
+        return "redirect:/pageTeacher.html";
 
     }
 
@@ -66,7 +67,7 @@ public class MonControleur {
         }
 //        params = new LinkedHashMap<>();
         saveCode(params);
-        return "redirect:/mainPage.html";
+        return "redirect:/pageTeacher.html";
     }
 
     @GetMapping("/login/student")
@@ -98,9 +99,9 @@ public class MonControleur {
     public String redirectWithAuthority() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_PROFESSOR")) {
-            return "redirect:/mainPage.html?prof=true";
+            return "redirect:/pageTeacher.html";
         } else {
-            return "redirect:/mainPage.html";
+            return "redirect:/pageStudent.html";
         }
     }
 

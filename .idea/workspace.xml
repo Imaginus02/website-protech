@@ -4,8 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
+    <list default="true" id="1bc8f48d-146d-4291-8d74-66816e039c65" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/demo/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/compte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/pageStudent.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/DeletePopup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/mainPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/html/result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pageTeacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/jsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/AlertPopUp.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/AlertPopUp.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/CodeListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/codes/InstructionListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/codes/InstructionListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/sessions/SessionListItem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +55,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/demo">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/demo">
+          <activation />
+        </task>
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
@@ -68,38 +113,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "withoutPort",
-    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
+    "git-widget-placeholder": "Merging withoutPort",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "spring.configuration.checksum": "ffd8af8551c61e7556e8d068b05f8554",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
-    ],
-    "vue.recent.templates": [
-      "Vue Composition API Component"
-    ]
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -112,14 +130,15 @@
       <recent name="D:\tb3\git\website-protech\website-protech-vue\src\components" />
       <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
       <recent name="D:\tb3\git\website-protech\src\main\resources" />
+      <recent name="D:\tb3\git\website-protech\demo" />
       <recent name="D:\tb3\git\website-protech" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjTechApplication">
-    <configuration name="website-protech [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="demo [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -164,13 +183,22 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="com.proj.tech.tech.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.proj.tech.ProjTechApplication" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Gradle.demo [assemble]" />
+      <item itemvalue="Gradle.website-protech [build]" />
+      <item itemvalue="Spring Boot.ProjTechApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.website-protech [assemble]" />
         <item itemvalue="Gradle.website-protech [build]" />
       </list>
     </recent_temporary>
@@ -180,6 +208,7 @@
     <option name="files">
       <set>
         <option value="$PROJECT_DIR$/build.gradle.kts" />
+        <option value="$PROJECT_DIR$/demo/build.gradle.kts" />
       </set>
     </option>
   </component>
@@ -196,7 +225,8 @@
       <workItem from="1702892340070" duration="10265000" />
       <workItem from="1702926605289" duration="5414000" />
       <workItem from="1702972962757" duration="6716000" />
-      <workItem from="1702982542053" duration="2113000" />
+      <workItem from="1702996031372" duration="2704000" />
+      <workItem from="1703057498437" duration="4239000" />
     </task>
     <servers />
   </component>

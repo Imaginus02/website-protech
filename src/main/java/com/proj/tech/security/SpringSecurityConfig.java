@@ -2,9 +2,11 @@ package com.proj.tech.security;
 
 import com.proj.tech.dao.SessionDao;
 import com.proj.tech.model.SessionEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -46,7 +48,7 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
         for (SessionEntity session : sessions) {
             manager.createUser(User.withUsername("session").password(encoder.encode(session.getPassword())).roles(ROLE_STUDENT).build());
         }
-        manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles(ROLE_PROFESSOR).build());
+            manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles(ROLE_PROFESSOR).build());
         manager.createUser(User.withUsername("LappliMobileTropBien").password(encoder.encode("UnMotD3Pass3Securis3")).roles(ROLE_MOBILE_APP).build());
         manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
         manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());
@@ -60,14 +62,15 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {
         System.out.println("Building http");
         http.authorizeHttpRequests((requests) -> requests
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/mainPage.html")).authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/pageTeacher.html")).authenticated()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/professor")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/student")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/professor?error=true")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/login/student?error=true")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/register")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/choose")).permitAll()
-                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/**")).authenticated()
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/**")).hasRole(ROLE_ADMIN)
+                        .requestMatchers(AntPathRequestMatcher.antMatcher("/api/sessions/**")).hasRole(ROLE_PROFESSOR)
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/assets/**")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/static/**")).permitAll()
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/inscription")).permitAll()

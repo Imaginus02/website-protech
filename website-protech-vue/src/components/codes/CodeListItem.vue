@@ -3,7 +3,7 @@
     <div class="fw-bold pe-3">{{code.name}}</div>
     <InstructionListItem v-for="instruction in sortedInstructions" :instruction="instruction" :key="instruction.id"></InstructionListItem>
     <hr/>
-    <button class="btn btn-danger">Supprimer</button>
+    <button class="btn btn-danger" @click="handleDeleteClick">Supprimer</button>
   </div>
 </template>
 
@@ -20,6 +20,13 @@ export default {
     sortedInstructions() {
       return this.code.instructions.slice().sort((a, b) => a.orderInCode - b.orderInCode);
     }
+  },
+  methods: {
+    handleDeleteClick() {
+      console.log("CodeListItem : user clicked on delete button")
+      this.$emit("delete-click", this.code);
+      console.log("CodeListItem : emitted delete-click to CodeList with code attached")
+    },
   }
 }
 
