@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f389e92-428d-4b2d-ae6a-7c8638d96082" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/img/compte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website-protech-vue/src/components/DeletePopup.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/stylesheets/mainPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/mainPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/MainNavigation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dist/js/chunk-vendors.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/website-protech-vue/src/components/profile/UserListItem.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +81,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;Merging Vue.JS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "git-widget-placeholder": "Vue.JS",
+    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
