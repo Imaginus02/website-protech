@@ -3,23 +3,34 @@
               @close-alert="this.alertMessage = ''; this.alertType = ''"></AlertPopUp>
   <div class="user-list pt-3">
     <UserListItem v-for="user in users" :user="user" :key="user.id" @update-user="updateUser"
-                  @error="handleUpdateError"></UserListItem>
+                  @delete-click="handleDelete">
+
+    </UserListItem>
   </div>
 </template>
 
 <script>
 import UserListItem from "@/components/profile/UserListItem.vue";
 import AlertPopUp from "@/components/AlertPopUp.vue";
+import {watch} from "vue";
 
 export default {
   name: "UserList",
   components: {AlertPopUp, UserListItem},
+  props: ['elementToDelete'],
   data: function () {
     return {
       users: [],
       alertMessage: '',
       alertType: ''
     }
+  },
+  setup(props) {
+    watch(() => props.elementToDelete, (newValue, oldValue) => {
+      if (newValue !== oldValue) {
+        this.handleDeleteConfirmed(newValue);
+      }
+    })
   },
   created: async function () {
     fetch('/api/users')
@@ -43,8 +54,14 @@ export default {
       if (index !== -1) {
         this.users[index] = data;
       }
-    }
-  }
+    },
+    handleDelete(user) {
+      this.$emit("show-delete-popup", user.name);
+    },
+    handleDeleteConfirmed(element) {
+      this.userList = this.userList.filter(user => user.name !== element.name);
+    },
+  },
 }
 </script>
 
