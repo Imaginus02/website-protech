@@ -112,4 +112,12 @@ public class SessionController {
         System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteSession(@PathVariable Long id) {
+        if (userDetailsService instanceof InMemoryUserDetailsManager) {
+            ((InMemoryUserDetailsManager) userDetailsService).deleteUser("sessions");
+        }
+        sessionDao.deleteById(id);
+    }
 }
