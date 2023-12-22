@@ -4,17 +4,15 @@ import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dao.blocks.CodeDao;
 import com.proj.tech.dao.blocks.InstructionDao;
 import com.proj.tech.dto.User;
-import com.proj.tech.dto.UserProfessor;
 import com.proj.tech.dto.blocks.Code;
-import com.proj.tech.mapper.UserProfessorMapper;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.UserEntity;
-import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -53,7 +51,7 @@ public class MonControleur {
 
         System.out.println(newList);
 
-        return "redirect:/mainPage.html";
+        return "redirect:/pageTeacher.html";
 
     }
 
@@ -69,7 +67,7 @@ public class MonControleur {
         }
 //        params = new LinkedHashMap<>();
         saveCode(params);
-        return "redirect:/mainPage.html";
+        return "redirect:/pageTeacher.html";
     }
 
     @GetMapping("/login/student")
@@ -92,13 +90,27 @@ public class MonControleur {
         return "inscription.html"; // Returns login.html
     }
 
+    @GetMapping("/profile")
+    public String showProfilePage() {
+        return "profile.html";
+    }
+
+    @GetMapping("/login-successful")
+    public String redirectWithAuthority() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_PROFESSOR")) {
+            return "redirect:/pageTeacher.html";
+        } else {
+            return "redirect:/pageStudent.html";
+        }
+    }
+
 
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
+        UserEntity user = userProfessorDao.findByUsername(authentication.getName());
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
         CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
-        code.setCreator(user);
         CodeEntity saved = codeDao.save(code);
         params.remove("nameOfCode");
         int compteur = 0;

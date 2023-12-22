@@ -1,7 +1,6 @@
 INSERT INTO SP_USER_PROFESSOR(id, email, password, username) VALUES (-2, 'tom.reynaud@etu.emse.fr', 'tomlebon', 'Imaginus');
 INSERT INTO SP_USER_PROFESSOR(id, email, password, username) VALUES (-1, 'admin@admin.com', 'admin', 'admin');
 
-
 INSERT INTO SP_CODE(id, name, creator_id) VALUES (-1, 'Code1', -2);
 
 INSERT INTO SP_INSTRUCTION(id, name, instruction, code_id, order_in_code) VALUES (-1, 'Couleur Rouge', 'r', -1, 0);
