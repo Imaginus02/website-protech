@@ -18,6 +18,8 @@ void setup() {
   strip.setBrightness(50);  // luminosité de la LED (maximum 255)
 }
 
+// Faire une code qui reçoit : ["name", "rtzejdcn"]
+
 void loop() {
 
   if (Serial.available() > 0) {
