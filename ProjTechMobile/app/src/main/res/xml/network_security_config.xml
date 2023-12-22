@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io</domain>
+        <domain includeSubdomains="true">http://app-77695203-c7cc-4ac1-a3c0-52cece554898.cleverapps.io</domain>
     </domain-config>
 </network-security-config>
