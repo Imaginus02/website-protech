@@ -2,6 +2,7 @@
   <div class="codes-list pt-3">
     <AlertPopUp v-if="alertMessage !== ''" :message="this.alertMessage" :type="this.alertType"
                 @close-alert="this.alertMessage = ''; this.alertType = ''"></AlertPopUp>
+    <p v-if="codes.length === 0 && this.alertMessage === ''" class="fw-bold">Aucun code créée</p>
     <CodeListItem v-for="code in codes" :code="code" :key="code.id" @delete-click="handleDelete"></CodeListItem>
   </div>
 </template>
