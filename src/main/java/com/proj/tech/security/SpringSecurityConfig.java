@@ -46,13 +46,13 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
 
         List<SessionEntity> sessions = sessionDao.findAll();
         for (SessionEntity session : sessions) {
-            manager.createUser(User.withUsername("session").password(encoder.encode(session.getPassword())).roles(ROLE_STUDENT).build());
+            manager.createUser(User.withUsername("session").password(encoder.encode(session.getPassword())).roles("ROLE_STUDENT").build());
         }
-            manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles(ROLE_PROFESSOR).build());
-        manager.createUser(User.withUsername("LappliMobileTropBien").password(encoder.encode("UnMotD3Pass3Securis3")).roles(ROLE_MOBILE_APP).build());
-        manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles(ROLE_USER).build());
-        manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles(ROLE_PROFESSOR).build());
-        manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles(ROLE_ADMIN, ROLE_USER, ROLE_STUDENT, ROLE_PROFESSOR).build());
+            manager.createUser(User.withUsername("Imaginus").password(encoder.encode("tomlebon")).roles("ROLE_PROFESSOR").build());
+        manager.createUser(User.withUsername("LappliMobileTropBien").password(encoder.encode("UnMotD3Pass3Securis3")).roles("ROLE_MOBILE_APP").build());
+        manager.createUser(User.withUsername("user").password(encoder.encode("password")).roles("ROLE_USER").build());
+        manager.createUser(User.withUsername("prof").password(encoder.encode("password")).roles("ROLE_PROFESSOR").build());
+        manager.createUser(User.withUsername("admin").password(encoder.encode("admin")).roles("ROLE_ADMIN", "ROLE_USER", "ROLE_STUDENT", "ROLE_PROFESSOR").build());
         return manager;
     }
 
