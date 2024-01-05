@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4f389e92-428d-4b2d-ae6a-7c8638d96082" name="Changes" comment="" />
+    <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,32 +45,16 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="Vue Composition API Component" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/resources/static/dist/js/app.27890c9c.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-        &quot;customColor&quot;: &quot;&quot;,
-        &quot;associatedIndex&quot;: 1
-        }</component>
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2Za8RTiGPuT7jIauip8e6wiSJ3D" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -72,43 +65,41 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Vue.JS",
-    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/resources/static",
+    "last_opened_file_path": "D:/tb3/git/website-protech/.idea",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
-  },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
-    ]
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
-      <recent name="D:\tb3\git\website-protech\src\main\resources\static\assets" />
-      <recent name="D:\tb3\git\website-protech\src\main\resources\static\dist" />
+      <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\tb3\git\website-protech\website-protech-vue\src\components" />
-      <recent name="D:\tb3\git\website-protech\src\main\resources\static" />
-      <recent name="D:\tb3\git\website-protech\src\main\resources" />
       <recent name="D:\tb3\git\website-protech\demo" />
       <recent name="D:\tb3\git\website-protech" />
+      <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjTechApplication">
-    <configuration name="demo [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="website-protech [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/demo" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -127,31 +118,9 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="website-protech [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="ProjTechApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="com.proj.tech.tech.main" />
+      <module name="tech.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.proj.tech.ProjTechApplication" />
       <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
         <option name="credential" />
@@ -163,13 +132,12 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.demo [assemble]" />
-      <item itemvalue="Gradle.website-protech [build]" />
+      <item itemvalue="Gradle.website-protech [assemble]" />
       <item itemvalue="Spring Boot.ProjTechApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.website-protech [build]" />
+        <item itemvalue="Gradle.website-protech [assemble]" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +145,6 @@
   <component name="StandaloneScriptsStorage">
     <option name="files">
       <set>
-        <option value="$PROJECT_DIR$/build.gradle.kts" />
         <option value="$PROJECT_DIR$/demo/build.gradle.kts" />
       </set>
     </option>
@@ -190,35 +157,17 @@
       <option name="presentableId" value="Default" />
       <updated>1702648823666</updated>
       <workItem from="1702648828584" duration="2305000" />
-      <workItem from="1702655061548" duration="655000" />
-      <workItem from="1702824238971" duration="15690000" />
-      <workItem from="1702892340070" duration="10265000" />
-      <workItem from="1702926605289" duration="5414000" />
-      <workItem from="1702972962757" duration="6716000" />
-      <workItem from="1702996031372" duration="2704000" />
-      <workItem from="1703057498437" duration="4239000" />
+      <workItem from="1704462656305" duration="100000" />
+      <workItem from="1704462771016" duration="114000" />
+      <workItem from="1704462924601" duration="630000" />
+      <workItem from="1704463561035" duration="255000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
