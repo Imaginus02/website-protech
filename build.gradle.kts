@@ -28,6 +28,8 @@ dependencies {
 	implementation("org.springframework.security:spring-security-web")
 	implementation("org.springframework.security:spring-security-config")
 	implementation("org.webjars.npm:vue:2.6.14")
+	implementation("org.apache.logging.log4j:log4j-api:2.22.1")
+	implementation("org.apache.logging.log4j:log4j-core:2.22.1")
 }
 
 tasks.withType<Test> {
