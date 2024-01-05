@@ -12,6 +12,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import static com.proj.tech.ProjTechApplication.logger;
+
 @CrossOrigin
 @Controller
 @RequestMapping("/inscription")
@@ -33,6 +35,7 @@ public class RegisterController {
                                        @RequestParam String passwordConfirm) {
 
         // Verify if the user entered the same password twice
+        logger.info("POST Request to /inscription with params : " + username + ", " + email + ", " + password + ", " + passwordConfirm);
         if (!password.equals(passwordConfirm))
             return "redirect:/inscription?error=true";
 

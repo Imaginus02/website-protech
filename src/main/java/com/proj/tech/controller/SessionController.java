@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.proj.tech.ProjTechApplication.logger;
 import static com.proj.tech.security.SpringSecurityConfig.ROLE_ADMIN;
 
 @CrossOrigin
@@ -53,6 +54,7 @@ public class SessionController {
     @GetMapping()
     public List<Session> listSessions() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("POST request to /api/sessions by " + authentication.getName());
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
             System.out.println("Admin here, providing full session list");
             return sessionDao.findAll()
@@ -71,6 +73,8 @@ public class SessionController {
 
     @GetMapping("/{username}")
     public List<Session> listSessionForUser(@PathVariable String username) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("GET request to /api/sessions/" + username + " by " + authentication.getName());
         return sessionDao.findByUser(username)
                 .stream()
                 .map(SessionMapper::of)
@@ -80,6 +84,8 @@ public class SessionController {
     @GetMapping("/{username}/active")
     @ResponseBody
     public List<Session> listActiveSessionForUser(@PathVariable String username) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("GET request to /api/sessions/" + username + "/active by " + authentication.getName());
         return sessionDao.findByUserAndStatus(username, SessionStatus.ACTIVE)
                 .stream()
                 .map(SessionMapper::of)
@@ -89,6 +95,8 @@ public class SessionController {
     @GetMapping("/{username}/archived")
     @ResponseBody
     public List<Session> listArchivedSessionForUser(@PathVariable String username) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("GET request to /api/sessions/" + username + "/archived by " + authentication.getName());
         return sessionDao.findByUserAndStatus(username, SessionStatus.ARCHIVED)
                 .stream()
                 .map(SessionMapper::of)
@@ -101,6 +109,7 @@ public class SessionController {
                                                  @RequestParam Integer maxUser,
                                                  @RequestParam String endDate) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("POST request to /api/sessions by " + authentication.getName() + " with parameters : " + name + ", " + maxUser + ", " + endDate);
         UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
         SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
 
@@ -112,7 +121,7 @@ public class SessionController {
         if (userDetailsService instanceof InMemoryUserDetailsManager) {
             ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
         }
-        System.out.println("Created new user with credentials: "+sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
+        System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
         return ResponseEntity.ok(SessionMapper.of(saved));
     }
 }

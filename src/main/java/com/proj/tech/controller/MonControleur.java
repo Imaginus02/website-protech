@@ -7,6 +7,7 @@ import com.proj.tech.dto.User;
 import com.proj.tech.dto.blocks.Code;
 import com.proj.tech.mapper.blocks.CodeMapper;
 import com.proj.tech.model.UserEntity;
+import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.model.blocks.CodeEntity;
 import com.proj.tech.model.blocks.InstructionEntity;
 import com.proj.tech.services.JavaArduinoTranslator;
@@ -108,7 +109,7 @@ public class MonControleur {
 
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserEntity user = userProfessorDao.findByUsername(authentication.getName());
+        UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
         Set<InstructionEntity> instructions = new HashSet<>(Set.of());
         CodeEntity code = new CodeEntity(params.get("nameOfCode")[0]);
         CodeEntity saved = codeDao.save(code);
@@ -120,6 +121,8 @@ public class MonControleur {
         }
         instructionDao.saveAll(instructions);
         code.setInstructions(instructions);
+        code.setCreator(user);
+        codeDao.save(code);
 
         return new CodeMapper().of(saved);
     }

@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.proj.tech.ProjTechApplication.logger;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/codes")
@@ -33,6 +35,7 @@ public class CodeController {
     @GetMapping
     public List<Code> listCode() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("Get request to /api/codes by " + authentication.getName());
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
             System.out.println("Admin here, providing full session list");
             return codeDao.findAll()
@@ -51,12 +54,15 @@ public class CodeController {
 
     @GetMapping("/{id}")
     public Code getCode(@PathVariable Long id) {
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("Get request to /api/codes/" + id + " by " + authentication.getName());
         return codeDao.findById(id).map(CodeMapper::of).orElse(null);
     }
 
     @GetMapping("/{username}")
     public List<Code> getCodeByUsername(@PathVariable String username) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("Get request to /api/codes/" + username + " by " + authentication.getName());
         return codeDao.findByUsername(username).stream().map(CodeMapper::of).collect(Collectors.toList());
     }
 }

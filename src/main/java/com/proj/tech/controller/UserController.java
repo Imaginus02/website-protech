@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.proj.tech.ProjTechApplication.logger;
+
 //@PreAuthorize("hasRole('ADMIN')")
 @CrossOrigin
 @RestController
@@ -55,6 +57,7 @@ public class UserController {
     @ResponseBody
     public List<UserProfessor> listUsers() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("GET request to /api/users by " + authentication.getName());
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
             System.out.println("Admin here, providing full session list");
             return userProfessorDao.findAll().stream()
@@ -70,11 +73,12 @@ public class UserController {
     @PostMapping("/{id}")
     @ResponseBody
     public UserProfessor updateUser(@PathVariable Long id, @RequestBody UserUpdate userUpdate) {
-        System.out.println("Post request received");
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("POST request to /api/users/" + id + " by " + authentication.getName());
         UserProfessorEntity user = userProfessorDao.findById(id).get();
         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
-        System.out.println("Json received :");
-        System.out.println(userUpdate.getProperties());
+        logger.info("Json received");
+        logger.info(userUpdate.getProperties());
         Map<String, Object> properties = userUpdate.getProperties();
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
@@ -105,6 +109,8 @@ public class UserController {
     @GetMapping("/{id}")
     @ResponseBody
     public UserProfessor showUser(@PathVariable Long id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("GET request to /api/users/" + id + " by " + authentication.getName());
         UserProfessor user = UserProfessorMapper.of(userProfessorDao.findById(id).get());
         System.out.println("Acceding to users page");
         System.out.println(user);
@@ -114,6 +120,7 @@ public class UserController {
     @PostMapping("/new")
     @ResponseBody
     public ResponseEntity<UserProfessor> createUser(@RequestBody UserProfessorCommand user) {
+        logger.info("POST request to /api/users/");
         UserProfessorEntity saved = userProfessorDao.save(new UserProfessorEntity(user.email(), user.username(), user.password()));
 
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
@@ -130,6 +137,8 @@ public class UserController {
 
     @DeleteMapping("{id}")
     public void deleteUser(@PathVariable Long id) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("DELETE request to /api/users/" + id + " by " + authentication.getName());
         if (userDetailsService instanceof InMemoryUserDetailsManager) {
             ((InMemoryUserDetailsManager) userDetailsService).deleteUser(userProfessorDao.findById(id).get().getUsername());
         }

@@ -32,6 +32,10 @@ dependencies {
 	implementation("org.apache.logging.log4j:log4j-core:2.22.1")
 }
 
+configurations.all {
+	exclude("org.springframework.boot" ,"spring-boot-starter-logging")
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
