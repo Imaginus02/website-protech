@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.io.IOException;
 import java.util.*;
 
+import static com.proj.tech.ProjTechApplication.logger;
+
 @Controller
 @CrossOrigin
 public class MonControleur {
@@ -99,6 +101,7 @@ public class MonControleur {
     @GetMapping("/login-successful")
     public String redirectWithAuthority() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        logger.info("New logged user : " + authentication.getName());
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_PROFESSOR")) {
             return "redirect:/pageTeacher.html";
         } else {

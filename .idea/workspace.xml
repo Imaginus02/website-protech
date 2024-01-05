@@ -7,13 +7,10 @@
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/CodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/CodeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RequestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/proj/tech/ProjTechApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/proj/tech/ProjTechApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +94,31 @@
       <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjTechApplication">
+  <component name="RunManager" selected="JUnit.Tests">
+    <configuration name="ProjTechApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.proj.tech.ProjTechApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="website-protech [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -120,6 +141,23 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Tests" type="JUnit" factoryName="JUnit">
+      <module name="tech.test" />
+      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="PACKAGE_NAME" value="com.proj.tech" />
+      <option name="MAIN_CLASS_NAME" value="com.proj.tech.ProjTechApplicationTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProjTechApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="tech.main" />
@@ -134,11 +172,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.ProjTechApplicationTests" />
       <item itemvalue="Gradle.website-protech [assemble]" />
+      <item itemvalue="JUnit.Tests" />
       <item itemvalue="Spring Boot.ProjTechApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ProjTechApplicationTests" />
         <item itemvalue="Gradle.website-protech [assemble]" />
       </list>
     </recent_temporary>
@@ -162,7 +203,7 @@
       <workItem from="1704462656305" duration="100000" />
       <workItem from="1704462771016" duration="114000" />
       <workItem from="1704462924601" duration="630000" />
-      <workItem from="1704463561035" duration="3056000" />
+      <workItem from="1704463561035" duration="7996000" />
     </task>
     <servers />
   </component>

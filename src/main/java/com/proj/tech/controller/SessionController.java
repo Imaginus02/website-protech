@@ -110,18 +110,23 @@ public class SessionController {
                                                  @RequestParam String endDate) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         logger.info("POST request to /api/sessions by " + authentication.getName() + " with parameters : " + name + ", " + maxUser + ", " + endDate);
-        UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
-        SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
+        if (name.isEmpty() || endDate.isEmpty()) {
+            logger.error("Missing arguments");
+            return (ResponseEntity<Session>) ResponseEntity.badRequest();
+        } else {
+            UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
+            SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
 
-        PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        UserDetails sessionUser = User.withUsername("sessions")
-                .password(encoder.encode(saved.getPassword()))
-                .roles(SpringSecurityConfig.ROLE_STUDENT)
-                .build();
-        if (userDetailsService instanceof InMemoryUserDetailsManager) {
-            ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
+            PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+            UserDetails sessionUser = User.withUsername("sessions")
+                    .password(encoder.encode(saved.getPassword()))
+                    .roles(SpringSecurityConfig.ROLE_STUDENT)
+                    .build();
+            if (userDetailsService instanceof InMemoryUserDetailsManager) {
+                ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
+            }
+            System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
+            return ResponseEntity.ok(SessionMapper.of(saved));
         }
-        System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
-        return ResponseEntity.ok(SessionMapper.of(saved));
     }
 }

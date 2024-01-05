@@ -37,18 +37,21 @@ public class CodeController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         logger.info("Get request to /api/codes by " + authentication.getName());
         if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_ADMIN")) {
-            System.out.println("Admin here, providing full session list");
+            logger.debug("Admin here, providing full session list");
             return codeDao.findAll()
                     .stream()
                     .map(CodeMapper::of)
                     .toList();
-        } else {
-            System.out.println("Simple user, providing only session created by this user");
+        } else if (authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).toList().contains("ROLE_PROFESSOR")){
+            logger.debug("Simple user, providing only session created by this user");
             UserProfessorEntity userProfessor = userProfessorDao.findByUsername(authentication.getName());
             return codeDao.findByUsername(userProfessor.getUsername())
                     .stream()
                     .map(CodeMapper::of)
                     .toList();
+        } else {
+            logger.warn("Unauthorized access to /api/codes");
+            return List.of();
         }
     }
 
