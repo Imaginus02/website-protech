@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 javadoc/
+node_modules/
 
 ### IntelliJ IDEA ###
 *.iws

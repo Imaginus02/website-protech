@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/build.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/release.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/CodeToStringTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/CodeToStringTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/JavaArduinoTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/JavaArduinoTranslator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/StringToDateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/StringToDateConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,7 @@
       <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.website-protech [generateJavadoc]">
+  <component name="RunManager" selected="Spring Boot.ProjTechApplication">
     <configuration name="ProjTechApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -294,7 +286,7 @@
       <workItem from="1704463561035" duration="8397000" />
       <workItem from="1704556215954" duration="1039000" />
       <workItem from="1704651839387" duration="285000" />
-      <workItem from="1704715683091" duration="9213000" />
+      <workItem from="1704715683091" duration="10916000" />
     </task>
     <servers />
   </component>
