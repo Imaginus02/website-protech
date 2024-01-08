@@ -5,8 +5,19 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Utility class for converting a string representation of a date to a {@code Date} object.
+ * This class provides a method to convert a string with the format "yyyy-MM-dd" to a {@code Date} object
+ * with the time set to midnight.
+ */
 public class StringToDateConverter {
 
+    /**
+     * Converts a string representation of a date to a {@code Date} object with the time set to midnight.
+     *
+     * @param dateString The string representation of the date in the format "yyyy-MM-dd".
+     * @return The {@code Date} object with the time set to midnight, or {@code null} if the conversion fails.
+     */
     public Date convertStringToDate(String dateString) {
         try {
             // Parse the input string

@@ -105,4 +105,4 @@ Le code pour générer la Javadoc se trouve à la fin dans build.gradle
 A la racine du projet (ProjTech), exécuter la commande
 gradle generateJavadoc
 
-La javadoc se trouve alors ProjTech/javadoc/index.html
+La javadoc se trouve alors ProjTech/javadoc/index.html, que l'on peut ouvrir avec son navigateur web.

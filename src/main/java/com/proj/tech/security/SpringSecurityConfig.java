@@ -23,21 +23,64 @@ import java.util.List;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
+/**
+ * Configuration class for Spring Security.
+ *
+ * <p>
+ * This class is responsible for configuring the security settings for the application.
+ * It defines user roles, provides a custom user details service, and sets up security rules for various endpoints.
+ * </p>
+ *
+ * <p>
+ * The application uses in-memory authentication with predefined users and roles.
+ * It also configures security rules for different endpoints, such as permitting access to certain pages or APIs based on user roles.
+ * </p>
+ */
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig {// extends WebSecurityConfiguration {
 
     private final SessionDao sessionDao;
+
+    /**
+     * Role constant for a professor user.
+     */
     public static final String ROLE_USER = "USER";
+
+    /**
+     * Role constant for a professor user.
+     */
     public static final String ROLE_PROFESSOR = "PROFESSOR";
+
+    /**
+     * Role constant for an administrator.
+     */
     public static final String ROLE_ADMIN = "ADMIN";
+
+    /**
+     * Role constant for a student user.
+     */
     public static final String ROLE_STUDENT = "STUDENT";
+
+    /**
+     * Role constant for the mobile app.
+     */
     public static final String ROLE_MOBILE_APP = "MOBILE_APP";
 
+    /**
+     * Constructs a new instance of {@code SpringSecurityConfig}.
+     *
+     * @param sessionDao The data access object for sessions.
+     */
     public SpringSecurityConfig(SessionDao sessionDao) {
         this.sessionDao = sessionDao;
     }
 
+    /**
+     * Configures the in-memory user details service with predefined users and roles.
+     *
+     * @return The user details service.
+     */
     @Bean
     public UserDetailsService userDetailsService() {
         // We create a password encoder
@@ -56,7 +99,13 @@ public class SpringSecurityConfig {// extends WebSecurityConfiguration {
         return manager;
     }
 
-
+    /**
+     * Configures the security filter chain for basic HTTP security settings.
+     *
+     * @param http The HTTP security configuration.
+     * @return The configured security filter chain.
+     * @throws Exception If an error occurs during configuration.
+     */
     @Bean
     @Order(2)
     public SecurityFilterChain basicFilterChain(HttpSecurity http) throws Exception {

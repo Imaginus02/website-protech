@@ -25,6 +25,10 @@ import java.util.*;
 
 import static com.proj.tech.ProjTechApplication.logger;
 
+/**
+ * Controller class handling HTTP requests and responsible for processing form submissions.
+ * This class manages actions related to code, instructions, and user profiles.
+ */
 @Controller
 @CrossOrigin
 public class MonControleur {
@@ -74,6 +78,15 @@ public class MonControleur {
 
     }
 
+    /**
+     * Handles the HTTP POST request for the "/savePage" endpoint.
+     * This method processes form submissions, extracts parameters, and saves the code.
+     *
+     * @param request The HttpServletRequest object representing the HTTP request.
+     * @return A String representing the redirect URL, in this case, "/pageTeacher.html".
+     * @throws IOException            If an I/O error occurs.
+     * @throws InterruptedException   If the thread is interrupted while waiting.
+     */
     @PostMapping("/savePage")
     public String save(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());
@@ -89,31 +102,67 @@ public class MonControleur {
         return "redirect:/pageTeacher.html";
     }
 
+    /**
+     * Handles the HTTP GET request for the "/login/student" endpoint.
+     * Displays the login page for students.
+     *
+     * @return A String representing the login page.
+     */
     @GetMapping("/login/student")
     public String showLoginStudentPage() {
         return "login.html"; // Returns login.html
     }
 
+    /**
+     * Handles the HTTP GET request for the "/login/professor" endpoint.
+     * Displays the login page for professors.
+     *
+     * @return A String representing the login page.
+     */
     @GetMapping("/login/professor")
     public String showLoginProfessorPage() {
         return "loginProf.html"; // Returns login.html
     }
 
+    /**
+     * Handles the HTTP GET request for the "/choose" endpoint.
+     * Displays the choose page.
+     *
+     * @return A String representing the choose page.
+     */
     @GetMapping("/choose")
     public String showChoosePage() {
         return "choose.html"; // Returns login.html
     }
 
+    /**
+     * Handles the HTTP GET request for the "/inscription" endpoint.
+     * Displays the registration page.
+     *
+     * @return A String representing the registration page.
+     */
     @GetMapping("/inscription")
     public String showRegisterPage() {
         return "inscription.html"; // Returns login.html
     }
 
+    /**
+     * Handles the HTTP GET request for the "/profile" endpoint.
+     * Displays the user profile page.
+     *
+     * @return A String representing the user profile page.
+     */
     @GetMapping("/profile")
     public String showProfilePage() {
         return "profile.html";
     }
 
+    /**
+     * Handles the HTTP GET request for the "/login-successful" endpoint.
+     * Redirects the user based on their role after successful login.
+     *
+     * @return A String representing the redirect URL.
+     */
     @GetMapping("/login-successful")
     public String redirectWithAuthority() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -125,7 +174,12 @@ public class MonControleur {
         }
     }
 
-
+    /**
+     * Saves the code and related instructions based on the submitted form parameters.
+     *
+     * @param params The form parameters containing information about the code and instructions.
+     * @return A Code entity representing the saved code.
+     */
     public Code saveCode(Map<String, String[]> params) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());

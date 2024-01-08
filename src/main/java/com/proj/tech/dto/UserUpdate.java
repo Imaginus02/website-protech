@@ -37,14 +37,29 @@ import java.util.Map;
  * </pre>
  */
 public class UserUpdate {
+
+    /**
+     * The properties to be updated.
+     */
     @JsonIgnore
     private final Map<String, Object> properties = new HashMap<>();
 
+    /**
+     * Sets a property with the given field name and value.
+     *
+     * @param fieldName The name of the field to be updated.
+     * @param value     The new value for the field.
+     */
     @JsonAnySetter
     public void set(String fieldName, Object value) {
         properties.put(fieldName,value);
     }
 
+    /**
+     * Gets the properties to be updated.
+     *
+     * @return The properties map.
+     */
     public Map<String, Object> getProperties() {
         return properties;
     }

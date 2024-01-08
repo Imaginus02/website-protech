@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/ProjTechApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Instruction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/SessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/SessionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserProfessorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserProfessorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/CodeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/CodeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/InstructionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/InstructionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/security/SpringSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/CodeToStringTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/CodeToStringTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/JavaArduinoTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/JavaArduinoTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/StringToDateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/services/StringToDateConverter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +294,7 @@
       <workItem from="1704463561035" duration="8397000" />
       <workItem from="1704556215954" duration="1039000" />
       <workItem from="1704651839387" duration="285000" />
-      <workItem from="1704715683091" duration="7398000" />
+      <workItem from="1704715683091" duration="9213000" />
     </task>
     <servers />
   </component>

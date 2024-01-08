@@ -17,16 +17,28 @@ import java.util.Set;
 @MappedSuperclass
 public abstract class UserEntity implements UserDetails {
 
+    /**
+     * The unique identifier for the user.
+     */
     @Id
     @GeneratedValue
     private Long id;
 
+    /**
+     * The email address of the user.
+     */
     @Column(nullable = false, name = "email")
     private String email;
 
+    /**
+     * The password of the user.
+     */
     @Column(nullable = false)
     private String password;
 
+    /**
+     * The username of the user.
+     */
     @Column
     private String username;
 

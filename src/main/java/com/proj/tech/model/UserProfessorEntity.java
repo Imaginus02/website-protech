@@ -18,16 +18,28 @@ import java.util.Set;
 @Table(name = "SP_USER_PROFESSOR")
 public class UserProfessorEntity extends UserEntity {//implements UserDetails {
 
+    /**
+     * The unique identifier for the user.
+     */
     @Id
     @GeneratedValue
     private Long id;
 
+    /**
+     * The list of user professor's active sessions.
+     */
     @OneToMany
     private Set<SessionEntity> activeSessions;
 
+    /**
+     * The list of user professor's archived sessions.
+     */
     @OneToMany
     private Set<SessionEntity> archivedSessions;
 
+    /**
+     * The list of user professor's codes.
+     */
     @OneToMany(mappedBy = "creator")
     private Set<CodeEntity> codes;
 
