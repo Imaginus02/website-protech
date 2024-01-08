@@ -17,10 +17,12 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: '17'
+          java-version: '17'  # Set to Java 17 or your desired version
 
-      - name: Build and test
-        run: ./gradlew build
+      - name: Generate Changelog
+        id: generate_changelog
+        run: npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0
+        continue-on-error: true
 
       - name: Create Release
         id: create_release
@@ -32,13 +34,14 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             Release notes and documentation here.
+            $(cat CHANGELOG.md)
 
       - name: Upload Artifacts
-        id: upload-artifacts
+        id: upload_artifacts
         uses: actions/upload-artifact@v2
         with:
           name: release-artifacts
-          path: build/libs
+          path: build/libs  # Update this path to your build artifacts location
 
       - name: Update Release with Artifacts
         uses: actions/upload-release-asset@v1
@@ -46,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ steps.upload-artifacts.outputs.artifact_path }}
-          asset_name: release-artifacts.zip
+          asset_path: ${{ steps.upload_artifacts.outputs.artifact_path }}
+          asset_name: release-artifacts.zip  # Update with your artifact file name
           asset_content_type: application/zip

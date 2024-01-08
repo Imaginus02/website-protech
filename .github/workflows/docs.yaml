@@ -1,0 +1,39 @@
+name: Generate and Deploy Javadoc
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  generate_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'  # Set to Java 17 or your desired version
+
+      - name: Generate Javadoc
+        run: ./gradlew generateJavadoc
+
+      - name: Clone Imaginus02.github.io repository
+        run: |
+          git clone https://github.com/Imaginus02/Imaginus02.github.io.git
+          cd Imaginus02.github.io
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Copy Javadoc to Imaginus02.github.io repository
+        run: cp -R ../build/docs/javadoc/* .
+
+      - name: Commit and Push to Imaginus02.github.io
+        run: |
+          git add .
+          git commit -m "Update Javadoc"
+          git push origin master
