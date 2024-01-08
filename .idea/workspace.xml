@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/SessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/SessionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserProfessorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserProfessorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/CodeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/CodeDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/InstructionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/InstructionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/CodeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/CodeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/InstructionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/InstructionEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +288,7 @@
       <workItem from="1704463561035" duration="8397000" />
       <workItem from="1704556215954" duration="1039000" />
       <workItem from="1704651839387" duration="285000" />
-      <workItem from="1704715683091" duration="3258000" />
+      <workItem from="1704715683091" duration="5923000" />
     </task>
     <servers />
   </component>

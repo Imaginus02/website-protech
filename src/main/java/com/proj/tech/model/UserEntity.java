@@ -10,6 +10,10 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * An abstract class representing a user entity in the application.
+ * This class implements the UserDetails interface, providing necessary information for Spring Security.
+ */
 @MappedSuperclass
 public abstract class UserEntity implements UserDetails {
 
@@ -20,49 +24,98 @@ public abstract class UserEntity implements UserDetails {
     @Column(nullable = false, name = "email")
     private String email;
 
-
     @Column(nullable = false)
     private String password;
 
     @Column
     private String username;
 
+    /**
+     * Default constructor for the UserEntity class.
+     */
     public UserEntity() {}
 
+    /**
+     * Parameterized constructor for the UserEntity class.
+     *
+     * @param email    The user's email.
+     * @param username The user's username.
+     * @param password The user's password.
+     */
     public UserEntity(String email, String username, String password) {
         this.email = email;
         this.username = username;
         this.password = password;
     }
 
+    /**
+     * Gets the unique identifier for the user.
+     *
+     * @return The user's ID.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Sets the unique identifier for the user.
+     *
+     * @param id The user's ID.
+     */
     public void setId(Long id) {
         this.id = id;
     }
 
+    /**
+     * Gets the email of the user.
+     *
+     * @return The user's email.
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets the email of the user.
+     *
+     * @param email The user's email.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets the password of the user.
+     *
+     * @return The user's password.
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     * Sets the password of the user.
+     *
+     * @param password The user's password.
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     * Gets the username of the user.
+     *
+     * @return The user's username.
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Sets the username of the user.
+     *
+     * @param username The user's username.
+     */
     public void setUsername(String username) {
         this.username = username;
     }
