@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/CodeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/CodeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/MonControleur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/RequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionStatus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +275,7 @@
       <workItem from="1704463561035" duration="8397000" />
       <workItem from="1704556215954" duration="1039000" />
       <workItem from="1704651839387" duration="285000" />
-      <workItem from="1704715683091" duration="2047000" />
+      <workItem from="1704715683091" duration="3258000" />
     </task>
     <servers />
   </component>
