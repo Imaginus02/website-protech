@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01bdee7b-3bb8-4b30-bb79-4b8c9e31e5e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/SessionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/SessionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserProfessorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/UserProfessorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/CodeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/CodeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/InstructionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dao/blocks/InstructionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/SessionEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/UserProfessorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/CodeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/CodeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/InstructionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/model/blocks/InstructionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserProfessorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/UserUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Code.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Instruction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/dto/blocks/Instruction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/SessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/SessionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserProfessorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/UserProfessorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/CodeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/CodeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/InstructionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proj/tech/mapper/blocks/InstructionMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -70,32 +79,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;custom__logs&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Majeur Informatique/TP-Cloud&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "custom__logs",
+    "last_opened_file_path": "D:/tb3/git/website-protech/src/main/java/com/proj/tech/dto/blocks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\tb3\git\website-protech\src\main\java\com\proj\tech\dto\blocks" />
       <recent name="D:\tb3\git\website-protech\.idea" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -288,7 +298,7 @@
       <workItem from="1704463561035" duration="8397000" />
       <workItem from="1704556215954" duration="1039000" />
       <workItem from="1704651839387" duration="285000" />
-      <workItem from="1704715683091" duration="5923000" />
+      <workItem from="1704715683091" duration="7398000" />
     </task>
     <servers />
   </component>

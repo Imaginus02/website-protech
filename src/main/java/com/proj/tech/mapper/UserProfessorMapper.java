@@ -8,7 +8,17 @@ import com.proj.tech.model.UserProfessorEntity;
 
 import java.util.stream.Collectors;
 
+/**
+ * Utility class for mapping UserProfessorEntity instances to UserProfessor instances.
+ */
 public class UserProfessorMapper {
+
+    /**
+     * Maps a UserProfessorEntity instance to a UserProfessor instance.
+     *
+     * @param user The UserProfessorEntity instance to be mapped.
+     * @return A UserProfessor instance with essential details from the UserProfessorEntity.
+     */
     public static UserProfessor of(UserProfessorEntity user) {
         return new UserProfessor(
                 user.getId(),
