@@ -28,6 +28,11 @@ import java.util.stream.Collectors;
 import static com.proj.tech.ProjTechApplication.logger;
 import static com.proj.tech.security.SpringSecurityConfig.ROLE_ADMIN;
 
+
+/**
+ * Controller handling operations related to user sessions.
+ * This controller manages the listing of sessions, creating new sessions, and retrieving sessions for a specific user.
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/sessions")
@@ -42,6 +47,13 @@ public class SessionController {
 
     private final UserDetailsService userDetailsService;
 
+    /**
+     * Constructs a new instance of the SessionController.
+     *
+     * @param sessionDao            The data access object for managing Session entities.
+     * @param userProfessorDao      The data access object for managing UserProfessor entities.
+     * @param userDetailsService    The service for loading user-specific data.
+     */
     public SessionController(SessionDao sessionDao,
                              UserProfessorDao userProfessorDao,
                              UserDetailsService userDetailsService) {
@@ -51,7 +63,13 @@ public class SessionController {
         this.userDetailsService = userDetailsService;
     }
 
-    @GetMapping()
+    /**
+     * Handles the HTTP GET request to retrieve a list of sessions.
+     * Give the full list for ADMIN, and only self created for PROFESSOR
+     *
+     * @return A list of Session DTOs representing the sessions.
+     */
+    @GetMapping
     public List<Session> listSessions() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         logger.info("POST request to /api/sessions by " + authentication.getName());
@@ -71,6 +89,12 @@ public class SessionController {
         }
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a list of sessions for a specific user.
+     *
+     * @param username The username of the user for whom sessions are retrieved.
+     * @return A list of Session DTOs representing the sessions for the specified user.
+     */
     @GetMapping("/{username}")
     public List<Session> listSessionForUser(@PathVariable String username) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -81,6 +105,12 @@ public class SessionController {
                 .toList();
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a list of active sessions for a specific user.
+     *
+     * @param username The username of the user for whom active sessions are retrieved.
+     * @return A list of Session DTOs representing the active sessions for the specified user.
+     */
     @GetMapping("/{username}/active")
     @ResponseBody
     public List<Session> listActiveSessionForUser(@PathVariable String username) {
@@ -92,6 +122,12 @@ public class SessionController {
                 .toList();
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a list of archived sessions for a specific user.
+     *
+     * @param username The username of the user for whom archived sessions are retrieved.
+     * @return A list of Session DTOs representing the archived sessions for the specified user.
+     */
     @GetMapping("/{username}/archived")
     @ResponseBody
     public List<Session> listArchivedSessionForUser(@PathVariable String username) {
@@ -103,6 +139,14 @@ public class SessionController {
                 .toList();
     }
 
+    /**
+     * Handles the HTTP POST request to create a new session.
+     *
+     * @param name     The name of the new session.
+     * @param maxUser  The maximum number of users allowed in the session.
+     * @param endDate  The end date of the session.
+     * @return ResponseEntity with the newly created Session DTO.
+     */
     @PostMapping
     @ResponseBody
     public ResponseEntity<Session> createSession(@RequestParam String name,

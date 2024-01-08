@@ -18,6 +18,10 @@ import java.util.stream.Collectors;
 
 import static com.proj.tech.ProjTechApplication.logger;
 
+/**
+ * Controller handling operations related to code management.
+ * This controller manages listing codes and retrieving code information.
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/codes")
@@ -27,11 +31,23 @@ public class CodeController {
     private final CodeDao codeDao;
     private final UserProfessorDao userProfessorDao;
 
+    /**
+     * Constructs a new instance of the CodeController.
+     *
+     * @param codeDao           The data access object for managing Code entities.
+     * @param userProfessorDao  The data access object for managing UserProfessor entities.
+     */
     public CodeController(CodeDao codeDao, UserProfessorDao userProfessorDao) {
         this.codeDao = codeDao;
         this.userProfessorDao = userProfessorDao;
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a list of codes.
+     * If the user has the role admin, all codes are provided; if the user has the role professor, only codes created by the professor are provided.
+     *
+     * @return A list of Code DTOs representing the codes.
+     */
     @GetMapping
     public List<Code> listCode() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -55,6 +71,12 @@ public class CodeController {
         }
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a specific code by ID.
+     *
+     * @param id The ID of the code to be retrieved.
+     * @return A Code DTO representing the retrieved code.
+     */
     @GetMapping("/{id}")
     public Code getCode(@PathVariable Long id) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -62,6 +84,12 @@ public class CodeController {
         return codeDao.findById(id).map(CodeMapper::of).orElse(null);
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a list of codes for a specific user by username.
+     *
+     * @param username The username of the user for whom codes are retrieved.
+     * @return A list of Code DTOs representing the codes for the specified user.
+     */
     @GetMapping("/{username}")
     public List<Code> getCodeByUsername(@PathVariable String username) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

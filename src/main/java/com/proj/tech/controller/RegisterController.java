@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.*;
 
 import static com.proj.tech.ProjTechApplication.logger;
 
+/**
+ * Controller handling registration-related operations for professors.
+ * This controller manages user registration, validation, and redirects.
+ */
 @CrossOrigin
 @Controller
 @RequestMapping("/inscription")
@@ -23,11 +27,26 @@ public class RegisterController {
 
     private final UserProfessorDao userProfessorDao;
 
+    /**
+     * Constructs a new instance of the RegisterController.
+     *
+     * @param userProfessorDao   The data access object for managing UserProfessor entities.
+     * @param userDetailsService The service for loading user-specific data.
+     */
     public RegisterController(UserProfessorDao userProfessorDao, UserDetailsService userDetailsService) {
         this.userProfessorDao = userProfessorDao;
         this.userDetailsService = userDetailsService;
     }
 
+    /**
+     * Handles the HTTP POST request for user registration.
+     *
+     * @param username         The username provided in the registration form.
+     * @param email            The email provided in the registration form.
+     * @param password         The password provided in the registration form.
+     * @param passwordConfirm  The confirmation password provided in the registration form.
+     * @return A String representing the redirect URL based on the registration outcome.
+     */
     @PostMapping
     public String registerNewProfessor(@RequestParam String username,
                                        @RequestParam String email,

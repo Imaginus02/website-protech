@@ -2,6 +2,8 @@ plugins {
 	java
 	id("org.springframework.boot") version "3.1.4"
 	id("io.spring.dependency-management") version "1.1.3"
+	id("net.ltgt.errorprone") version "latest.release"
+	id("checkstyle")
 }
 
 group = "com.proj.tech"
@@ -15,7 +17,15 @@ repositories {
 	mavenCentral()
 }
 
+checkstyle {
+	toolVersion = "8.44"
+	configFile = file("$rootDir/checkstyle.xml")
+	// Other configuration options as needed
+}
+
 dependencies {
+	checkstyle("com.puppycrawl.tools:checkstyle:8.44")
+	errorprone("com.google.errorprone:error_prone_core:latest.release")
 	implementation("org.springframework:spring-context-support:6.0.11")
 	testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
@@ -43,4 +53,12 @@ configurations.all {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.register<Javadoc>("generateJavadoc") {
+	val docDir = "$projectDir/javadoc"
+	source = sourceSets.getByName("main").allJava
+	classpath = configurations.getByName("compileClasspath")
+	// destinationDir = file("/mnt/c/Users/noset/Documents/ProjTech/javadoc")
+	destinationDir = file(docDir)
 }

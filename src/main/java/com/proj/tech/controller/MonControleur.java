@@ -36,12 +36,28 @@ public class MonControleur {
 
     private final JavaArduinoTranslator javaArduinoTranslator = new JavaArduinoTranslator();
 
+    /**
+     * Constructs a new instance of the MonControleur class with the specified data access objects.
+     *
+     * @param codeDao           The data access object for managing Code entities.
+     * @param instructionDao    The data access object for managing Instruction entities.
+     * @param userProfessorDao  The data access object for managing UserProfessor entities.
+     */
     public MonControleur(CodeDao codeDao, InstructionDao instructionDao, UserProfessorDao userProfessorDao) {
         this.codeDao = codeDao;
         this.instructionDao = instructionDao;
         this.userProfessorDao = userProfessorDao;
     }
 
+    /**
+     * Handles the HTTP POST request for the "/maPage" endpoint.
+     * This method processes form submissions, extracts parameters, and redirects to the specified page.
+     *
+     * @param request The HttpServletRequest object representing the HTTP request.
+     * @return A String representing the redirect URL, in this case, "/pageTeacher.html".
+     * @throws IOException            If an I/O error occurs.
+     * @throws InterruptedException   If the thread is interrupted while waiting.
+     */
     @PostMapping("/maPage") // "/maPage" correspond à <form action="/maPage" method="post">
     public String maPage(HttpServletRequest request) throws IOException, InterruptedException {
         Map<String, String[]> params = new LinkedHashMap<>(request.getParameterMap());

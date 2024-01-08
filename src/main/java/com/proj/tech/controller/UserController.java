@@ -1,11 +1,9 @@
 package com.proj.tech.controller;
 
-import com.proj.tech.dao.UserDao;
 import com.proj.tech.dao.UserProfessorDao;
 import com.proj.tech.dto.UserProfessor;
 import com.proj.tech.dto.UserProfessorCommand;
 import com.proj.tech.dto.UserUpdate;
-import com.proj.tech.mapper.UserMapper;
 import com.proj.tech.mapper.UserProfessorMapper;
 import com.proj.tech.model.UserProfessorEntity;
 import com.proj.tech.security.SpringSecurityConfig;
@@ -25,11 +23,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static com.proj.tech.ProjTechApplication.logger;
 
-//@PreAuthorize("hasRole('ADMIN')")
+/**
+ * Controller handling operations related to user management.
+ * This controller manages user listing, updating, creation, and deletion.
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api/users")
@@ -39,19 +39,23 @@ public class UserController {
     private final UserProfessorDao userProfessorDao;
     private final UserDetailsService userDetailsService;
 
+    /**
+     * Constructs a new instance of the UserController.
+     *
+     * @param userProfessorDao   The data access object for managing UserProfessor entities.
+     * @param userDetailsService The service for loading user-specific data.
+     */
     public UserController(UserProfessorDao userProfessorDao,
                           UserDetailsService userDetailsService) {
         this.userProfessorDao = userProfessorDao;
         this.userDetailsService = userDetailsService;
     }
 
-//    @GetMapping
-//    public String listUsers(Model model) {
-//        return "userList";
-//    }
-
-    /*
-     * Si L'utilisateur a le rôle admin, alors il on lui envoit tout les users, sinon on lui renvoit que lui dans une liste
+    /**
+     * Handles the HTTP GET request to retrieve a list of users.
+     * If the user has the role admin, all users are provided; otherwise, only the current user is provided.
+     *
+     * @return A list of UserProfessor DTOs representing the users.
      */
     @GetMapping
     @ResponseBody
@@ -70,6 +74,14 @@ public class UserController {
         }
     }
 
+    /**
+     * Handles the HTTP POST request to update a user.
+     * The user can update their username, email, or password.
+     *
+     * @param id         The ID of the user to be updated.
+     * @param userUpdate The UserUpdate object containing updated user information.
+     * @return A UserProfessor DTO representing the updated user.
+     */
     @PostMapping("/{id}")
     @ResponseBody
     public UserProfessor updateUser(@PathVariable Long id, @RequestBody UserUpdate userUpdate) {
@@ -106,6 +118,12 @@ public class UserController {
         return UserProfessorMapper.of(saved);
     }
 
+    /**
+     * Handles the HTTP GET request to retrieve a user by ID.
+     *
+     * @param id The ID of the user to be retrieved.
+     * @return A UserProfessor DTO representing the retrieved user.
+     */
     @GetMapping("/{id}")
     @ResponseBody
     public UserProfessor showUser(@PathVariable Long id) {
@@ -117,6 +135,12 @@ public class UserController {
         return user;
     }
 
+    /**
+     * Handles the HTTP POST request to create a new user.
+     *
+     * @param user The UserProfessorCommand object containing user information for creation.
+     * @return ResponseEntity with the newly created UserProfessor DTO.
+     */
     @PostMapping("/new")
     @ResponseBody
     public ResponseEntity<UserProfessor> createUser(@RequestBody UserProfessorCommand user) {
@@ -135,6 +159,11 @@ public class UserController {
         return ResponseEntity.ok(UserProfessorMapper.of(saved));
     }
 
+    /**
+     * Handles the HTTP DELETE request to delete a user by ID.
+     *
+     * @param id The ID of the user to be deleted.
+     */
     @DeleteMapping("{id}")
     public void deleteUser(@PathVariable Long id) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
