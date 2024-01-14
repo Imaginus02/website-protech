@@ -149,7 +149,7 @@ public class SessionController {
      */
     @PostMapping
     @ResponseBody
-    public ResponseEntity<Session> createSession(@RequestParam String name,
+    public String createSession(@RequestParam String name,
                                                  @RequestParam Integer maxUser,
                                                  @RequestParam String endDate) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -170,7 +170,7 @@ public class SessionController {
                 ((InMemoryUserDetailsManager) userDetailsService).createUser(sessionUser);
             }
             System.out.println("Created new user with credentials: " + sessionUser.getUsername() + "Encrypted password" + sessionUser.getPassword() + "decrypted password" + saved.getPassword());
-            return ResponseEntity.ok(SessionMapper.of(saved));
+            return "redirect:/pageTeacher.html";
         }
     }
 }
