@@ -156,7 +156,7 @@ public class SessionController {
         logger.info("POST request to /api/sessions by " + authentication.getName() + " with parameters : " + name + ", " + maxUser + ", " + endDate);
         if (name.isEmpty() || endDate.isEmpty()) {
             logger.error("Missing arguments");
-            return (ResponseEntity<Session>) ResponseEntity.badRequest();
+            return "redirect:/pageTeacher.html";
         } else {
             UserProfessorEntity user = userProfessorDao.findByUsername(authentication.getName());
             SessionEntity saved = sessionDao.save(new SessionEntity(name, user, maxUser, stringToDateConverter.convertStringToDate(endDate)));
