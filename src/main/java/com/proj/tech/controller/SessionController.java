@@ -148,7 +148,6 @@ public class SessionController {
      * @return ResponseEntity with the newly created Session DTO.
      */
     @PostMapping
-    @ResponseBody
     public String createSession(@RequestParam String name,
                                                  @RequestParam Integer maxUser,
                                                  @RequestParam String endDate) {
