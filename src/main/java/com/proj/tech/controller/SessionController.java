@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,7 +35,7 @@ import static com.proj.tech.security.SpringSecurityConfig.ROLE_ADMIN;
  * This controller manages the listing of sessions, creating new sessions, and retrieving sessions for a specific user.
  */
 @CrossOrigin
-@RestController
+@Controller
 @RequestMapping("/api/sessions")
 @Transactional
 public class SessionController {
